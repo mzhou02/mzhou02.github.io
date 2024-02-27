@@ -1,8 +1,8 @@
 ---
-layout: about
-title: about
+layout: home
+title: home
 permalink: /
-subtitle: <a href='#'>University of Pennsylvania</a>. 
+subtitle: <a href='#'>University of Pennsylvania</a>.
 
 profile:
   align: right
