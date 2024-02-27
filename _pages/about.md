@@ -6,7 +6,7 @@ subtitle: <a href='#'>University of Pennsylvania</a>.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: mission_peak.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 your office number</p>
