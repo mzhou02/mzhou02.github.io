@@ -12,6 +12,8 @@ this is a custom post
 
 please work :')
 
+$$\sum_{k = 1}^n = \frac{n(n + 1)}{2}$$
+
 no plots no nothing just some markdown
 
 ````markdown
