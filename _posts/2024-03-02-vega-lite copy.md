@@ -1,6 +1,6 @@
 ---
 layout: post
-title: test
+title: test 1234
 date: 2024-03-02 00:20:00
 description: this is what included vega lite code could look like
 tags: formatting charts
