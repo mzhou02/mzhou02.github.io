@@ -8,7 +8,7 @@ category: work
 related_publications: true
 ---
 
-Let $G$ be the Cartesian product of two groups $N$ and $H$. We can define a group relation on $G = N \times H$ pointwise using the operations from $N$ and $H$. In other words, $(n_1, h_1)(n_2, h_2) = (n_1n_2, h_1h_2)$. Because the group operations of $N$ and $H$ are both associative and closed, this operation is also associative and closed. There exists an identity, namely $(0, 0)$, and every element has an inverse. Thus, this ``Cartesian" product also has a group structure when defined pointwise. We call this the direct product.
+Let $latex G$ be the Cartesian product of two groups $N$ and $H$. We can define a group relation on $G = N \times H$ pointwise using the operations from $N$ and $H$. In other words, $(n_1, h_1)(n_2, h_2) = (n_1n_2, h_1h_2)$. Because the group operations of $N$ and $H$ are both associative and closed, this operation is also associative and closed. There exists an identity, namely $(0, 0)$, and every element has an inverse. Thus, this ``Cartesian" product also has a group structure when defined pointwise. We call this the direct product.
 
 A natural question that arises is when can a group be expressed as a direct product of subgroups. Let $N$ and $H$ be groups, and $N \times H$ be their direct product. For $(n, h) \in N \times H$ and $n' \in N$, we have that $(n, h)(n', 0)(n^{-1}, h^{-1}) = (nn'n^{-1}, 0) \in  N$. Thus, $N \trianglelefteq N \times H$. Similarly, $H \trianglelefteq N \times H$. In other words, if $G$ can be written as a direct product $N \times H$ for subgroups $N$ and $H$, it must be that both subgroups are normal.
 
