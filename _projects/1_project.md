@@ -5,7 +5,7 @@ description: An abstraction of the direct product
 img: assets/img/12.jpg
 importance: 1
 category: work
-related_publications: true
+mathjax: true
 ---
 
 Let $latex G$ be the Cartesian product of two groups $N$ and $H$. We can define a group relation on $G = N \times H$ pointwise using the operations from $N$ and $H$. In other words, $(n_1, h_1)(n_2, h_2) = (n_1n_2, h_1h_2)$. Because the group operations of $N$ and $H$ are both associative and closed, this operation is also associative and closed. There exists an identity, namely $(0, 0)$, and every element has an inverse. Thus, this ``Cartesian" product also has a group structure when defined pointwise. We call this the direct product.
