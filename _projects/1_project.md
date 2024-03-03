@@ -10,6 +10,8 @@ related_publications: true
 
 Let $latex G$ be the Cartesian product of two groups $N$ and $H$. We can define a group relation on $G = N \times H$ pointwise using the operations from $N$ and $H$. In other words, $(n_1, h_1)(n_2, h_2) = (n_1n_2, h_1h_2)$. Because the group operations of $N$ and $H$ are both associative and closed, this operation is also associative and closed. There exists an identity, namely $(0, 0)$, and every element has an inverse. Thus, this ``Cartesian" product also has a group structure when defined pointwise. We call this the direct product.
 
+$$\sum_{i = 1}^n i = \frac{n(n + 1)}{2}$$
+
 A natural question that arises is when can a group be expressed as a direct product of subgroups. Let $N$ and $H$ be groups, and $N \times H$ be their direct product. For $(n, h) \in N \times H$ and $n' \in N$, we have that $(n, h)(n', 0)(n^{-1}, h^{-1}) = (nn'n^{-1}, 0) \in  N$. Thus, $N \trianglelefteq N \times H$. Similarly, $H \trianglelefteq N \times H$. In other words, if $G$ can be written as a direct product $N \times H$ for subgroups $N$ and $H$, it must be that both subgroups are normal.
 
 These are quite substantial demands for non-abelian groups, and if we were to try and construct groups that contain two groups $N$ and $H$ as part of its subgroups by only using the direct product, our scope is quite limited. Naturally, we would like to ``relax" this requirement by only requiring one subgroup to be normal. Of course, we wouldn't be able to write $G$ as a direct product of two of its subgroups in this case. But let us see how far we can go down this route.
