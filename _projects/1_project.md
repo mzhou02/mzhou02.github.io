@@ -7,10 +7,10 @@ importance: 1
 category: work
 mathjax: true
 ---
-<h1> A Less "Direct" Product </h1>
+<h3> A Less "Direct" Product </h3>
 Let $$G$$ be the Cartesian product of two groups $$N$$ and $$H$$. We can define a group relation on $$G = N \times H$$ pointwise using the operations from $$N$$ and $$H$$. In other words, $$(n_1, h_1)(n_2, h_2) = (n_1n_2, h_1h_2)$$. Because the group operations of $$N$$ and $$H$$ are both associative and closed, this operation is also associative and closed. There exists an identity, namely $$(0, 0)$$, and every element has an inverse. Thus, this "Cartesian" product also has a group structure when defined pointwise. We call this the direct product.
 
-A natural question that arises is when a group be expressed as a direct product of subgroups. To investigate, let $$N \times H$$ be the direct product of groups $$N$$ and $$H$$. Notice how for $$(n, h) \in N \times H$$ and $$n' \in N$$, notice that $$(n, h)(n', 0)(n^{-1}, h^{-1}) = (nn'n^{-1}, 0) \in  N$$. Thus, $$N \trianglelefteq N \times H$$. Similarly, $$H \trianglelefteq N \times H$$. In other words, if $$G$$ can be written as a direct product $$N \times H$$ for subgroups $$N$$ and $$H$$, both subgroups must be normal.
+A natural question that arises is when a group be expressed as a direct product of subgroups. To investigate, let $$N \times H$$ be the direct product of groups $$N$$ and $$H$$. Notice how for $$(n, h) \in N \times H$$ and $$n' \in N$$, $$(n, h)(n', 0)(n^{-1}, h^{-1}) = (nn'n^{-1}, 0) \in  N$$. Thus, $$N \trianglelefteq N \times H$$. Similarly, $$H \trianglelefteq N \times H$$. In other words, if $$G$$ can be written as a direct product $$N \times H$$ for subgroups $$N$$ and $$H$$, both subgroups must be normal.
 
 These are quite substantial demands for non-abelian groups. If we wanted to construct groups that contain $$N$$ and $$H$$ as subgroups, our scope is quite limited with just the direct product. Naturally, we would like to "relax" this requirement by only requiring one subgroup to be normal. We wouldn't be able to write $$G$$ as a direct product of two of its subgroups in this case. But let us see how far we can go down this route.
 
@@ -18,16 +18,16 @@ Let $$N$$ be normal in $$G$$, and $$H$$ be a subgroup of $$G$$ such that $$N \ca
 
 $$(n_1h_1)(n_2h_2) = n_1(h_1n_2h_1^{-1})h_1h_2 = n_3h_3$$
 
-where $$n_3 = n_1(h_1n_2h_1^{-1})$$ and $$h_3 = h_1h_2$$ (note normality of $$N$$, so that $$h_1n_2h_1^{-1} \in N$$). In a way, $$G$$ is a sort of "product" between these normal subgroups. If we were to define its elements of $$G$$ as ordered pairs of elements from $$N$$ and $$H$$, our "group operation" would be that $$(n_1, h_1)(n_2, h_2) = (n_1(h_1n_2h_1^{-1}), h_1h_2)$$ (you can verify that this operation follows group axioms). This is called the <b> internal semidirect product </b>, denoted as $$N \rtimes H$$.
+where $$n_3 = n_1(h_1n_2h_1^{-1})$$ and $$h_3 = h_1h_2$$ (note normality of $$N$$, so that $$h_1n_2h_1^{-1} \in N$$). In a way, $$G$$ is sort of a "product" between these subgroups. If we were to define its elements of $$G$$ as ordered pairs of elements from $$N$$ and $$H$$, our "group operation" would be that $$(n_1, h_1)(n_2, h_2) = (n_1(h_1n_2h_1^{-1}), h_1h_2)$$ (you can verify that this operation follows group axioms). This is called the <b> internal semidirect product </b>, denoted as $$N \rtimes H$$.
 
-<h1> An External Product </h1>
+<h3> An External Product </h3>
 We can draw inspiration from this example of $$G$$ to construct something called the <b> external semidirect product </b>. Rather than rewriting $$G$$ as an internal semidirect product, why not see what class of groups we can construct from $$N$$ and $$H$$?
 
 The key idea from our example is that because $$N$$ is normal, $$H$$ acts upon $$N$$ by conjugation, which is a map in the automorphism group of $$N$$. This group action induces a homomorphism $$\phi: H \rightarrow \text{Aut}(N)$$ (as given $$h_1, h_2 \in H$$ and $$n \in N$$, conjugating $$n$$ by $$h_2$$ then by $$h_1$$ yields $$h_1h_2nh_2^{-1}h_1^{-1}$$, which is the same as conjugating by $$h_1h_2$$), which defines a proper group operation for our ordered pairs. Thus, the group operation in this "product" for $$G$$ is based mainly upon the automorphism that $$H$$ induces upon $$N$$, as $$(n_1, h_1)(n_2, h_2) = (n_1 \phi_{h_1}(n_2), h_1h_2)$$.
 
-So given groups $$N$$ and $$H$$ and a homomorphism $$\phi: N \rightarrow \text{Aut}(H)$$, we can construct a group $$G$$ which is the semidirect product of these groups as follows: let $$\cdot$$ be the left action of $$N$$ on $$H$$ determined by $$\phi$$. $$G$$ will be the set of ordered pairs $$(n, h)$$ for $$n \in N$$ and $$h \in H$$ with the following group operation:
+So given groups $$N$$ and $$H$$ and a homomorphism $$\phi: H \rightarrow \text{Aut}(N)$$, we can construct a group $$G$$ which is the semidirect product of these groups as follows: let $$\cdot$$ be the left action of $$H$$ on $$N$$ determined by $$\phi$$. $$G$$ will be the set of ordered pairs $$(n, h)$$ for $$n \in N$$ and $$h \in H$$ with the following group operation:
 
-$$(n_1, h_1)(n_2, h_2) = (n_1, h_1 \cdot n_2, h_1h_2)$$
+$$(n_1, h_1)(n_2, h_2) = (n_1 (h_1 \cdot n_2), h_1h_2)$$
 
 We denote this as $$N \rtimes_{\phi} H$$.
 

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: mikezhou [at] seas [dot] upenn [dot] edu
+subtitle: <font color="#2e59f2"> mikezhou [at] seas [dot] upenn [dot] edu </font>
 
 profile:
   align: right
