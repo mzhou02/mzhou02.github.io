@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: home
 permalink: /
 subtitle: <font color="#2e59f2"> mikezhou [at] seas [dot] upenn [dot] edu </font>
 
@@ -20,53 +20,4 @@ My name is Mike Zhou and I am currently a fourth year undergraduate studying com
 
 I am currently an undergraduate researcher working at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a> under Professor Dan Roth. Before that, I was at <a href='https://rycolab.io/'>Rycolab</a> under Professor Ryan Cotterell.
 
-<br>
-<br>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <style>
-        /* CSS for the resume box */
-        .resume-box {
-            border: 2px solid #333;  /* Solid border with a dark gray color */
-            padding: 20px;           /* Space inside the box */
-            margin: 15px 0;          /* Space outside the box, with a top and bottom margin */
-            border-radius: 10px;     /* Rounded corners */
-            background-color: #a0d9ef; /* Light gray background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            font-family: 'Arial', sans-serif; /* Simple, professional font */
-        }
 
-        .resume-box h3 {
-            margin-top: 0;
-            font-size: 1.5em;
-            color: #444; /* Darker color for the heading */
-        }
-
-        .resume-box p {
-            margin: 10px 0;
-            color: #666; /* Medium gray for the text */
-            line-height: 1.6; /* Improved readability */
-        }
-
-        .resume-box a {
-            color: #007bff; /* Link color */
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        .resume-box a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-    </style>
-</head>
-<body>
-    <div class="resume-box">
-      <h5> Education </h5>
-      <b> University of Pennsylvania (August 2021 - May 2025 (Expected)) </b>
-      <p> BSE (Computer Science and Mathematics), MSE (Computer Science) </p>
-      <br>
-      <b> Eidgenössische Technische Hochschule, Zurich (Spring 2024) </b>
-      <p> Study Abroad Program </p>
-    </div>
-</body>

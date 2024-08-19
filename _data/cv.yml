@@ -11,13 +11,12 @@
   contents:
     - title: BSE, MSE
       institution: University of Pennsylvnaia
-      year: August 2021 - May 2025 (Expected)
+      year: 2021 - 2025
     - title: Study Abroad
       institution: Eidgenössische Technische Hochschule, Zurich
       year: Spring 2024 
       description:
-        - Description 1.
-        - Description 2.
+ 
 
 - title: Teaching
   type: time_table
