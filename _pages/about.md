@@ -2,14 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: University of Pennsylvania
+subtitle: mikezhou [at] seas [dot] upenn [dot] edu
 
 profile:
   align: right
   image: headshot_website.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>mikezhou [at] seas [dot] upenn [dot] edu</p>
 
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
