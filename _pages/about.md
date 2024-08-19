@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>University of Pennsylvania</a>.
+subtitle: University of Pennsylvania
 
 profile:
   align: right
-  image: headshot_copy.jpg
+  image: headshot_website.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>mikezhou [at] seas [dot] upenn [dot] edu</p>
