@@ -1,7 +1,7 @@
 ---
 layout: page
 title: notes
-permalink: /projects/
+permalink: /notes/
 description: A collection of notes that I have written.
 nav: true
 nav_order: 3
