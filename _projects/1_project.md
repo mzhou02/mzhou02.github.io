@@ -2,7 +2,7 @@
 layout: page
 title: Semidirect Product
 description: An abstraction of the direct product
-img: assets/img/12.jpg
+img: 
 importance: 1
 category: work
 mathjax: true
