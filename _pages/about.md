@@ -20,7 +20,8 @@ My name is Mike Zhou and I am currently a fourth year undergraduate studying com
 
 I am currently an undergraduate researcher working at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a> under Professor Dan Roth. Before that, I was at <a href='https://rycolab.io/'>Rycolab</a> under Professor Ryan Cotterell.
 
-
+<br>
+<br>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +62,9 @@ I am currently an undergraduate researcher working at <a href='https://cogcomp.s
 </head>
 <body>
     <div class="resume-box">
-      <h3> Education </h3>
+      <h5> Education </h5>
+      <p> University of Pennsylvania </p>
+      <p> BSE (Computer Science and Mathematics), MSE (Computer Science) </p>
+      
     </div>
 </body>
