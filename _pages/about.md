@@ -33,7 +33,7 @@ I am currently an undergraduate researcher working at <a href='https://cogcomp.s
             padding: 20px;           /* Space inside the box */
             margin: 15px 0;          /* Space outside the box, with a top and bottom margin */
             border-radius: 10px;     /* Rounded corners */
-            background-color: #f9f9f9; /* Light gray background */
+            background-color: #a0d9ef; /* Light gray background */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
             font-family: 'Arial', sans-serif; /* Simple, professional font */
         }
@@ -63,8 +63,10 @@ I am currently an undergraduate researcher working at <a href='https://cogcomp.s
 <body>
     <div class="resume-box">
       <h5> Education </h5>
-      <p> University of Pennsylvania </p>
+      <b> University of Pennsylvania (August 2021 - May 2025 (Expected)) </b>
       <p> BSE (Computer Science and Mathematics), MSE (Computer Science) </p>
-      
+      <br>
+      <b> Eidgenössische Technische Hochschule, Zurich (Spring 2024) </b>
+      <p> Study Abroad Program </p>
     </div>
 </body>
