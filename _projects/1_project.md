@@ -4,7 +4,7 @@ title: Semidirect Product
 description: An abstraction of the direct product
 img: 
 importance: 1
-category: work
+category: algebra
 mathjax: true
 ---
 <h3> A Less "Direct" Product </h3>
