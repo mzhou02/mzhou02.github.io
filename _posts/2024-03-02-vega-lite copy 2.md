@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Linear 
+title: Minimum number of lines from non-collinear points 
 date: 2024-09-16 16:42:00
-description: Minimum number of lines from $$n$$ non-collinear points
+description:
 tags: combinatorics
 categories: math
 featured: false
 ---
 
-I've recently been reading more about algebraic methods within combinatorics, and have been fascinated by the appearances of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across recently that is inspired by incredibly simple techniques.
+I've recently been reading more about algebraic methods within combinatorics, and have been fascinated by the appearances of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across recently that is really just inspired by some incredibly simple ideas.
 
 <b>Problem 1.</b> What is the minimum number of lines $$n$$ non-collinear points form if all lines are drawn between points?
 
@@ -18,7 +18,7 @@ To demonstrate why, we can assign variables $$x_i$$ to each of the points, and d
 
 $$\sum_{j : x_j \in l_i}x_i = 0.$$
 
-That is, the sum of all the variables on that line is equal to 0. Assuming that there is a placement of $$n$$ points that produces less than $$n$$ lines, we will have at most $$n - 1$$ equations and $$n$$ variables, meaning that there exists a nontrivial solution. Since the square of non-zero numbers is strictly larger than 0, it would make sense if we square each equation and add them all up, like this:
+That is, the sum of all the variables on that line is equal to 0. Assuming that there is a placement of $$n$$ points that produces less than $$n$$ lines, we will have at most $$n - 1$$ equations and $$n$$ variables, meaning that there exists a nontrivial solution (this is the key idea of the proof). Since the square of non-zero numbers is strictly larger than 0, it would make sense if we square each equation and add them all up, like this:
 
 $$\sum_{i = 1}^{m}\left(\sum_{j : x_j \in l_i} x_i\right)^2 = \sum_{i = 1}^n a_i x_i^2 + 2\sum_{1 \leq i < j \leq n} a_{i, j} x_i x_j = 0$$
 
