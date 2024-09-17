@@ -18,7 +18,7 @@ To demonstrate why, we can assign variables $$x$$ to each of the points, and def
 
 $$\sum_{j\text{ }: x_j \in l_i} x_j = 0.$$
 
-That is, the sum of all the variables on line $$i$$ is equal to 0. Assuming that there is a placement of $$n$$ points that produces less than $$n$$ lines, we will have at most $$n - 1$$ equations and $$n$$ variables, meaning that there exists a nontrivial solution (this is the key idea of the proof). Since the square of non-zero numbers is strictly larger than 0, it would make sense if we square each equation and add them all up, like this:
+That is, the sum of all the variables on line $$i$$ is equal to 0. Assuming that there is a placement of $$n$$ points that produces less than $$n$$ lines, we will have at most $$n - 1$$ equations and $$n$$ variables, meaning that there exists a nontrivial solution (this is the key idea of the proof). Since the square of non-zero numbers is strictly larger than 0, it would make sense to introduce squares, so let's square each equation and add them all up, like this:
 
 $$\sum_{i = 1}^{m}\left(\sum_{j\text{ }: x_j \in l_i} x_j\right)^2 = \sum_{i = 1}^n a_i x_i^2 + 2\sum_{1 \leq i < j \leq n} a_{i, j} x_i x_j = 0$$
 
