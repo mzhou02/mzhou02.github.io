@@ -13,12 +13,15 @@ Turan's theorem states that a graph without $$K_{r + 1}$$ on $$n$$ vertices can 
 We begin with a base case. If $$n \leq r$$, we have that we can have we can have a complete graph. Since
 
 $$n^2r - n^2 \geq n^2r - nr$$
+
 $$\left(r - 1\right)\frac{n^2}{2} \geq \binom{n}{2}r$$
+
 $$\left(1 - \frac{1}{r} \right)\frac{n^2}{2} \geq \binom{n}{2}$$
 
-and we are done.
+we are done.
 
 We continue to our inductive case. Since this graph has a maximal number of edges and no $$r + 1$$ clique, there must exist an $$r$$-clique. Let us take this $$r$$-clique out. There are exactly $$\binom{r}{2}$$ edges in this $$r$$-clique, and at most $$(r - 1)(n - r)$$ edges between the $$r$$-clique and the rest of the graph. In addition, since the rest of the graph doesn't have an $$r$$-clique either, it has at most $$T(n - r, r)$$ edges, meaning that the number of edges is upper bounded by:
+
 $$\frac{r(r - 1)}{2} + (r - 1)(n - r) + \left(1 - \frac{1}{r}\right)\frac{(n - r)^2}{2} = \left(1 - \frac{1}{r}\right)\frac{n^2}{2}$$
 
 <h3> Proof #2: Maximizing Lagrangian </h3>
