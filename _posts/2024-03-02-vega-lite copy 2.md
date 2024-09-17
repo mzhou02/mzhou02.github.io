@@ -8,11 +8,11 @@ categories: math
 featured: false
 ---
 
-I've recently been reading more about algebraic methods within combinatorics, and have been fascinated by the appearances of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across recently that is really just inspired by some incredibly simple ideas.
+Recently, I've been reading more about algebraic methods within combinatorics, and have been fascinated by the appearances of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across lately that is really just inspired by some incredibly simple ideas.
 
 <b>Problem 1.</b> What is the minimum number of lines $$n$$ non-collinear points form if all lines are drawn between points?
 
-It is easy to see that we can achieve $$n$$ lines by simply leaving $$n - 1$$ collinear points on a line and the last point off the line, to have $$1 + (n - 1) = n$$ lines formed by these points. Indeed, this is the best case possible.
+It is easy to see that we can achieve $$n$$ lines by simply leaving $$n - 1$$ collinear points on a line and the last point off the line. Indeed, this is the best case possible.
 
 To demonstrate why, we can assign variables $$x_i$$ to each of the points, and define a system of equations as:
 
@@ -28,6 +28,6 @@ $$0 = \sum_{i = 1}^n a_i x_i^2 + 2\sum_{1 \leq i < j \leq n} a_{i, j} x_i x_j = 
 
 Because we have a non-trivial solution,
 
-$$0 = \sum_{i = 1}^n a_i x_i^2 + 2\sum_{1 \leq i < j \leq n} a_{i, j} x_i x_j = \sum_{i = 1}^n (a_i - 1) x_i^2 + \left(\sum_{i = 1}^n x_i \right)^2 > 0$$
+$$0 = \sum_{i = 1}^n (a_i - 1) x_i^2 + \left(\sum_{i = 1}^n x_i \right)^2 > 0$$
 
 and we have a contradiction.
