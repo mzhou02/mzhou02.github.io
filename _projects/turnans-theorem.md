@@ -7,10 +7,19 @@ importance: 1
 category: combinatorics
 mathjax: true
 ---
-Turan's theorem states that a graph without $$K_{r + 1}$$ on $$n$$ vertices can have no more than $$\left(1 - \frac{1}{r}\right)\frac{n^2}{2}$$ number of edges. Here, we present some proofs and applications.
+Turan's theorem states that a graph without $$K_{r + 1}$$ on $$n$$ vertices can have no more than $$T(n, r) = \left(1 - \frac{1}{r}\right)\frac{n^2}{2}$$ number of edges. Here, we present some proofs and applications.
 
 <h3> Proof #1: Induction </h3>
+We begin with a base case. If $$n \leq r$$, we have that we can have we can have a complete graph. Since
 
+$$n^2r - n^2 \geq n^2r - nr$$
+$$\left(r - 1\right)\frac{n^2}{2} \geq \binom{n}{2}r$$
+$$\left(1 - \frac{1}{r} \right)\frac{n^2}{2} \geq \binom{n}{2}$$
+
+and we are done.
+
+We continue to our inductive case. Since this graph has a maximal number of edges and no $$r + 1$$ clique, there must exist an $$r$$-clique. Let us take this $$r$$-clique out. There are exactly $$\binom{r}{2}$$ edges in this $$r$$-clique, and at most $$(r - 1)(n - r)$$ edges between the $$r$$-clique and the rest of the graph. In addition, since the rest of the graph doesn't have an $$r$$-clique either, it has at most $$T(n - r, r)$$ edges, meaning that the number of edges is upper bounded by:
+$$\frac{r(r - 1)}{2} + (r - 1)(n - r) + \left(1 - \frac{1}{r}\right)\frac{(n - r)^2}{2} = \left(1 - \frac{1}{r}\right)\frac{n^2}{2}$$
 
 <h3> Proof #2: Maximizing Lagrangian </h3>
 This one is perhaps my favorite proof of the theorem. Given a graph $$G$$ with no $$K_{r + 1}$$ subgraph but maximum number of edges, let us assign weights to each vertex such that $$\sum_{v \in V} w(v) = 1$$, and assign weights to edges as the product of the weights of its vertices. This sum of edge weights is kown as the Lagrangian of the graph. We can obviously assign uniform weights, so that each edge has weight $$\frac{1}{n^2}$$. In this case, the Lagrangian is equal to $$\frac{T(n, r)}{n^2}$$. To upper bound $$T(n, r)$$, it thus then suffices to find an upper bound on the Lagrangian of this graph and multiply by $$n^2$$.

@@ -26,8 +26,12 @@ where $$m$$ is the number of lines, $$a_i$$ is the number of lines that $$x_i$$ 
 
 $$0 = \sum_{i = 1}^n a_i x_i^2 + 2\sum_{1 \leq i < j \leq n} a_{i, j} x_i x_j = \sum_{i = 1}^n (a_i - 1) x_i^2 + \left(\sum_{i = 1}^n x_i \right)^2.$$
 
-Because we have a non-trivial solution,
+Because we have a non-trivial solution and $$a_i > 1$$, 
+
+$$\sum_{i = 1}^n (a_i - 1) x_i^2 > 0,$$ 
+
+and
 
 $$0 = \sum_{i = 1}^n (a_i - 1) x_i^2 + \left(\sum_{i = 1}^n x_i \right)^2 > 0$$
 
-and we have a contradiction.
+gives a contradiction.
