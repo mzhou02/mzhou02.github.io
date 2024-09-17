@@ -14,7 +14,7 @@ Recently, I've been reading more about algebraic methods within combinatorics, a
 
 It is easy to see that we can achieve $$n$$ lines by simply leaving $$n - 1$$ collinear points on a line and the last point off the line. Indeed, this is the best case possible.
 
-To demonstrate why, we can assign variables $$x_i$$ to each of the points, and define a system of equations as:
+To demonstrate why, we can assign variables $$x$$ to each of the points, and define a system of equations as:
 
 $$\sum_{j\text{ }: x_j \in l_i} x_j = 0.$$
 
