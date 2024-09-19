@@ -15,9 +15,18 @@ latest_posts: false # includes a list of the newest posts
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0823RLC0T3');
+</script>
 
 My name is Mike Zhou and I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania. I am interested in deep learning, natural langauge processing, and arithmetic combinatorics. My current work focuses on the representational capacity of transformer based models, as well as reasoning capabilities of large language models.
 
 I am currently an undergraduate researcher working at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a> under Professor Dan Roth. Before that, I was at <a href='https://rycolab.io/'>Rycolab</a> under Professor Ryan Cotterell.
 
-<a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
+<a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.XZ
