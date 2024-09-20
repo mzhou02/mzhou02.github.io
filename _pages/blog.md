@@ -15,6 +15,15 @@ pagination:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0823RLC0T3');
+</script>
 
 <div class="post">
 
