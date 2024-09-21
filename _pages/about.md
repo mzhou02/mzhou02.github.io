@@ -12,7 +12,7 @@ profile:
 
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 <!-- Google tag (gtag.js) -->
@@ -29,4 +29,4 @@ My name is Mike Zhou and I am currently a fourth year undergraduate studying com
 
 I am currently an undergraduate researcher working at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a> under Professor Dan Roth. Before that, I was at <a href='https://rycolab.io/'>Rycolab</a> under Professor Ryan Cotterell.
 
-<a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.XZ
+<a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
