@@ -39,4 +39,3 @@ I am currently an undergraduate researcher working at <a href='https://cogcomp.s
 <a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
 
 <br>
-<br>
