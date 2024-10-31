@@ -31,10 +31,11 @@ by simply letting $$X$$ be the sum of indicator variables representing whether a
 $$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} \right) - 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] \right)$$
 
 Notice that $$(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x)) = 1$$ if and only if both $$p$$ and $$q$$ divide $$x$$. This is the same as if $$pq$$ divides $$x$$, which has probability $$\frac{1}{pq} + O\left(\frac{1}{N}\right)$$. Thus,
+<br>
+<br>
 
 $$\textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] $$
 
-<br>
 <br>
 
 $$= \frac{1}{pq} + O\left(\frac{1}{N}\right) - \left(\frac{1}{p} + O\left(\frac{1}{N}\right)\right) \left(\frac{1}{q} + O\left(\frac{1}{N}\right) \right) = O\left(\frac{1}{N}\right)$$
