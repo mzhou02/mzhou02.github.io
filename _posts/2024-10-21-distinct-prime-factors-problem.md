@@ -3,7 +3,7 @@ layout: post
 title: Hardy-Ramanujan with probablistic method
 date: 2024-10-21 13:57:00
 description:
-tags: combinatorics, number theory
+tags: combinatorics, number-theory
 categories: math
 featured: false
 ---
@@ -48,6 +48,6 @@ $$\textbf{Var}(X) = \text{log}(\text{log}(N)) + O(1)$$
 
 and then by Chebyshev's inequality and the fact that $$\text{log}(\text{log}(x)) = \text{log}(\text{log}(x)) + O(1)$$ with probability $$1 - o(1)$$, we have that
 
-$$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}\right) \ll o(1) + \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(x))} = o(1)$$
+$$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}\right) \ll o(1) + \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(N))} = o(1)$$
 
 and we are done.
