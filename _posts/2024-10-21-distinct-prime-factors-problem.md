@@ -35,15 +35,15 @@ Notice that $$(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x)) = 1$$ if and only if 
 $$\textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] $$
 
 <br>
+<br>
 
 $$= \frac{1}{pq} + O\left(\frac{1}{N}\right) - \left(\frac{1}{p} + O\left(\frac{1}{N}\right)\right) \left(\frac{1}{q} + O\left(\frac{1}{N}\right) \right) = O\left(\frac{1}{N}\right)$$
 
 and
 
-$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\eft(\left( \frac{1}{N}\right)\right) \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} O\left( \frac{1}{N}\right)\right)$$
+$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left(\left( \frac{1}{N}\right)\right) \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} O\left( \frac{1}{N}\right)\right)$$
 
 Using Merten's estimates and the fact that the sum of reciprical of squares converges, we get that
-<br>
 
 $$\textbf{E}[X] = \text{log}(\text{log}(N)) + O(1)$$
 
