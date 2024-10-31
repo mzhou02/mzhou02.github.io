@@ -18,9 +18,9 @@ featured: false
 
 One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have about less than $$\text{log}(\text{log}(x))$$ number of prime divisors, $$\omega(x)$$.
 
-<b>Theorem (Ramanujan).</b> Let $$\phi$$ be any function that grows arbitrarily slowly to infinity. For large enough $$N$$, we have that $$ \vert  \{x \leq N $$ : $$\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))  \} \vert  = o(N)$$ 
+<b>Theorem (Ramanujan).</b> Let $$\phi$$ be any function that grows arbitrarily slowly to infinity. For large enough $$N$$, we have that $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))} \} \vert  = o(N)$$ 
 
-To prove this statement, it suffices to show that $$P(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}) = o(1)$$. This looks like an application of Chebyshev's inequality.
+To prove this statement, it suffices to show that $$\textbf{P}(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}) = o(1)$$. This looks like an application of Chebyshev's inequality.
 
 To begin, let $$X$$ be the random variable equal denoting the number of prime divisors a randomly selected $$x \leq N$$ has that are each less than $$N^{\frac{1}{3}}$$ (notice that $$x$$ can only have at most 3 prime factors larger than $$N^{\frac{1}{3}}$$, so $$X$$ will only be off by a constant additive factor). Since the probability that a prime $$p$$ divides $$x$$ is $$\frac{1}{p} + O\left(\frac{1}{N}\right)$$, we have that
 
@@ -46,8 +46,8 @@ $$\textbf{E}[X] = \text{log}(\text{log}(N)) + O(1)$$
 
 $$\textbf{Var}(X) = \text{log}(\text{log}(N)) + O(1)$$
 
-and then by Chebyshev's inequality, we have that
+and then by Chebyshev's inequality and the fact that $$\text{log}(\text{log}(x)) = \text{log}(\text{log}(x)) + O(1)$$ with probability $$1 - o(1)$$, we have that
 
-$$P(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}) \ll \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(x)} = o(1)$$
+$$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}RIGHT) \ll o(1) + \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(x)} = o(1)$$
 
 and we are done.
