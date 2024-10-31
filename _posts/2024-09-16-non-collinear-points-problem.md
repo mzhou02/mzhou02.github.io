@@ -7,6 +7,14 @@ tags: combinatorics
 categories: math
 featured: false
 ---
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0823RLC0T3');
+</script>
 
 Recently, I've been reading more about algebraic methods within combinatorics, and have been fascinated by the appearance of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across lately that is really just inspired by some incredibly simple ideas.
 
