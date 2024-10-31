@@ -36,8 +36,6 @@ Notice that $$(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x)) = 1$$ if and only if 
 
 $$\textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] $$
 
-<br>
-
 $$= \frac{1}{pq} + O\left(\frac{1}{N}\right) - \left(\frac{1}{p} + O\left(\frac{1}{N}\right)\right) \left(\frac{1}{q} + O\left(\frac{1}{N}\right) \right) = O\left(\frac{1}{N}\right)$$
 
 and
