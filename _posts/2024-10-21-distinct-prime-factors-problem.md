@@ -28,7 +28,7 @@ $$\textbf{E}[X] = \sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} + O\left(\frac{1}{N}
 
 by simply letting $$X$$ be the sum of indicator variables representing whether a prime divides $$x$$ or not. Since each indicator variable is a Bernoulli random variable, their individual variances are $$\frac{1}{p} - \frac{1}{p^2}$$, meaning that
 
-$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} \right) - 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] \right)$$
+$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left( \frac{1}{N} \right) \right) - 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] \right)$$
 
 Notice that $$(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x)) = 1$$ if and only if both $$p$$ and $$q$$ divide $$x$$. This is the same as if $$pq$$ divides $$x$$, which has probability $$\frac{1}{pq} + O\left(\frac{1}{N}\right)$$. Thus,
 <br>
@@ -40,7 +40,7 @@ $$= \frac{1}{pq} + O\left(\frac{1}{N}\right) - \left(\frac{1}{p} + O\left(\frac{
 
 and
 
-$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left(\left( \frac{1}{N}\right)\right) \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} O\left( \frac{1}{N}\right)\right)$$
+$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left( \frac{1}{N}\right) \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} O\left( \frac{1}{N}\right)\right)$$
 
 Using Merten's estimates and the fact that the sum of reciprical of squares converges, we get that
 
