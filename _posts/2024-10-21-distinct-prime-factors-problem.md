@@ -38,7 +38,7 @@ $$= \frac{1}{pq} + O\left(\frac{1}{N}\right) - \left(\frac{1}{p} + O\left(\frac{
 
 Thus,
 
-$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \frac{1}{N}\right)$$
+$$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} \right) + 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} O\left( \frac{1}{N}\right)\right)$$
 
 Using Merten estimates and the fact that the sum of reciprical of squares converges, we get that
 
@@ -48,6 +48,6 @@ $$\textbf{Var}(X) = \text{log}(\text{log}(N)) + O(1)$$
 
 and then by Chebyshev's inequality and the fact that $$\text{log}(\text{log}(x)) = \text{log}(\text{log}(x)) + O(1)$$ with probability $$1 - o(1)$$, we have that
 
-$$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}RIGHT) \ll o(1) + \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(x)} = o(1)$$
+$$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}\right) \ll o(1) + \frac{\text{log}(\text{log}(N))}{\phi(x)^2\text{log}(\text{log}(x))} = o(1)$$
 
 and we are done.
