@@ -16,17 +16,17 @@ featured: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have about less than $$\text{log}(\text{log}(x))$$ number of prime divisors, $$\omega(x)$$.
+One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have about less than $$\text{log}(\text{log}(x))$$ number of prime divisors, denoted as $$\omega(x)$$. By realizing that the variance of a particular random variable is very close to its expectation, we can show that almost all cases of a random variable are assymptotically equal to its expectation with only a vanishing number of exceptions, providing an elementary proof to a seemingly difficult problem in number theory.
 
 <b>Theorem (Ramanujan).</b> Let $$\phi$$ be any function that grows arbitrarily slowly to infinity. For large enough $$N$$, we have that $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))} \} \vert  = o(N)$$ 
 
 To prove this statement, it suffices to show that $$\textbf{P}(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}) = o(1)$$. This looks like an application of Chebyshev's inequality.
 
-To begin, let $$X$$ be the random variable equal denoting the number of prime divisors a randomly selected $$x \leq N$$ has that are each less than $$N^{\frac{1}{3}}$$ (notice that $$x$$ can only have at most 3 prime factors larger than $$N^{\frac{1}{3}}$$, so $$X$$ will only be off by a constant additive factor). Since the probability that a prime $$p$$ divides $$x$$ is $$\frac{1}{p} + O\left(\frac{1}{N}\right)$$, we have that
+We can start by defining a random variable $$X$$ denoting the number of prime divisors a randomly selected $$x \leq N$$ has that are each less than $$N^{\frac{1}{3}}$$ (notice that $$x$$ can only have at most 3 prime factors larger than $$N^{\frac{1}{3}}$$, so $$X$$ will only be off by a constant additive factor). Since the probability that a prime $$p$$ divides $$x$$ is $$\frac{1}{p} + O\left(\frac{1}{N}\right)$$, we have that
 
 $$\textbf{E}[X] = \sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} + O\left(\frac{1}{N}\right)$$
 
-by simply letting $$X$$ be the sum of indicator variables representing whether a prime divides $$x$$ or not. Since each indicator variable is a Bernoulli random variable, their individual variances are $$\frac{1}{p} - \frac{1}{p^2}$$, meaning that
+by simply letting $$X$$ be the sum of indicator variables representing whether a prime divides $$x$$ or not. Since each indicator variable is a Bernoulli random variable, their individual variances are $$\textbf{P}(p \mid x) - textbf{P}(p \mid x)^2$$, meaning that
 
 $$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left( \frac{1}{N} \right) \right) - 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] \right)$$
 

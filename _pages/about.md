@@ -34,6 +34,6 @@ social: false # includes social icons at the bottom of the page
 
 My name is Mike Zhou and I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania. I am interested in deep learning, natural langauge processing, and arithmetic combinatorics. I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
 
-Within NLP, I am interested in language model understanding and formal language theory. I am interested in where models parametrically store their knowledge, and why some prompts (like CoT and self consistency) elicit reasoning more than others?
+Within NLP, I am interested in language model understanding and formal language theory. I am interested in where models parametrically store their knowledge, and why some prompts (like CoT and self consistency) elicit reasoning better than others.
 
 <a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
