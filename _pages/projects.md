@@ -5,7 +5,7 @@ permalink: /notes/
 description: A collection of notes that I have written.
 nav: true
 nav_order: 3
-display_categories: [algebra, combinatorics, natural language processing]
+display_categories: [nlp, algebra, combinatorics]
 horizontal: false
 ---
 <!-- Google tag (gtag.js) -->
