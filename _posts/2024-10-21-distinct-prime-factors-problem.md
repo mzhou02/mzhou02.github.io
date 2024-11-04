@@ -28,7 +28,7 @@ Since the probability that a prime $$p$$ divides $$x$$ is $$\frac{1}{p} + O\left
 
 $$\textbf{E}[X] = \sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} + O\left(\frac{1}{N}\right)$$
 
-by simply letting $$X$$ be the sum of indicator variables representing whether a prime divides $$x$$ or not. Since each indicator variable is a Bernoulli random variable, their individual variances are $$\textbf{P}(p \mid x) - textbf{P}(p \mid x)^2$$, meaning that
+by simply letting $$X$$ be the sum of indicator variables representing whether a prime divides $$x$$ or not. Since each indicator variable is a Bernoulli random variable, their individual variances are $$\textbf{P}(p \mid x) - \textbf{P}(p \mid x)^2$$, meaning that
 
 $$\textbf{Var}(X) = \left(\sum_{p \leq N^{\frac{1}{3}}} \frac{1}{p} - \frac{1}{p^2} + O\left( \frac{1}{N} \right) \right) - 2\left(\sum_{p < q \leq N^{\frac{1}{3}}} \textbf{E}[(\mathbb{I}(p \mid x))(\mathbb{I}(q \mid x))] - \textbf{E}[(\mathbb{I}(p \mid x))]\textbf{E}[(\mathbb{I}(q \mid x))] \right).$$
 
