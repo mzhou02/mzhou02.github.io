@@ -169,7 +169,7 @@ collections:
     permalink: /news/:path/
   notes:
     output: true
-    permalink: /projects/:path/
+    permalink: /notes/:path/
 
 announcements:
   enabled: true
