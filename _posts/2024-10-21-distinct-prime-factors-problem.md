@@ -62,7 +62,7 @@ $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi
 
 <br>
 
-<h4> Note on Merten Estimates </h4>
+<h3> Note on Merten Estimates </h3>
 Merten's estimates can be derived using elementary techniques. All you really need is that $$\text{log}(n!) = n\text{log}(n) + O(n)$$, as
 
 $$\text{log}(n!) = \sum_{p \leq n} \text{log}(p) \lfloor \frac{n}{p} \rfloor = O(n) + n\sum_{p \leq n} \frac{\text{log}(p)}{p}$$
