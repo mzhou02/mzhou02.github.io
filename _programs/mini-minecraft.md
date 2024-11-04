@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Language Modeling Foundations
-description: This article is still in the works
+title: Mini Minecraft
+description:
 img: 
 importance: 1
 category: graphics
 mathjax: true
 ---
+Test
