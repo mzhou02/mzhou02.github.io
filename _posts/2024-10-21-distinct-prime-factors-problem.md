@@ -68,4 +68,4 @@ $$\sum_{p \leq n}\frac{\text{log}(p)}{p} = \text{log}(n) + O(1)$$
 
 Then, using summation by parts on $$\frac{\text{log}(p)}{p}$$ and $$\frac{1}{\text{log}(p)}$$, we have that
 
-$$\sum_{p \leq n} \frac{1}{p} = \text{log}(\text{log}(n))$$
+$$\sum_{p \leq n} \frac{1}{p} = \text{log}(\text{log}(n)) + O(1)$$
