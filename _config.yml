@@ -167,7 +167,7 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  notes:
+  projects:
     output: true
     permalink: /notes/:path/
 
