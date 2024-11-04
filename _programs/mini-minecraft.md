@@ -15,4 +15,6 @@ To get the game running smoothly, the game runs with multithreading, allowing fo
 
 To improve visual effects, I implemented frame buffering and some custom shader programs, resulting in passable lighting and shading. I also developed a system for procedurally placing assets, such as natural elements and voxelized characters and objects, including some Mario-themed assets, to populate the environment in a somewhat balanced and engaging way.
 
+<br>
+
 <img src="/assets/img/mini-minecraft.png" alt="Easter Island Biome">
