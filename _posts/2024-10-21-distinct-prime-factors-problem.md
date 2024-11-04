@@ -16,7 +16,7 @@ featured: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have about less than $$\text{log}(\text{log}(x))$$ number of prime divisors, denoted as $$\omega(x)$$. By realizing that the variance of a particular random variable is very close to its expectation, we can show that almost all cases of a random variable are assymptotically equal to its expectation with only a vanishing number of exceptions, providing an elementary proof to a seemingly difficult problem in number theory.
+One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have roughly $$\text{log}(\text{log}(x))$$ number of prime divisors, denoted as $$\omega(x), with an error bound that approaches $$O\left( \sqrt{\text{log}(\text{log}(x))} \right)$$ (ie. raise it to a $$1 + \epsilon$$ power). Though complex sounding, we can use simple tools like linearity of expectation to find the expectation and variance of prime divisors; and, if they are close enough, show that almost all cases of this random variable are assymptotically equal to its expectation with only a vanishing number of exceptions, providing a clever and elementary proof to a seemingly difficult number theoretic problem.
 
 <b>Theorem (Ramanujan).</b> Let $$\phi$$ be any function that grows arbitrarily slowly to infinity. For large enough $$N$$, we have that $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))} \} \vert  = o(N)$$ 
 
@@ -57,3 +57,11 @@ $$\textbf{P}\left(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)
 meaning that
 
 $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))} \} \vert  = o(N)$$
+
+<b> Note: </b> Merten's estimates can be derived using elementary techniques. All you really need is that $$\text{log}(n!) = n\text{log}(n) + O(n)$$, as
+
+$$\text{log}(n!) = \sum_{p \leq n} \text{log}(p) \lfloor \frac{n}{p} \rfloor = O(n) + n\sum_{p \leq n}\frac{\text{log}(p)}{p}$$
+$$\sum_{p \leq n}\frac{\text{log}(p)}{p} = \text{log}(n) + O(1)$$
+
+Then, using summation by parts on $$\frac{\text{log}(p)}{p}$$ and $$\frac{1}{\text{log}(p)}$$, we have that
+$$\sum_{p \leq n} \frac{1}{p} = \text{log}(\text{log}(n))$$
