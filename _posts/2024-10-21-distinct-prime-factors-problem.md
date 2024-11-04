@@ -22,7 +22,7 @@ One of my favorite applications of the probablistic method is perhaps the Hardy-
 
 To prove this statement, it suffices to show that $$\textbf{P}(  \vert \omega(x) - \text{log}(\text{log}(x)) \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x) )}) = o(1)$$. This looks like an application of Chebyshev's inequality.
 
-We can start by defining a random variable $$X$$ denoting the number of prime divisors a randomly selected $$x \leq N$$ has that are each less than $$N^{\frac{1}{3}}$$ (notice that $$x$$ can only have at most 3 prime factors larger than $$N^{\frac{1}{3}}$$, so $$X$$ will only be off by a constant additive factor). For a technical detail we will see later, it will be easier to analyze prime factors less than $$N^{\frac{1}{3}} rather than $$N$$. 
+We can start by defining a random variable $$X$$ denoting the number of prime divisors a randomly selected $$x \leq N$$ has that are each less than $$N^{\frac{1}{3}}$$ (notice that $$x$$ can only have at most 3 prime factors larger than $$N^{\frac{1}{3}}$$, so $$X$$ will only be off by a constant additive factor). For a technical detail we will see later, it will be easier to analyze prime factors less than $$N^{\frac{1}{3}}$$ rather than $$N$$. 
 
 Since the probability that a prime $$p$$ divides $$x$$ is $$\frac{1}{p} + O\left(\frac{1}{N}\right)$$, we have that
 
