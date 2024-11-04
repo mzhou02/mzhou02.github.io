@@ -72,3 +72,5 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+
+<a href='/projects/mini-minecraft'>Mini Minecraft</a>
