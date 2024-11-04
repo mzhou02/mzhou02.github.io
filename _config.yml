@@ -170,6 +170,9 @@ collections:
   projects:
     output: true
     permalink: /notes/:path/
+  programs:
+    output: true
+    permalink: /projects/:path/
 
 announcements:
   enabled: true
