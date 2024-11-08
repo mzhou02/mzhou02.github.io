@@ -9,14 +9,14 @@
 - title: Education
   type: time_table
   contents:
-    - title: University of Pennsylvnaia
+    - title: University of Pennsylvania
       institution: BSE, MSE
       year: 2021 - 2025
       description: 
       - "MSE: Computer Science"
-      - title: "BSE: Computer Science, Mathematics"
+      - title: "BSE: Computer Science, Mathematics (with Honors)"
         contents:
-          - Undergraduate Honors Thesis: Fourier Analytic Methods in Combinatorics
+          - "Undergraduate Honors Thesis: Fourier Analytic Methods in Combinatorics"
     - title: Eidgenössische Technische Hochschule, Zürich
       institution: Exchange Program
       year: Spring 2024 
