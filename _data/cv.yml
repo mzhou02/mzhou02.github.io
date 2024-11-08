@@ -14,14 +14,13 @@
       year: 2021 - 2025
       description: 
       - "MSE: Computer Science"
-      - "BSE: Computer Science, Mathematics"
+      - title: "BSE: Computer Science, Mathematics"
+        contents:
+          - Undergraduate Honors Thesis: Fourier Analytic Methods in Combinatorics
     - title: Eidgenössische Technische Hochschule, Zürich
       institution: Exchange Program
       year: Spring 2024 
-      description:
       
- 
-
 - title: Teaching
   type: time_table
   contents:
