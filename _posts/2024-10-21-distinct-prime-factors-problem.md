@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hardy-Ramanujan with probablistic method
+title: Hardy-Ramanujan with probabilistic method
 date: 2024-10-21 13:57:00
 description:
 tags: combinatorics number-theory
@@ -16,7 +16,7 @@ featured: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-One of my favorite applications of the probablistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have roughly $$\text{log}(\text{log}(x))$$ number of prime divisors, denoted as $$\omega(x)$$, with an error bound that approaches $$O\left( \sqrt{\text{log}(\text{log}(x))} \right)$$ (ie. raise it to a $$1 + \epsilon$$ power). Though complex sounding, we can use simple tools like linearity of expectation to find the expectation and variance of prime divisors; and, if they are close enough, use Chebyshev's inequality to show that almost all cases of this random variable are assymptotically equal to its expectation with only a vanishing number of exceptions, providing a clever and elementary proof to a seemingly difficult number theoretic problem.
+One of my favorite applications of the probabilistic method is perhaps the Hardy-Ramanujan theorem in number theory, which roughly states that almost all numbers $$x$$ have roughly $$\text{log}(\text{log}(x))$$ number of prime divisors, denoted as $$\omega(x)$$, with an error bound that approaches $$O\left( \sqrt{\text{log}(\text{log}(x))} \right)$$ (ie. raise it to a $$1 + \epsilon$$ power). Though complex sounding, we can use simple tools like linearity of expectation to find the expectation and variance of prime divisors; and, if they are close enough, use Chebyshev's inequality to show that almost all cases of this random variable are assymptotically equal to its expectation with only a vanishing number of exceptions, providing a clever and elementary proof to a seemingly difficult number theoretic problem.
 
 <b>Theorem (Ramanujan).</b> Let $$\phi$$ be any function that grows arbitrarily slowly to infinity. For large enough $$N$$, we have that $$ \vert  \{x \leq N :\vert \omega(x) - \text{log}(\text{log}(x))  \vert  > \phi(x)\sqrt{\text{log}(\text{log}(x))} \} \vert  = o(N)$$ 
 
