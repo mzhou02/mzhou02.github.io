@@ -7,6 +7,15 @@ importance: 1
 category: combinatorics
 mathjax: true
 ---
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0823RLC0T3');
+</script>
+
 Turan's theorem states that a graph without $$K_{r + 1}$$ on $$n$$ vertices cannot have more than the number of edges than the Turan graph on $$n$$ vertices: the complete $$r$$-partite graph $$n$$ vertices such that the size of each partition differs from each other by at most 1 vertex. We denote the Turan graph on $$n$$ vetices without $$K_{r + 1}$$ as $$T(n, r)$$. Here, we present some proofs and applications. The first is that each the edge maximal graph on $$n$$ vertices without $$K_{r + 1}$$ has no more than $$\left(1 - \frac{1}{r}\right)\frac{n^2}{2}$$ number of edges, the second is that $$T(n, r)$$ is edge maximal, and the third that $$T(n, r)$$ is the unique maximal example.
 
 <h3> Proof #1: Maximizing Lagrangian </h3>
