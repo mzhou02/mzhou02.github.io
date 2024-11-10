@@ -34,6 +34,6 @@ The probability of generating a string $$y$$ is then
 
 $$p_{\text{LM}}(y) = \prod_{l = 1}^L p_{\text{SM}}(y_l \mid y_{<l})$$
 
-It's tempting to think that we're done. But we're not. Notice how since probabilities are at most 1, the probability of generating a string decreases with its length. Thus, statements like "Upenn is in" are more likely to be sampled than ``UPenn is in Philadelphia". To get around this, we introduce the EOS (End of String) symbol into the distribution, so that $$p_{S\text{SM}}$$ maps values from $$\overline{\Sigma} = \Sigma \cup \{\text{EOS}\}$$ to the reals. We then have that
+It's tempting to think that we're done. But we're not. Notice how since probabilities are at most 1, the probability of generating a string decreases with its length. Thus, statements like "Upenn is in" are more likely to be sampled than "UPenn is in Philadelphia". To get around this, we introduce the EOS (End of String) symbol into the distribution, so that $$p_{S\text{SM}}$$ maps values from $$\overline{\Sigma} = \Sigma \cup \{\text{EOS}\}$$ to the reals. We then have that
 
 $$p_{\text{LM}}(y) = p_{\text{SM}}(\text{EOS} \mid y)\prod_{l = 1}^L p_{\text{SM}}(y_l \mid y_{<l})$$
