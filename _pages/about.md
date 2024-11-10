@@ -6,7 +6,7 @@ subtitle: <font color="#2e59f2"> mikezhou [at] seas [dot] upenn [dot] edu </font
 
 profile:
   align: right
-  image: headshot_website.jpg
+  image: headshot.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
 
