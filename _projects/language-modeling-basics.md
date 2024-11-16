@@ -15,7 +15,7 @@ mathjax: true
 
   gtag('config', 'G-0823RLC0T3');
 </script>
-
+ 
 To begin our discussion of what a language model is, we first have to formally define what a language is. The simplest structure we can start with is the idea of an alphabet, which is merely just a set of symbols denoted as $$\Sigma$$. From our alphabet, we can build strings, which are finite sequences of symbols formed by concatenation. Since concatenation is associative, we can define a concatenative closure, often called the Kleene closure of an alphabet, denoted as $$\Sigma^*$$. Intuitively, this is just the set of all finite strings generated from our alphabet. Since the Kleene closure also includes the empty string, it provides a nice monoid we can work with. We then define a language as a subset of $$\Sigma^*$$.
 
 <b>Note on terminology:</b> The terminology we use here is drawn from formal language theory. In practical settings, we can normally substitute "alphabet" with any building block we use for language, like a <b> vocabulary </b> that will be comprised of either words or tokens. A string will then be synonymous with what we call sentences, and our language will be a subset of all possible sentences.
