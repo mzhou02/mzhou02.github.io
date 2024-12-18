@@ -16,7 +16,7 @@ featured: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-Recently, I've been reading more about algebraic methods within combinatorics, and have been fascinated by the appearance of topics like linear algebra in the subject. In this blog post, I'll share one of my favorite problems I've come across lately that is really just inspired by some incredibly simple ideas.
+As I've been reading more about June Huh's work with the Dowling-Wilson conjecture, I've become more and more interested in algebraic methods within combinatorics. More recently, I've come across a very cute problem with a very neat solution, inspired by simple ideas from linear algebra.
 
 <b>Problem 1.</b> What is the minimum number of lines $$n$$ non-collinear points form if all lines are drawn between points?
 
