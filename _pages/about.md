@@ -27,12 +27,18 @@ social: false # includes social icons at the bottom of the page
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Mike Zhou">
-  <meta name="keywords" content="Mike, Zhou, UPenn, University of Pennsylvania">
-  <meta name="author" content="Mike">
+  <meta name="description" content="Mike Zhou - Computer Science and Mathematics student at the University of Pennsylvania (UPenn). Undergraduate researcher at Penn's Cognitive Computation Group working on NLP and machine learning.">
+  <meta name="keywords" content="Mike Zhou, UPenn, University of Pennsylvania, Computer Science, Mathematics, NLP, Machine Learning, Cognitive Computation Group, Penn SEAS">
+  <meta name="author" content="Mike Zhou">
+  <meta property="og:title" content="Mike Zhou - UPenn Computer Science & Mathematics">
+  <meta property="og:description" content="Mike Zhou - Computer Science and Mathematics student at the University of Pennsylvania (UPenn). Undergraduate researcher at Penn's Cognitive Computation Group.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://mzhou02.github.io">
 </head>
 
-My name is Mike Zhou and I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania. I am interested in deep learning, natural langauge processing, and arithmetic combinatorics. I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
+My name is Mike Zhou and I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania (UPenn). As a student in Penn's School of Engineering and Applied Science (SEAS), I am interested in deep learning, natural language processing, and arithmetic combinatorics.
+
+I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
 
 Within NLP, I am interested in language model reasoning. I am interested in where models parametrically store their knowledge, and why some prompts (like CoT and self consistency) elicit reasoning better than others. On my free time, I also like to think about problems related to arithmetic combinatorics and graph theory.
 
