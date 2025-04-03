@@ -3,7 +3,7 @@ layout: page
 title: Reinforcement Learning with Human Feedback
 description: 
 img: 
-importance: 1
+importance: 2
 category: reinforcement learning
 mathjax: true
 ---
