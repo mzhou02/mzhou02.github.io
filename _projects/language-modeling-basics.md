@@ -127,6 +127,8 @@ This sequential processing with memory enables RNNs to model complex language ph
 
 <h4>Technical Details of Simple RNNs (Elman Networks)</h4>
 
+<img src="../assets/img/elmann-rnn-diagram.png.jpg" alt="Digram of Training an RNN">
+
 Formally, an Elman RNN processes a sequence $$y_1, y_2, \ldots, y_L$$ as follows:
 
 1. Each word $$y_t$$ is first converted to its embedding representation $$e_t = E_{y_t}$$.
