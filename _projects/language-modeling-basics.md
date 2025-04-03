@@ -127,8 +127,8 @@ This sequential processing with memory enables RNNs to model complex language ph
 
 <h4>Technical Details of Simple RNNs (Elman Networks)</h4>
 
-<figure>
-  <img src="https://mikezhou.me/assets/img/elmann-rnn-diagram.png" width="500" height="300">
+<figure style="text-align: center; margin-left: auto; margin-right: auto;">
+  <img src="https://mikezhou.me/assets/img/elmann-rnn-diagram.png" width="500">
   <figcaption>Figure 1: Intuitive diagram of inference in a recurrent neural network</figcaption>
 </figure>
 
