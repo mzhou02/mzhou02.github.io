@@ -9,7 +9,7 @@ mathjax: true
 ---
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
 <script>
-  window.dataLayer = window.dataLayer \mid\mid [];
+  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
