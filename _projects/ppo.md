@@ -7,13 +7,22 @@ importance: 1
 category: reinforcement learning
 mathjax: true
 ---
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0823RLC0T3');
+</script>
+
 <h2>Trust Region Methods in Reinforcement Learning</h2>
 
 <h4>Beyond Value-Based Methods: The Policy Gradient Approach</h4>
 
 While value-based methods like Q-learning provide powerful tools for reinforcement learning, they operate indirectly by first learning a value function and then deriving a policy. An alternative approach is to parameterize the policy directly and optimize it to maximize expected returns. This policy gradient approach offers several advantages, particularly for problems with continuous action spaces or where stochastic policies are beneficial.
 
-In the policy gradient framework, we represent the policy as a parameterized function $$\pi_\theta(a|s)$$, where $$\theta$$ are the parameters (e.g., weights of a neural network). The objective is to find parameters $$\theta$$ that maximize the expected return:
+In the policy gradient framework, we represent the policy as a parameterized function $$\pi_\theta(a\mids)$$, where $$\theta$$ are the parameters (e.g., weights of a neural network). The objective is to find parameters $$\theta$$ that maximize the expected return:
 
 $$J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \gamma^t r_t \right]$$
 
@@ -21,7 +30,7 @@ where $$\tau$$ represents a trajectory (sequence of states, actions, and rewards
 
 The policy gradient theorem provides a way to compute the gradient of this objective:
 
-$$\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t \right]$$
+$$\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t\mids_t) \cdot G_t \right]$$
 
 where $$G_t = \sum_{k=t}^{T} \gamma^{k-t} r_k$$ is the return from time step $$t$$.
 
@@ -63,14 +72,14 @@ This approximation assumes that the state visitation frequencies under the old a
 
 TRPO formalizes the notion of "similar policies" using the Kullback-Leibler (KL) divergence, a measure of how one probability distribution differs from another. Specifically, TRPO constrains the maximum KL divergence between the old and new policies at any state:
 
-$$\max_s D_{KL}(\pi_{\text{old}}(\cdot|s) \parallel \pi(\cdot|s)) \leq \delta$$
+$$\max_s D_{KL}(\pi_{\text{old}}(\cdot\mids) \parallel \pi(\cdot\mids)) \leq \delta$$
 
 where $$\delta$$ is a hyperparameter controlling the size of the trust region.
 
 The TRPO optimization problem thus becomes:
 
 $$\max_{\theta} \mathbb{E}_{s \sim \rho_{\pi_{\text{old}}}, a \sim \pi_\theta} \left[ A^{\pi_{\text{old}}}(s, a) \right]$$
-$$\text{subject to } \max_s D_{KL}(\pi_{\text{old}}(\cdot|s) \parallel \pi_\theta(\cdot|s)) \leq \delta$$
+$$\text{subject to } \max_s D_{KL}(\pi_{\text{old}}(\cdot\mids) \parallel \pi_\theta(\cdot\mids)) \leq \delta$$
 
 This constrained optimization ensures that the new policy doesn't deviate too far from the old one, maintaining the validity of the local approximation and preventing catastrophic updates.
 
@@ -79,7 +88,7 @@ This constrained optimization ensures that the new policy doesn't deviate too fa
 Solving the constrained optimization problem directly is challenging. TRPO uses a series of approximations:
 
 1. Replace the maximum KL divergence with the average KL divergence:
-   $$\mathbb{E}_{s \sim \rho_{\pi_{\text{old}}}} \left[ D_{KL}(\pi_{\text{old}}(\cdot|s) \parallel \pi_\theta(\cdot|s)) \right] \leq \delta$$
+   $$\mathbb{E}_{s \sim \rho_{\pi_{\text{old}}}} \left[ D_{KL}(\pi_{\text{old}}(\cdot\mids) \parallel \pi_\theta(\cdot\mids)) \right] \leq \delta$$
 
 2. Use a linear approximation for the objective and a quadratic approximation for the constraint:
    $$\max_{\theta} g^T (\theta - \theta_{\text{old}})$$
@@ -126,7 +135,7 @@ The key insight of PPO is that we can achieve similar performance to TRPO using 
 
 PPO works with the ratio of probabilities between the new and old policies:
 
-$$r_t(\theta) = \frac{\pi_\theta(a_t|s_t)}{\pi_{\theta_{\text{old}}}(a_t|s_t)}$$
+$$r_t(\theta) = \frac{\pi_\theta(a_t\mids_t)}{\pi_{\theta_{\text{old}}}(a_t\mids_t)}$$
 
 This ratio indicates how much more (or less) likely the action $$a_t$$ is under the new policy compared to the old policy. If $$r_t(\theta) > 1$$, the new policy assigns higher probability to the action; if $$r_t(\theta) < 1$$, it assigns lower probability.
 
@@ -158,7 +167,7 @@ The complete PPO algorithm typically includes additional components:
    $$L^{VF}(\phi) = \mathbb{E}_t \left[ (V_\phi(s_t) - V_t^{target})^2 \right]$$
 
 2. <strong>Entropy bonus</strong>: To encourage exploration, PPO may include an entropy term in the objective:
-   $$L^{ENT}(\theta) = \mathbb{E}_t \left[ H(\pi_\theta(\cdot|s_t)) \right]$$
+   $$L^{ENT}(\theta) = \mathbb{E}_t \left[ H(\pi_\theta(\cdot\mids_t)) \right]$$
 
 3. <strong>Combined objective</strong>: The final objective combines these components:
    $$L^{TOTAL}(\theta, \phi) = \mathbb{E}_t \left[ L^{CLIP}(\theta) - c_1 L^{VF}(\phi) + c_2 L^{ENT}(\theta) \right]$$
@@ -185,7 +194,7 @@ Algorithm: Proximal Policy Optimization (PPO)
 There are several common variants and implementation details that can significantly affect PPO's performance:
 
 1. <strong>PPO-Clip vs. PPO-Penalty</strong>: Besides the clipping approach described above, an alternative is to use a KL penalty term, similar to TRPO but without explicit constraint enforcement:
-   $$L^{PENALTY}(\theta) = \mathbb{E}_t \left[ r_t(\theta) \cdot A_t - \beta \cdot D_{KL}(\pi_{\theta_{\text{old}}}(\cdot|s_t) \parallel \pi_\theta(\cdot|s_t)) \right]$$
+   $$L^{PENALTY}(\theta) = \mathbb{E}_t \left[ r_t(\theta) \cdot A_t - \beta \cdot D_{KL}(\pi_{\theta_{\text{old}}}(\cdot\mids_t) \parallel \pi_\theta(\cdot\mids_t)) \right]$$
    where $$\beta$$ is adapted based on whether the actual KL divergence is above or below a target value.
 
 2. <strong>Normalized advantages</strong>: To reduce variance, advantages are often normalized to have zero mean and unit variance within each batch.
@@ -217,7 +226,7 @@ Trust region methods have found important applications in fine-tuning large pre-
 
 For example, when fine-tuning a language model on a specific text generation task, a KL divergence penalty between the original and fine-tuned model can prevent catastrophic forgetting:
 
-$$L(\theta) = L_{task}(\theta) - \beta \cdot D_{KL}(\pi_{\theta_0}(\cdot|s) \parallel \pi_\theta(\cdot|s))$$
+$$L(\theta) = L_{task}(\theta) - \beta \cdot D_{KL}(\pi_{\theta_0}(\cdot\mids) \parallel \pi_\theta(\cdot\mids))$$
 
 where $$L_{task}(\theta)$$ is the task-specific loss, $$\pi_{\theta_0}$$ is the original model, and $$\beta$$ controls the strength of the regularization.
 
