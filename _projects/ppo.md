@@ -175,7 +175,6 @@ The complete PPO algorithm typically includes additional components:
 
 The PPO algorithm proceeds as follows:
 
-<pre>
 Algorithm: Proximal Policy Optimization (PPO)
 1. Initialize policy parameters θ and value function parameters φ
 2. Repeat:
@@ -187,7 +186,6 @@ Algorithm: Proximal Policy Optimization (PPO)
          1. Update θ by maximizing the PPO-Clip objective
          2. Update φ by minimizing the value function loss
 3. Until convergence
-</pre>
 
 <h4>PPO Variants and Implementation Details</h4>
 
