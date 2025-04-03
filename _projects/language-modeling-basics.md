@@ -68,7 +68,7 @@ where $$C(\cdot)$$ denotes the count of occurrences in our training corpus.
 To address this problem, we employ various smoothing techniques:
 
 1. <b>Laplace (Add-1) Smoothing:</b> Add 1 to all counts:
-   $$p_{\text{SM}}(y_l \mid y_{l-(n-1)}, \ldots, y_{l-1}) = \frac{C(y_{l-(n-1)}, \ldots, y_{l-1}, y_l) + 1}{C(y_{l-(n-1)}, \ldots, y_{l-1}) + |\Sigma|}$$
+   $$p_{\text{SM}}(y_l \mid y_{l-(n-1)}, \ldots, y_{l-1}) = \frac{C(y_{l-(n-1)}, \ldots, y_{l-1}, y_l) + 1}{C(y_{l-(n-1)}, \ldots, y_{l-1}) + \mid\Sigma\mid}$$
 
 2. <b>Add-k Smoothing:</b> A generalization of Laplace smoothing where we add k (0 < k < 1) instead of 1.
 
@@ -93,7 +93,7 @@ Word embeddings map words from a discrete space (the vocabulary) to a continuous
 1. They capture semantic relationships between words, enabling better generalization.
 2. They provide a more compact representation, mitigating the curse of dimensionality.
 
-Formally, we define an embedding matrix $$E \in \mathbb{R}^{|\Sigma| \times d}$$, where each row $$E_i$$ corresponds to the d-dimensional embedding of the i-th word in our vocabulary. These embeddings can be learned through various methods:
+Formally, we define an embedding matrix $$E \in \mathbb{R}^{\mid\Sigma\mid \times d}$$, where each row $$E_i$$ corresponds to the d-dimensional embedding of the i-th word in our vocabulary. These embeddings can be learned through various methods:
 
 1. <b>Count-based methods:</b> Such as Latent Semantic Analysis (LSA), which applies singular value decomposition to word-context co-occurrence matrices.
 
@@ -101,11 +101,11 @@ Formally, we define an embedding matrix $$E \in \mathbb{R}^{|\Sigma| \times d}$$
 
 For instance, in the Skip-gram model, we maximize:
 
-$$\sum_{t=1}^T \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j} | w_t)$$
+$$\sum_{t=1}^T \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j} \mid w_t)$$
 
 where c is the context window size, and 
 
-$$p(w_{t+j} | w_t) = \frac{\exp(v_{w_{t+j}}^T \cdot v_{w_t})}{\sum_{w' \in \Sigma} \exp(v_{w'}^T \cdot v_{w_t})}$$
+$$p(w_{t+j} \mid w_t) = \frac{\exp(v_{w_{t+j}}^T \cdot v_{w_t})}{\sum_{w' \in \Sigma} \exp(v_{w'}^T \cdot v_{w_t})}$$
 
 Here, $$v_w$$ represents the vector embedding of word w.
 
@@ -143,13 +143,13 @@ Formally, an Elman RNN processes a sequence $$y_1, y_2, \ldots, y_L$$ as follows
 
    $$o_t = W_o h_t + b_o$$
    
-   $$p(y_{t+1} | y_{\leq t}) = \text{softmax}(o_t)$$
+   $$p(y_{t+1} \mid y_{\leq t}) = \text{softmax}(o_t)$$
 
-   where $$W_o \in \mathbb{R}^{|\Sigma| \times d_h}$$ is the output weight matrix and $$b_o \in \mathbb{R}^{|\Sigma|}$$ is the output bias.
+   where $$W_o \in \mathbb{R}^{\mid\Sigma\mid \times d_h}$$ is the output weight matrix and $$b_o \in \mathbb{R}^{\mid\Sigma\mid}$$ is the output bias.
 
 Specifically, the softmax function converts the output logits into a proper probability distribution:
 
-$$p(y_{t+1} = w | y_{\leq t}) = \frac{\exp(o_{t,w})}{\sum_{w' \in \Sigma} \exp(o_{t,w'})}$$
+$$p(y_{t+1} = w \mid y_{\leq t}) = \frac{\exp(o_{t,w})}{\sum_{w' \in \Sigma} \exp(o_{t,w'})}$$
 
 where $$o_{t,w}$$ is the component of the output vector corresponding to word w.
 
@@ -157,7 +157,7 @@ where $$o_{t,w}$$ is the component of the output vector corresponding to word w.
 
 RNNs are trained using the maximum likelihood principle, which for language modeling translates to minimizing the negative log-likelihood of the training data:
 
-$$\mathcal{L} = -\sum_{t=1}^{L-1} \log p(y_{t+1} | y_{\leq t})$$
+$$\mathcal{L} = -\sum_{t=1}^{L-1} \log p(y_{t+1} \mid y_{\leq t})$$
 
 This is often referred to as minimizing the cross-entropy loss. The optimization is done using backpropagation through time (BPTT), which is a variant of the standard backpropagation algorithm adapted for sequential models. In BPTT, we unroll the RNN for a fixed number of steps and then apply backpropagation to compute gradients.
 
