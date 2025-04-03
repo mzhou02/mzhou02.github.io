@@ -102,7 +102,9 @@ $$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y) - \bet
 Notice that this is equivalent to minimizing
 
 $$\min_{\pi} \text{KL}[\pi(y\mid x) \|  \pi_{\text{ref}}(y\mid x)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[ \frac{1}{\beta}r(x, y)]$$
+
 $$=\min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid  x)}{\pi_{\text{ref}}(y\mid x)} \right)- \frac{1}{\beta}r(x, y) \right]$$
+
 $$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid  x)}{\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)} \right)- \text{log}(Z(x))\right]$$
 
 Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
@@ -124,6 +126,7 @@ $$p(y_1 \succ y_2 \mid  x) = \sigma(r(x, y_1) - r(x, y_2))$$
 If we substitute our rearranged reward function, we get
 
 $$p(y_1 \succ y_2 \mid  x) = \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} + \beta \log Z(x) - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)} - \beta \log Z(x)\right)$$
+
 $$= \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)}\right)$$
 
 Now, the partition function $$Z(x)$$ cancels out, and we can express the probability of one response being preferred over another directly in terms of the policy ratios, without needing to compute the intractable normalizing constant.
