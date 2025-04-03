@@ -127,7 +127,7 @@ This sequential processing with memory enables RNNs to model complex language ph
 
 <h4>Technical Details of Simple RNNs (Elman Networks)</h4>
 
-<img src="../assets/img/elmann-rnn-diagram.png.jpg" alt="Digram of Training an RNN">
+<img src="../assets/img/elmann-rnn-diagram.png" alt="Diagram of Training an RNN">
 
 Formally, an Elman RNN processes a sequence $$y_1, y_2, \ldots, y_L$$ as follows:
 
@@ -170,11 +170,3 @@ While simple RNNs (Elman networks) represent a significant improvement over n-gr
 2. <b>Limited memory capacity:</b> The fixed-size hidden state can struggle to retain information over very long sequences.
 
 These challenges led to the development of more sophisticated architectures like Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs), which incorporate gating mechanisms to better control information flow and mitigate the vanishing gradient problem.
-
-<h3>Conclusion</h3>
-
-We have covered the foundations of language modeling, from formal definitions to practical implementations. We started with count-based n-gram models, which make strong Markov assumptions but suffer from data sparsity and limited context. We then moved to representation-based approaches, discussing word embeddings that capture semantic relationships and RNNs that model sequential dependencies.
-
-This progression reflects the historical development of language modeling, with each approach addressing limitations of its predecessors. Modern language models build upon these foundations, incorporating attention mechanisms, transformers, and pre-training on massive corpora to achieve unprecedented performance across a wide range of natural language processing tasks.
-
-As language modeling continues to evolve, understanding these foundational concepts remains crucial for developing intuition about how these models work and their inherent strengths and limitations.
