@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reinforcement Learning with Human Feedback
-description: This article is still in the works
+description: 
 img: 
 importance: 1
 category: reinforcement learning
@@ -148,10 +148,6 @@ where:
 - $$\sigma$$ is the logistic function
 
 This objective has an intuitive interpretation: it increases the probability of preferred responses relative to dispreferred responses, but does so in a way that accounts for the reference model's probabilities and includes an implicit KL penalty to prevent diverging too far from the reference model.
-
-<h4>The Elegant Simplicity of DPO</h4>
-
-The beauty of DPO lies in its simplicity. Instead of the complex pipeline of traditional RLHF, DPO requires just two steps:
 
 <h4>The DPO Approach</h4>
 1. Train a reference model (e.g., through supervised fine-tuning)
