@@ -137,17 +137,11 @@ This is a rational number with denominator $$10^{m!}$$. The error between $$L$$ 
 
 $$|L - L_m| = \sum_{n=m+1}^{\infty} \frac{1}{10^{n!}} = \frac{1}{9 \cdot 10^{(m+1)! - 1}}$$
 
-Since $$(m+1)! - 1 > m!(m)$$ for large enough $$m$$, we can write:
+Since $$(m+1)! - 1 \geq m!(m)$$ for large enough $$m$$, we can write:
 
 $$|L - L_m| < \frac{1}{10^{m!(m)}} = \frac{1}{(10^{m!})^{m}} = \frac{1}{q^{m}}$$
 
-where $$q = 10^{m!}$$.
-
-Given any $$k > 0$$, we can choose $$m$$ so that $$m+1 > k$$. Then:
-
-$$|L - L_m| < \frac{1}{q^k}$$
-
-This shows that $$L$$ can be approximated by rationals with error smaller than $$1/q^k$$ for every $$k$$—precisely the definition of a Liouville number. Hence, by Theorem 2, $$L$$ is transcendental.
+where $$q = 10^{m!}$$. Hence, by Theorem 2, $$L$$ is transcendental.
 
 <h3>Concluding Remarks: Roth’s Theorem on Diophantine Approximation</h3>
 
