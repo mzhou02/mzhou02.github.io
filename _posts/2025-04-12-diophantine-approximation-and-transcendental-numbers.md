@@ -32,7 +32,10 @@ For example, $$ \mathbb{Q} $$ is in one one-to-one correspondence to $$ \mathbb{
 
 Since all algebraic numbers are countable, it would suffice to show that the reals are uncountable in order to demonstrate the existence of transcendental numbers. To do this, Cantor supposed for contradiction that all real numbers in the interval $$ (0, 1) $$ can be listed:
 
-$$r_1 = 0.a_{11}a_{12}a_{13}\dots \\ r_2 = 0.a_{21}a_{22}a_{23}\dots \\ r_3 = 0.a_{31}a_{32}a_{33}\dots \\ \vdots $$
+$$r_1 = 0.a_{11}a_{12}a_{13}\dots \\
+r_2 = 0.a_{21}a_{22}a_{23}\dots \\
+r_3 = 0.a_{31}a_{32}a_{33}\dots \\
+\vdots$$
 
 Now construct a new number $$ r \in (0,1) $$ by altering the diagonal digits:
 
@@ -67,9 +70,9 @@ In other words, irrational algebraic numbers can’t be too well approximated by
 
 *Proof.* Let $$f(x) = \sum a_k x^k$$ be the minimal polynomial of $$\alpha$$ with integer coefficients. Since $$f(\alpha) = 0$$, we’ll examine how $$f$$ behaves near $$\alpha$$.
 
-By the fundamental theorem of algebra, $$f$$ has at most $$n$$ roots. This means there exists some $$\delta_1 > 0$$ such that if $$0 < |x - \alpha| < \delta_1$$, then $$f(x) \neq 0$$.
+By the fundamental theorem of algebra, $$f$$ has at most $$n$$ roots. This means there exists some $$\delta_1 > 0$$ such that if $$0 < \vert x - \alpha \vert < \delta_1$$, then $$f(x) \neq 0$$.
 
-Also, since $$f'(\alpha) \neq 0$$ and $$f'$$ is continuous, we can find $$\delta_2 > 0$$ and a bound $$M > 0$$ such that if $$|x - \alpha| < \delta_2$$, then  
+Also, since $$f'(\alpha) \neq 0$$ and $$f'$$ is continuous, we can find $$\delta_2 > 0$$ and a bound $$M > 0$$ such that if $$\vert x - \alpha \vert < \delta_2$$, then  
 
 $$0 < |f'(x)| \leq M$$
 
@@ -79,7 +82,7 @@ $$f'(x_0) = \frac{f(\alpha) - f(p/q)}{\alpha - p/q}$$
 
 Since $$f(\alpha) = 0$$ and $$f(p/q) \neq 0$$, we rearrange:
 
-$$|\alpha - p/q| = \frac{|f(p/q)|}{|f'(x_0)|}$$
+$$\vert \alpha - p/q \vert = \frac{\vert f(p/q) \vert}{\vert f'(x_0) \vert}$$
 
 Now consider the value of $$f(p/q)$$. Since $$f$$ has integer coefficients,
 
