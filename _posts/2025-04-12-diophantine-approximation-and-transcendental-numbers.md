@@ -32,10 +32,13 @@ For example, $$ \mathbb{Q} $$ is in one one-to-one correspondence to $$ \mathbb{
 
 Since all algebraic numbers are countable, it would suffice to show that the reals are uncountable in order to demonstrate the existence of transcendental numbers. To do this, Cantor supposed for contradiction that all real numbers in the interval $$ (0, 1) $$ can be listed:
 
-$$r_1 = 0.a_{11}a_{12}a_{13}\dots \\
-r_2 = 0.a_{21}a_{22}a_{23}\dots \\
-r_3 = 0.a_{31}a_{32}a_{33}\dots \\
-\vdots$$
+$$r_1 = 0.a_{11}a_{12}a_{13}\dots $$
+
+$$r_2 = 0.a_{21}a_{22}a_{23}\dots $$
+
+$$r_3 = 0.a_{31}a_{32}a_{33}\dots $$
+
+$$\vdots$$
 
 Now construct a new number $$ r \in (0,1) $$ by altering the diagonal digits:
 
@@ -108,15 +111,15 @@ $$\left\vert x - \frac{p}{q} \right\vert  > \frac{A}{q^d}$$
 
 for all rational numbers $$p/q$$.
 
-But the definition of Liouville number tells us that for any $$n > d$$, we can find infinitely many $$p/q$$ such that:
+But the definition of Liouville number tells us that for any $$n > d$$, we can find $$p/q$$ such that
 
 $$\left\vert x - \frac{p}{q} \right\vert  < \frac{1}{q^n}$$
 
-Since $$n > d$$, for sufficiently large $$q$$, the inequality
+For sufficiently large $$n$$, we have the inequality
 
 $$\frac{1}{q^n} < \frac{A}{q^d}$$
 
-holds—contradicting the lower bound. Therefore, $$x$$ cannot be algebraic.
+contradicting the lower bound. Therefore, $$x$$ cannot be algebraic.
 
 Returning to Liouville’s original construction:
 
