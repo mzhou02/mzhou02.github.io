@@ -135,11 +135,11 @@ $$L_m = \sum_{n=1}^{m} \frac{1}{10^{n!}}$$
 
 This is a rational number with denominator $$10^{m!}$$. The error between $$L$$ and $$L_m$$ is:
 
-$$|L - L_m| = \sum_{n=m+1}^{\infty} \frac{1}{10^{n!}} < \frac{1}{10^{(m+1)!}}$$
+$$|L - L_m| = \sum_{n=m+1}^{\infty} \frac{1}{10^{n!}} = \frac{1}{9 \cdot 10^{(m+1)! - 1}}$$
 
-Since $$(m+1)! > m!(m+1)$$, we can write:
+Since $$(m+1)! - 1 > m!(m)$$ for large enough $$m$$, we can write:
 
-$$|L - L_m| < \frac{1}{10^{m!(m+1)}} = \frac{1}{(10^{m!})^{m+1}} = \frac{1}{q^{m+1}}$$
+$$|L - L_m| < \frac{1}{10^{m!(m)}} = \frac{1}{(10^{m!})^{m}} = \frac{1}{q^{m}}$$
 
 where $$q = 10^{m!}$$.
 
