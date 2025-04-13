@@ -57,7 +57,7 @@ By construction, $$ r $$ differs from each $$ r_i $$ in at least the $$ i$$-th d
 
 From this result, we can make a clear observation. While the rational and algebraic numbers are scattered densely across the real line, they form only a countable skeleton. The transcendental numbers, in contrast, fill in the uncountable “gaps” between them, making up almost all of the real number continuum. In essence, because transcendental numbers fill in these gaps between rationals, they can reveal themselves through how well they can be approximated by rationals. Roughly speaking, an irrational numebr that can be approximated by rationals better than any other number must be transcendental.
 
-<h4>Liouville's Insight and Transcendental Numbers</h4>
+<h3>Liouville's Insight and Transcendental Numbers</h3>
 Though predating Cantor, Liouville’s crucial insight, dating back to 1844, was exactly this: to understand just how well irrational algebraic numbers can be approximated by rationals—and how that imposes deep structural limitations. To demonstrate this, he constructed what is now known as the <b>Liouville constant</b>:
 
 $$L = \sum_{n=1}^{\infty} \frac{1}{10^{n!}} = 0.110001000000000000000001000\ldots$$
@@ -149,7 +149,7 @@ $$|L - L_m| < \frac{1}{q^k}$$
 
 This shows that $$L$$ can be approximated by rationals with error smaller than $$1/q^k$$ for every $$k$$—precisely the definition of a Liouville number. Hence, by Theorem 2, $$L$$ is transcendental.
 
-<h4>Concluding Remarks: Roth’s Theorem on Diophantine Approximation</h4>
+<h3>Concluding Remarks: Roth’s Theorem on Diophantine Approximation</h3>
 
 Liouville’s theorem was eventually sharpened in 1955 by Klaus Roth, who proved a striking improvement:
 
