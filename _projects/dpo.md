@@ -97,17 +97,19 @@ $$Z(x) = \sum_y \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)
 
 To demonstrate why, if we recall the RL objective
 
-$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y) - \beta \cdot \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)]]$$
+$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y) - \beta \cdot \text{KL}[\pi(y\mid x) \mid \pi_{\text{ref}}(y\mid x)]]$$
 
 Notice that this is equivalent to minimizing
 
-$$\min_{\pi} \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[ \frac{1}{\beta}r(x, y)]$$
+$$\min_{\pi} \text{KL}[\pi(y\mid x) \mid \pi_{\text{ref}}(y\mid x)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[ \frac{1}{\beta}r(x, y)]$$
+
 $$=\min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\pi_{\text{ref}}(y\mid x)} \right)- \frac{1}{\beta}r(x, y) \right]$$
+
 $$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)} \right)- \text{log}(Z(x))\right]$$
 
 Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
 
-$$= \min_{\pi} \text{KL} \left[\pi(y\mid x) \bigg\\mid \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \text{log}(Z(x))$$
+$$= \min_{\pi} \text{KL} \left[\pi(y\mid x) \bigg \mid \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \text{log}(Z(x))$$
 
 By Gibb's Inequality, this is minimized when $$\pi(y \mid x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$, finishing the proof. This tells us that the optimal policy applies a Boltzmann distribution over rewards, scaled by the reference policy. Higher rewards lead to higher probabilities in the optimal policy, with the KL constraint (controlled by $$\beta$$) determining how much the optimal policy can deviate from the reference policy.
 
@@ -124,6 +126,7 @@ $$p(y_1 \succ y_2 \mid x) = \sigma(r(x, y_1) - r(x, y_2))$$
 If we substitute our rearranged reward function, we get
 
 $$p(y_1 \succ y_2 \mid x) = \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} + \beta \log Z(x) - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)} - \beta \log Z(x)\right)$$
+
 $$= \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)}\right)$$
 
 Now, the partition function $$Z(x)$$ cancels out, and we can express the probability of one response being preferred over another directly in terms of the policy ratios, without needing to compute the intractable normalizing constant.

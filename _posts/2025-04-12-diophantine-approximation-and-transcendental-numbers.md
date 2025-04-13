@@ -66,7 +66,8 @@ This number is famous not only for its curious decimal expansion, but also for b
 
 Let’s begin with the key result:
 
-**Theorem 1 (Liouville).** *Let* $$\alpha$$ *be an irrational algebraic number of degree* $$n > 1$$. *Then there exists a positive constant* $$A$$ *such that for all integers* $$p, q$$ *with* $$q > 0$$, we have:  
+**Theorem 1 (Liouville).** *Let* $$\alpha$$ *be an irrational algebraic number of degree* $$n > 1$$. *Then there exists a positive constant* $$A$$ *such that for all integers* $$p, q$$ *with* $$q > 0$$, we have:
+  
 $$\left\vert \alpha - \frac{p}{q}\right\vert  > \frac{A}{q^n}$$
 
 In other words, irrational algebraic numbers can’t be too well approximated by rational numbers, and any number that can be approximated well by a rational of small denominator must be transcendental.
