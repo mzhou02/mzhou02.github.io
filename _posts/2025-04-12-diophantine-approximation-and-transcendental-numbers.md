@@ -3,7 +3,7 @@ layout: post
 title: Diophantine Approximation and Transcendental Numbers  
 date: 2025-04-12 22:48:00
 description:
-tags: combinatorics
+tags: number-theory
 categories: math
 featured: false
 ---
@@ -22,7 +22,7 @@ Transcendental numbers are numbers that cannot be expressed as solutions to poly
 
 To understand the intuition of Louiville's approach, let's first walk through Cantor's proof of the existence of transcendental numbers. To understand why transcendental numbers must exist, we begin with a key concept from set theory: the idea of countable and uncountable sets.
 
-A set is said to be $$\emph{countable}$$ if its elements can be placed into a one-to-one correspondence with the natural numbers $$ \mathbb{N} = \{1, 2, 3, \dots\} $$. That is, we can enumerate the elements in a list: $$ x_1, x_2, x_3, \dots $$. Examples of countable sets include:
+A set is said to be <b>countable</b> if its elements can be placed into a one-to-one correspondence with the natural numbers $$ \mathbb{N} = \{1, 2, 3, \dots\} $$. That is, we can enumerate the elements in a list: $$ x_1, x_2, x_3, \dots $$. Examples of countable sets include:
 
 - The set of natural numbers $$ \mathbb{N} $$
 - The set of integers $$ \mathbb{Z} $$
