@@ -45,7 +45,7 @@ Now construct a new number $$ r \in (0,1) $$ by altering the diagonal digits:
 $$b_i =
 \begin{cases}
     1 & \text{if } a_{ii} \neq 1 \\
-    2 & \text{if } a_{ii} = 1
+    0 & \text{if } a_{ii} = 1
 \end{cases}
 $$
 
