@@ -20,7 +20,7 @@ Many numbers we encounter in everyday life–even those that seem impossibly com
 
 Transcendental numbers are numbers that cannot be expressed as solutions to polynomial equations with integer coefficients. Up until the mid-19th century, it was unresolved whether any transcendental numbers existed. In fact, it is extremely hard to even prove that a number may even be transcendental. While Liouville had proven the existence of transcendental numbers in 1844, it wasn't until 1873 that Hermite proved $$e$$ is transcendental, followed by Lindemann's proof of $$\pi$$'s transcendence in 1882. Liouville's approach, centered on approximation properties of numbers, provided the first concrete examples of transcendental numbers and established a powerful criterion for transcendence.
 
-To understand the intuition of Louiville's approach, let's first walk through Cantor's proof of the existence of transcendental numbers. To understand why transcendental numbers must exist, we begin with a key concept from set theory: the idea of countable and uncountable sets.
+To understand the intuition of Liouville's approach, let's first walk through Cantor's proof of the existence of transcendental numbers. To understand why transcendental numbers must exist, we begin with a key concept from set theory: the idea of countable and uncountable sets.
 
 A set is said to be <b>countable</b> if its elements can be placed into a one-to-one correspondence with the natural numbers $$ \mathbb{N} = \{1, 2, 3, \dots\} $$. That is, we can enumerate the elements in a list: $$ x_1, x_2, x_3, \dots $$. Examples of countable sets include:
 
@@ -54,7 +54,7 @@ By construction, $$ r $$ differs from each $$ r_i $$ in at least the $$ i$$-th d
 
 From this result, we can make a clear observation. While the rational and algebraic numbers are scattered densely across the real line, they form only a countable skeleton. The transcendental numbers, in contrast, fill in the uncountable “gaps” between them, making up almost all of the real number continuum. In essence, because transcendental numbers fill in these gaps between rationals, they can reveal themselves through how well they can be approximated by rationals. Roughly speaking, an irrational numebr that can be approximated by rationals better than any other number must be transcendental.
 
-<h2>Liouville's Insight and Transcendental Numbers</h2>
+<h4>Liouville's Insight and Transcendental Numbers</h4>
 Liouville’s crucial insight, dating back to 1844, was exactly this: to understand just how well irrational algebraic numbers can be approximated by rationals—and how that imposes deep structural limitations. To demonstrate this, he constructed what is now known as the <b>Liouville constant</b>:
 
 $$L = \sum_{n=1}^{\infty} \frac{1}{10^{n!}} = 0.110001000000000000000001000\ldots$$
@@ -94,7 +94,7 @@ $$|\alpha - p/q| \geq \frac{1}{|f'(x_0)|} \cdot \frac{1}{q^n} \geq \frac{1}{M} \
 
 Setting $$A = 1/M$$, we get the desired bound.
 
-We then define a **Liouville number** as an irrational number $$x$$ such that, for every integer $$n > 0$$, there are infinitely many rational numbers $$p/q$$ satisfying:
+We then define a **Liouville number** as an irrational number $$x$$ such that, for every integer $$n > 0$$, there exists a pair $$(p, q)$$ satisfying
 
 $$\left\vert x - \frac{p}{q} \right\vert  < \frac{1}{q^n}$$
 
@@ -146,7 +146,7 @@ $$|L - L_m| < \frac{1}{q^k}$$
 
 This shows that $$L$$ can be approximated by rationals with error smaller than $$1/q^k$$ for every $$k$$—precisely the definition of a Liouville number. Hence, by Theorem 2, $$L$$ is transcendental.
 
-<h2>Concluding Remarks: Roth’s Theorem on Diophantine Approximation</h2>
+<h4>Concluding Remarks: Roth’s Theorem on Diophantine Approximation</h4>
 
 Liouville’s theorem was eventually sharpened in 1955 by Klaus Roth, who proved a striking improvement:
 
