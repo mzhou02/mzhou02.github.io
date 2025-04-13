@@ -68,7 +68,7 @@ With a trained reward model in hand, the final stage of traditional RLHF uses re
 
 The RL objective typically takes the form:
 
-$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y)] - \beta \cdot \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)]$$
+$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y)] - \beta \cdot \text{KL}[\pi(y\mid x) \mid \pi_{\text{ref}}(y\mid x)]$$
 
 where:
 - $$\pi$$ is the policy we're optimizing
