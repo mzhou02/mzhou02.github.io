@@ -61,7 +61,7 @@ This number is famous not only for its curious decimal expansion, but also for b
 Let’s begin with the key result:
 
 **Theorem 1 (Liouville).** *Let* $$\alpha$$ *be an irrational algebraic number of degree* $$n > 1$$. *Then there exists a positive constant* $$A$$ *such that for all integers* $$p, q$$ *with* $$q > 0$$, we have:  
-$$\left|\alpha - \frac{p}{q}\right| > \frac{A}{q^n}$$
+$$\left\vert \alpha - \frac{p}{q}\right\vert  > \frac{A}{q^n}$$
 
 In other words, irrational algebraic numbers can’t be too well approximated by rational numbers, and any number that can be approximated well by a rational of small denominator must be transcendental.
 
@@ -85,15 +85,15 @@ Now consider the value of $$f(p/q)$$. Since $$f$$ has integer coefficients,
 
 $$f(p/q) = \frac{1}{q^n} \sum_{k=0}^{n} a_k p^k q^{n-k}$$
 
-This sum is an integer, and if $$f(p/q) \ne 0$$, its absolute value is at least 1. So,
+This sum is an integer, and if $$f(p/q) \neq 0$$, its absolute value is at least 1. So,
 
-$$|\alpha - p/q| \ge \frac{1}{|f'(x_0)|} \cdot \frac{1}{q^n} \ge \frac{1}{M} \cdot \frac{1}{q^n}$$
+$$|\alpha - p/q| \geq \frac{1}{|f'(x_0)|} \cdot \frac{1}{q^n} \geq \frac{1}{M} \cdot \frac{1}{q^n}$$
 
 Setting $$A = 1/M$$, we get the desired bound.
 
 We then define a **Liouville number** as an irrational number $$x$$ such that, for every integer $$n > 0$$, there are infinitely many rational numbers $$p/q$$ satisfying:
 
-$$\left|x - \frac{p}{q} \right| < \frac{1}{q^n}$$
+$$\left\vert x - \frac{p}{q} \right\vert  < \frac{1}{q^n}$$
 
 These numbers are, in a sense, *too well* approximated by rationals to be algebraic, and are better approximated by rationals than any other algebraic number.
 
@@ -101,13 +101,13 @@ These numbers are, in a sense, *too well* approximated by rationals to be algebr
 
 *Proof.* Suppose not—suppose there’s a Liouville number $$x$$ that is algebraic of degree $$d > 1$$. Then by Theorem 1, there is a constant $$A > 0$$ such that:
 
-$$\left|x - \frac{p}{q} \right| > \frac{A}{q^d}$$
+$$\left\vert x - \frac{p}{q} \right\vert  > \frac{A}{q^d}$$
 
 for all rational numbers $$p/q$$.
 
 But the definition of Liouville number tells us that for any $$n > d$$, we can find infinitely many $$p/q$$ such that:
 
-$$\left|x - \frac{p}{q} \right| < \frac{1}{q^n}$$
+$$\left\vert x - \frac{p}{q} \right\vert  < \frac{1}{q^n}$$
 
 Since $$n > d$$, for sufficiently large $$q$$, the inequality
 
@@ -149,7 +149,7 @@ Liouville’s theorem was eventually sharpened in 1955 by Klaus Roth, who proved
 
 **Theorem 4 (Roth).** *Let* $\alpha$ *be an irrational algebraic number. Then for every* $\epsilon > 0$*, there exist only finitely many rational numbers $p/q$ such that*
 
-$$\left| \alpha - \frac{p}{q} \right| < \frac{1}{q^{2 + \epsilon}}$$
+$$\left\vert  \alpha - \frac{p}{q} \right\vert  < \frac{1}{q^{2 + \epsilon}}$$
 
 This result shows that the exponent $$2$$ is essentially optimal for algebraic irrationals: they cannot be approximated better than order $$1/q^2$$, no matter how high their degree.
 
