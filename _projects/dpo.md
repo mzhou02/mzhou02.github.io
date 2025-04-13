@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reinforcement Learning with Human Feedback
-description: This article is still in the works
+description: 
 img: 
 importance: 1
 category: reinforcement learning
