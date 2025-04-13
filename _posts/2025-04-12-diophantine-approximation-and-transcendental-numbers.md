@@ -153,7 +153,7 @@ This shows that $$L$$ can be approximated by rationals with error smaller than $
 
 Liouville’s theorem was eventually sharpened in 1955 by Klaus Roth, who proved a striking improvement:
 
-**Theorem 4 (Roth).** *Let* $$\alpha$$ *be an irrational algebraic number. Then for every* $$\epsilon > 0$$*, there exist only finitely many rational numbers $p/q$ such that*
+**Theorem 4 (Roth).** *Let* $$\alpha$$ *be an irrational algebraic number. Then for every* $$\epsilon > 0$$*, there exist only finitely many rational numbers $$p/q$$ such that*
 
 $$\left\vert  \alpha - \frac{p}{q} \right\vert  < \frac{1}{q^{2 + \epsilon}}$$
 
