@@ -71,7 +71,7 @@ By the fundamental theorem of algebra, $$f$$ has at most $$n$$ roots. This means
 
 Also, since $$f'(\alpha) \neq 0$$ and $$f'$$ is continuous, we can find $$\delta_2 > 0$$ and a bound $$M > 0$$ such that if $$|x - \alpha| < \delta_2$$, then  
 
-$$0 < |f'(x)| \le M$$
+$$0 < |f'(x)| \leq M$$
 
 Let $$\delta = \min(\delta_1, \delta_2)$$. If a rational number $$\frac{p}{q}$$ lies within $$\delta$$ of $$\alpha$$, then by the Mean Value Theorem, there exists $$x_0$$ between $$p/q$$ and $$\alpha$$ such that
 
