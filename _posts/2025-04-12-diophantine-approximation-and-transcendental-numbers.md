@@ -58,7 +58,7 @@ By construction, $$ r $$ differs from each $$ r_i $$ in at least the $$ i$$-th d
 From this result, we can make a clear observation. While the rational and algebraic numbers are scattered densely across the real line, they form only a countable skeleton. The transcendental numbers, in contrast, fill in the uncountable “gaps” between them, making up almost all of the real number continuum. In essence, because transcendental numbers fill in these gaps between rationals, they can reveal themselves through how well they can be approximated by rationals. Roughly speaking, an irrational numebr that can be approximated by rationals better than any other number must be transcendental.
 
 <h4>Liouville's Insight and Transcendental Numbers</h4>
-Liouville’s crucial insight, dating back to 1844, was exactly this: to understand just how well irrational algebraic numbers can be approximated by rationals—and how that imposes deep structural limitations. To demonstrate this, he constructed what is now known as the <b>Liouville constant</b>:
+Though predating Cantor, Liouville’s crucial insight, dating back to 1844, was exactly this: to understand just how well irrational algebraic numbers can be approximated by rationals—and how that imposes deep structural limitations. To demonstrate this, he constructed what is now known as the <b>Liouville constant</b>:
 
 $$L = \sum_{n=1}^{\infty} \frac{1}{10^{n!}} = 0.110001000000000000000001000\ldots$$
 
@@ -153,7 +153,7 @@ This shows that $$L$$ can be approximated by rationals with error smaller than $
 
 Liouville’s theorem was eventually sharpened in 1955 by Klaus Roth, who proved a striking improvement:
 
-**Theorem 4 (Roth).** *Let* $\alpha$ *be an irrational algebraic number. Then for every* $\epsilon > 0$*, there exist only finitely many rational numbers $p/q$ such that*
+**Theorem 4 (Roth).** *Let* $$\alpha$$ *be an irrational algebraic number. Then for every* $$\epsilon > 0$$*, there exist only finitely many rational numbers $p/q$ such that*
 
 $$\left\vert  \alpha - \frac{p}{q} \right\vert  < \frac{1}{q^{2 + \epsilon}}$$
 
