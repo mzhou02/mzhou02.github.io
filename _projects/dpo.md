@@ -48,7 +48,7 @@ The traditional RLHF approach unfolds as a three-stage process, with each stage 
     
 3. <strong>Reinforcement Learning Optimization</strong>: Use the reward model to optimize the language model's outputs through reinforcement learning.
 
-The beauty of this approach is in how it progressively refines the model's understanding of human preferences. First, we give the model a basic understanding of the types of responses we want through examples (SFT). This way, it makes the aligning stage much more stable. Then, we teach it to distinguish between better and worse responses by learning from human comparative judgments (reward modeling). Finally, we use this learned understanding to guide the model toward generating better responses (RL optimization).
+The main idea of this approach is to progressively refine the model's understanding of human preferences. First, we give the model a basic understanding of the types of responses we want through examples (SFT). This way, it makes the aligning stage much more stable. Then, we teach it to distinguish between better and worse responses by learning from human comparative judgments (reward modeling). Finally, we use this learned understanding to guide the model toward generating better responses (RL optimization).
 
 <h4>Learning What Humans Prefer</h4>
 
@@ -68,7 +68,7 @@ With a trained reward model in hand, the final stage of traditional RLHF uses re
 
 The RL objective typically takes the form:
 
-$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)}[r(x, y)] - \beta \cdot \text{KL}[\pi(y\midx) \\mid \pi_{\text{ref}}(y\midx)]$$
+$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y)] - \beta \cdot \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)]$$
 
 where:
 - $$\pi$$ is the policy we're optimizing
@@ -89,31 +89,31 @@ This innate instability and computational infeasibility of training a reward mod
 
 We first examine that, for any reward function $$r(x,y)$$, the optimal policy $$\pi_r$$ that maximizes the expected reward while staying close to a reference policy $$\pi_{\text{ref}}$$ (as measured by KL divergence) has a specific mathematical form:
 
-$$\pi_r(y\midx) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right)$$
+$$\pi_r(y\mid x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$
 
 where $$Z(x)$$ is a normalizing constant (partition function) that ensures the distribution sums to 1:
 
-$$Z(x) = \sum_y \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right)$$
+$$Z(x) = \sum_y \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$
 
 To demonstrate why, if we recall the RL objective
 
-$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)}[r(x, y) - \beta \cdot \text{KL}[\pi(y\midx) \\mid \pi_{\text{ref}}(y\midx)]]$$
+$$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y) - \beta \cdot \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)]]$$
 
 Notice that this is equivalent to minimizing
 
-$$\min_{\pi} \text{KL}[\pi(y\midx) \\mid \pi_{\text{ref}}(y\midx)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)}[ \frac{1}{\beta}r(x, y)]$$
-$$=\min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\pi_{\text{ref}}(y\midx)} \right)- \frac{1}{\beta}r(x, y) \right]$$
-$$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\frac{1}{Z(x)} \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right)} \right)- \text{log}(Z(x))\right]$$
+$$\min_{\pi} \text{KL}[\pi(y\mid x) \\mid \pi_{\text{ref}}(y\mid x)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[ \frac{1}{\beta}r(x, y)]$$
+$$=\min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\pi_{\text{ref}}(y\mid x)} \right)- \frac{1}{\beta}r(x, y) \right]$$
+$$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)} \right)- \text{log}(Z(x))\right]$$
 
-Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
+Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
 
-$$= \min_{\pi} \text{KL} \left[\pi(y\midx) \bigg\\mid \frac{1}{Z(x)} \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\midx)} \text{log}(Z(x))$$
+$$= \min_{\pi} \text{KL} \left[\pi(y\mid x) \bigg\\mid \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \text{log}(Z(x))$$
 
-By Gibb's Inequality, this is minimized when $$\pi(y \mid x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\midx) \exp\left(\frac{1}{\beta}r(x,y)\right)$$, finishing the proof. This tells us that the optimal policy applies a Boltzmann distribution over rewards, scaled by the reference policy. Higher rewards lead to higher probabilities in the optimal policy, with the KL constraint (controlled by $$\beta$$) determining how much the optimal policy can deviate from the reference policy.
+By Gibb's Inequality, this is minimized when $$\pi(y \mid x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$, finishing the proof. This tells us that the optimal policy applies a Boltzmann distribution over rewards, scaled by the reference policy. Higher rewards lead to higher probabilities in the optimal policy, with the KL constraint (controlled by $$\beta$$) determining how much the optimal policy can deviate from the reference policy.
 
 We can rearrange this insight on the optimal policy to express the reward function in terms of the policy:
 
-$$r(x,y) = \beta \log \frac{\pi_r(y\midx)}{\pi_{\text{ref}}(y\midx)} + \beta \log Z(x)$$
+$$r(x,y) = \beta \log \frac{\pi_r(y\mid x)}{\pi_{\text{ref}}(y\mid x)} + \beta \log Z(x)$$
 
 Of course, we don't know the optimal policy—that's what we're trying to learn. But we do have human preference data that tells us which outputs are preferred to others. And since under the Bradley Terry model, the probability of a human preferring one output over another only deals with the differences in their rewards, we have some nice cancellation properties (keep in mind that $$Z(x)$$ is very hard to calculate, so we would like to get rid of that).
 
@@ -123,8 +123,8 @@ $$p(y_1 \succ y_2 \mid x) = \sigma(r(x, y_1) - r(x, y_2))$$
 
 If we substitute our rearranged reward function, we get
 
-$$p(y_1 \succ y_2 \mid x) = \sigma\left(\beta \log \frac{\pi_r(y_1\midx)}{\pi_{\text{ref}}(y_1\midx)} + \beta \log Z(x) - \beta \log \frac{\pi_r(y_2\midx)}{\pi_{\text{ref}}(y_2\midx)} - \beta \log Z(x)\right)$$
-$$= \sigma\left(\beta \log \frac{\pi_r(y_1\midx)}{\pi_{\text{ref}}(y_1\midx)} - \beta \log \frac{\pi_r(y_2\midx)}{\pi_{\text{ref}}(y_2\midx)}\right)$$
+$$p(y_1 \succ y_2 \mid x) = \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} + \beta \log Z(x) - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)} - \beta \log Z(x)\right)$$
+$$= \sigma\left(\beta \log \frac{\pi_r(y_1\mid x)}{\pi_{\text{ref}}(y_1\mid x)} - \beta \log \frac{\pi_r(y_2\mid x)}{\pi_{\text{ref}}(y_2\mid x)}\right)$$
 
 Now, the partition function $$Z(x)$$ cancels out, and we can express the probability of one response being preferred over another directly in terms of the policy ratios, without needing to compute the intractable normalizing constant.
 
@@ -138,7 +138,7 @@ Direct Preference Optimization (DPO) leverages this mathematical insight we just
 
 DPO formulates a simple objective function that directly optimizes a policy $$\pi_\theta$$ to align with human preferences:
 
-$$\mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) = -\mathbb{E}_{(x,y_w,y_l) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w\midx)}{\pi_{\text{ref}}(y_w\midx)} - \beta \log \frac{\pi_\theta(y_l\midx)}{\pi_{\text{ref}}(y_l\midx)}\right)\right]$$
+$$\mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) = -\mathbb{E}_{(x,y_w,y_l) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w\mid x)}{\pi_{\text{ref}}(y_w\mid x)} - \beta \log \frac{\pi_\theta(y_l\mid x)}{\pi_{\text{ref}}(y_l\mid x)}\right)\right]$$
 
 where:
 - $$\pi_\theta$$ is the policy we're optimizing
@@ -171,9 +171,9 @@ In essence, DPO accomplishes with one elegant step what traditional RLHF does wi
 
 To build intuition for how DPO works, let's examine how it updates the policy. The gradient of the DPO loss with respect to the model parameters has the form:
 
-$$\nabla_\theta \mathcal{L}_{\text{DPO}} \propto -\beta \cdot \sigma(\hat{r}_\theta(x, y_l) - \hat{r}_\theta(x, y_w)) \cdot (\nabla_\theta \log \pi_\theta(y_w\midx) - \nabla_\theta \log \pi_\theta(y_l\midx))$$
+$$\nabla_\theta \mathcal{L}_{\text{DPO}} \propto -\beta \cdot \sigma(\hat{r}_\theta(x, y_l) - \hat{r}_\theta(x, y_w)) \cdot (\nabla_\theta \log \pi_\theta(y_w\mid x) - \nabla_\theta \log \pi_\theta(y_l\mid x))$$
 
-where $$\hat{r}_\theta(x, y) = \beta \log \frac{\pi_\theta(y\midx)}{\pi_{\text{ref}}(y\midx)}$$ is the implicit reward.
+where $$\hat{r}_\theta(x, y) = \beta \log \frac{\pi_\theta(y\mid x)}{\pi_{\text{ref}}(y\mid x)}$$ is the implicit reward.
 
 This update has a natural interpretation:
 
