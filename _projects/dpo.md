@@ -109,7 +109,7 @@ $$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \tex
 
 Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
 
-$$= \min_{\pi} \text{KL} \left[\pi(y\mid x) \big\mid \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \text{log}(Z(x))$$
+$$= \min_{\pi} \text{KL} \left[\pi(y\mid x) \Big| \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right) \right] -  \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \text{log}(Z(x))$$
 
 By Gibb's Inequality, this is minimized when $$\pi(y \mid x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$, finishing the proof. This tells us that the optimal policy applies a Boltzmann distribution over rewards, scaled by the reference policy. Higher rewards lead to higher probabilities in the optimal policy, with the KL constraint (controlled by $$\beta$$) determining how much the optimal policy can deviate from the reference policy.
 
