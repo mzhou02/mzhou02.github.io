@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mzhou02.github.io/sitemap.xml
+Sitemap: https://mikezhou.me/sitemap.xml
