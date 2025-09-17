@@ -90,6 +90,8 @@ I am currently a fourth year undergraduate studying computer science and mathema
 
 I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
 
+<div style="clear: both;"></div>
+
 <div class="cv">
   {% for entry in site.data.cv %}
     {% if entry.title == "Education" or entry.title == "Teaching" %}
