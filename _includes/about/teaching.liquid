@@ -1,11 +1,13 @@
-{% for teaching in site.data.cv %}
-  {% if teaching.title == "Teaching" %}
-    <div class="card mt-3 p-3">
-      <h3 class="card-title font-weight-medium">{{ teaching.title }}</h3>
-      <div>
-        {% assign entry = teaching %}
-        {% include cv/time_table.liquid %}
+<div class="cv">
+  {% for teaching in site.data.cv %}
+    {% if teaching.title == "Teaching" %}
+      <div class="card mt-3 p-3">
+        <h3 class="card-title font-weight-medium">{{ teaching.title }}</h3>
+        <div>
+          {% assign entry = teaching %}
+          {% include cv/time_table.liquid %}
+        </div>
       </div>
-    </div>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
