@@ -3,7 +3,7 @@
 
 <!-- Preload critical images -->
 {% if page.profile and page.profile.image %}
-  <link rel="preload" as="image" href="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" fetchpriority="high">
+  <link rel="preload" as="image" href="https://mikezhou.me/assets/img/{{ page.profile.image }}" fetchpriority="high">
 {% endif %}
 
 <!-- Bootstrap & MDB -->
