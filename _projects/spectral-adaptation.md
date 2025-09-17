@@ -9,9 +9,9 @@ github: https://github.com/mzhou02/Spectral-Adaptation
 mathjax: true
 ---
 
+## Overview
 Full implementation available at: [https://github.com/mzhou02/Spectral-Adaptation](https://github.com/mzhou02/Spectral-Adaptation)
 
-## Overview
 
 This project implements a vanilla transformer architecture with efficient fine-tuning capabilities using Singular Value Decomposition (SVD). The approach enables parameter-efficient adaptation of large language models to new domains while preserving the structure of pretrained weights.
 
