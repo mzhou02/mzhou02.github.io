@@ -16,7 +16,7 @@ featured: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-One of my favourite examples of the probabilistic method at work is the Hardy--Ramanujan theorem. It says that if you take a large integer~$x$, the number of distinct prime factors it has, written~$\omega(x)$, is usually very close to $\log\log x$. More precisely, the fluctuations are typically no larger than about $\sqrt{\log\log x}$.
+One of my favourite examples of the probabilistic method at work is the Hardy--Ramanujan theorem. It says that if you take a large integer $$x$$, the number of distinct prime factors it has, written $$\omega(x)$$, is usually very close to $$\log\log x$$. More precisely, the fluctuations are typically no larger than about $$\sqrt{\log\log x}$$.
 
 At first sight this is the kind of statement one might expect to need advanced analytic tools. After all, it concerns the distribution of prime factors, which is usually a delicate subject. But in fact the proof rests on a very simple probabilistic observation; to sketch the main one out, if a random variable's expectation and variance are "close enough", one can use Chebyshev's inequality to show that almost all cases of this random variable are assymptotically equal to its expectation with only a vanishing number of exceptions. Thus, if the expected value of $$\omega(x)$$ is close to its variance, we can use clever bounds to find an elementary proof to a seemingly difficult number theoretic problem.
 
