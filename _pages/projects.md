@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A collection of software projects and programs I have developed.
+description: 
 nav: true
 nav_order: 3
 display_categories: [graphics, games, applications, machine learning]

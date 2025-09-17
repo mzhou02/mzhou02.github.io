@@ -33,14 +33,14 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-2">
     {% for note in sorted_notes %}
-      {% include projects_horizontal.liquid %}
+      {% include projects_horizontal.liquid project=note %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="grid">
     {% for note in sorted_notes %}
-      {% include projects.liquid %}
+      {% include projects.liquid project=note %}
     {% endfor %}
   </div>
   {% endif %}
@@ -59,14 +59,14 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-2">
     {% for note in sorted_notes %}
-      {% include projects_horizontal.liquid %}
+      {% include projects_horizontal.liquid project=note %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="grid">
     {% for note in sorted_notes %}
-      {% include projects.liquid %}
+      {% include projects.liquid project=note %}
     {% endfor %}
   </div>
   {% endif %}
