@@ -15,19 +15,19 @@ This project implements a vanilla transformer architecture with efficient fine-t
 
 ## Key Innovation: SVD Fine-Tuning
 
-Given a weight matrix $W \in \mathbb{R}^{m \times n}$, SVD factorizes it as:
+Given a weight matrix $$W \in \mathbb{R}^{m \times n}$$, SVD factorizes it as:
 
 $$ W = U \Sigma V^\top $$
 
 where:
-- $U \in \mathbb{R}^{m \times r}$ and $V \in \mathbb{R}^{n \times r}$ are (semi-)orthogonal matrices
+- $$U \in \mathbb{R}^{m \times r}$$ and $$V \in \mathbb{R}^{n \times r}$$ are (semi-)orthogonal matrices
 - $\Sigma = \mathrm{diag}(\sigma_1, \sigma_2, \dots, \sigma_r)$ is the diagonal matrix of singular values
 
 ### Fine-Tuning Approach
 
 Instead of updating the entire weight matrix, we:
-1. **Freeze** $U$ and $V$ matrices
-2. **Train only** a new set of scalar multipliers $z \in \mathbb{R}^r$ applied to singular values:
+1. **Freeze** $$U$$ and $$V$$ matrices
+2. **Train only** a new set of scalar multipliers $$z \in \mathbb{R}^r$$ applied to singular values:
 
 $$\Sigma' = \mathrm{diag}(z_1 \sigma_1, z_2 \sigma_2, \dots, z_r \sigma_r)$$
 
