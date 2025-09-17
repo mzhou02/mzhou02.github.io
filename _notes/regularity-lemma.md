@@ -50,7 +50,7 @@ is called an $$\varepsilon$$-regular partition if:
 3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
 
 <figure style="max-width: 100%; margin: 0; text-align: center;">
-  <img src="/assets/img/epsilon-regular-partition.png" 
+  <img src="/assets/img/epsilon_regular-partition.png" 
        alt="Epsilon Regular Partition" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </figure>
