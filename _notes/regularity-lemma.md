@@ -49,6 +49,12 @@ is called an $$\varepsilon$$-regular partition if:
 2. $$\#V_1\# = \#V_2\# = \cdots = \#V_k\#$$ (the non-exceptional classes are balanced)
 3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
 
+<figure style="max-width: 50%; margin: 0;">
+  <img src="/assets/img/epsilon-regular-partition.png" 
+       alt="Epsilon Regular Partition" 
+       style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
+</figure>
+
 Having defined $$\varepsilon$$-regular partitions, a natural question arises: how many parts must we allow in order to guarantee that such a partition exists?  Remarkably, Szemerédi proved that the number of parts required depends not on the size of the graph, but only $$\varepsilon$$ (and a chosen lower bound for the number of parts).
 This Ramsey-like phenomenon is the content of the Regularity Lemma.  
 
