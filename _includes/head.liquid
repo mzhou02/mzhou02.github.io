@@ -1,17 +1,6 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
-<!-- Preload critical images -->
-{% if page.profile and page.profile.image %}
-  <link rel="preload" as="image" href="https://mikezhou.me/assets/img/{{ page.profile.image }}" fetchpriority="high">
-  <style>
-    .profile img {
-      opacity: 1 !important;
-      visibility: visible !important;
-      display: block !important;
-    }
-  </style>
-{% endif %}
 
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
