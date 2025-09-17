@@ -5,3 +5,29 @@
       value: Mike Zhou
     - name: Languages
       value: English, Chinese, French, Japanese (N5)
+
+- title: Education
+  type: time_table
+  contents:
+    - title: <h5>University of Pennsylvania</h5>
+      institution: BSE, MSE
+      year: 2021 - 2025
+      description: 
+      - "<b>MSE</b>: Computer Science"
+      - title: "<b>BSE</b>: Computer Science, Mathematics (with Honors)"
+        contents:
+          - "<i><small>Undergraduate Honors Thesis: Fourier Analytic Methods in Combinatorics</small></i>"
+    - title: <h5>ETH, Zürich</h5>
+      institution: Exchange Program
+      year: Spring 2024
+      
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: University of Pennsylvania
+      year: 2022 - 2024
+      description:
+        - CIS 5020 - Algorithms (Summer 2024)
+        - STAT 4300 - Probability (Spring 2023)
+        - CIS 1600 - Discrete Mathematics (Fall 2022)
