@@ -3,7 +3,7 @@ layout: page
 title: Turan's Theorem
 description: This article is still in the works
 img: 
-importance: 1
+importance: 2
 category: combinatorics
 mathjax: true
 ---

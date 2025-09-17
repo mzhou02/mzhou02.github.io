@@ -5,7 +5,7 @@ permalink: /notes/
 description: A collection of notes and research work I have completed.
 nav: true
 nav_order: 3
-display_categories: [reinforcement learning, nlp, algebra, combinatorics]
+display_categories: [reinforcement learning, nlp, combinatorics, algebra]
 horizontal: false
 ---
 <!-- Google tag (gtag.js) -->
