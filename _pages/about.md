@@ -86,10 +86,10 @@ social: false # includes social icons at the bottom of the page
   <meta property="og:url" content="https://mikezhou.me">
 </head>
 
-My name is Mike Zhou and I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania (UPenn). I am interested in reinforcement learning, deep learning, and arithmetic combinatorics.
+I am currently a fourth year undergraduate studying computer science and mathematics at the University of Pennsylvania. I'm interested in reinforcement learning, deep learning, and arithmetic combinatorics. My current focus is on exploring architectures and methods that could enable AI systems to reason more effectively, and on using reinforcement learning as a way to shape adaptive and generalizable behaviors.
 
 I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
 
-My research interests primarily focus on architectures and methods that enable AI systems to reason more effectively. I’m  interested in approaches that reimagine how models structure and manipulate information—such as architectures inspired by latent reasoning spaces—and in reinforcement learning as a tool for shaping these adaptive, generalizable behaviors.
+{% include about/education.liquid %}
 
-<a href='/about'>Click here</a> to learn more about me, or check out <a href='/projects'>my projects</a> and <a href='/notes'>my notes</a> here.
+{% include about/teaching.liquid %}
