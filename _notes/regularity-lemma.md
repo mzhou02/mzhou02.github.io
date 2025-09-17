@@ -67,12 +67,7 @@ $$|V_0| \le \varepsilon |V| \quad\text{and}\quad |V_1|=\cdots=|V_k|,$$
 for which all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$, $$1\le i<j\le k$$$, are $$\varepsilon$$-regular.
 
 <h3>Proof</h3>
-At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size.  
-The key insight is the so-called *energy increment argument*.  
-One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs.  
-If a partition is not yet $\varepsilon$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount.  
-Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition.  
-The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
+At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called *energy increment argument*. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $\varepsilon$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
 
 **Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$|V| = n$$. The energy of the pair $(U,W)$ is defined by  
 
