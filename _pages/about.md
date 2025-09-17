@@ -93,7 +93,7 @@ I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upen
 <br>
 <br>
 
-<div class="cv" style="width: 85%; margin: 0 auto;">
+<div class="cv" style="width: 100%; margin: 0 auto;">
   {% for entry in site.data.cv %}
     {% if entry.title == "Education" or entry.title == "Teaching" %}
       <a class="anchor" id="{{ entry.title }}"></a>

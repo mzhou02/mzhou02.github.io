@@ -29,7 +29,7 @@ $$d(A,B) := \frac{e(A,B)}{\vert A\vert \,\vert B\vert },$$
 
 where $$e(A,B)$$ is the number of edges with one endpoint in $$$A$$ and one in $$B$$.
 
-Now, how should we define what it means for the edges between two vertex sets to look random? A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly.  To capture this, we require that no large subset of either side reveals a very different density of edges than the whole pair.  
+Now, how should we define what it means for the edges between two vertex sets to look random? A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly.  To capture this, we require that no **large** subset of either side reveals a very different density of edges than the whole pair.  
 
 **$$\varepsilon$$-regular pair.** Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$\vert X\vert  \geq \varepsilon \vert A\vert $$ and $$\vert Y\vert  \geq \varepsilon \vert B\vert $$$, one has  
 
@@ -39,15 +39,13 @@ In other words, the density between $$A$$ and $$B$$ is essentially uniform acros
 
 We now define what it means for a partition to be random-like.
 
-**$$\varepsilon$$-regular partition.** For $$\varepsilon > 0$$, a partition of the vertex set  
+**$$\varepsilon$$-regular partition.** A partition of $$V$$ into $$k$$ classes  
 
-$$V = V_0 \cup V_1 \cup \cdots \cup V_k$$
+$$\mathcal{P} = \{ V_1, V_2, \ldots, V_k \}$$  
 
-is called an $$\varepsilon$$-regular partition if:  
+is called an $$\varepsilon$$-regular partition if  
 
-1. $$\vert V_0\vert  \leq \varepsilon \vert V\vert $$ (an exceptional set of negligible size) 
-2. $$\vert V_1\vert  = \vert V_2\vert  = \cdots = \vert V_k\vert $$ (the non-exceptional classes are balanced)
-3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
+$$\sum_{\substack{(V_i,V_j) \ \text{not } \varepsilon\text{-regular}}} |V_i|\,|V_j| \;\;\leq\;\; \varepsilon \, |V|^2.$$
 
 <figure style="max-width: 90%; margin: 0; text-align: center;">
   <img src="/assets/img/epsilon_regular_partition.png" 
@@ -55,18 +53,10 @@ is called an $$\varepsilon$$-regular partition if:
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </figure>
 
-Having defined $$\varepsilon$$-regular partitions, a natural question arises: how many parts must we allow in order to guarantee that such a partition exists?  Remarkably, Szemerédi proved that the number of parts required depends not on the size of the graph, but only $$\varepsilon$$ (and a chosen lower bound for the number of parts).
-This Ramsey-like phenomenon is the content of the Regularity Lemma.  
+Having defined $$\varepsilon$$-regular partitions, a natural question arises: how many parts must we allow in order to guarantee that such a partition exists?  Remarkably, Szemerédi proved that the number of parts required depends not on the size of the graph, but only $$\varepsilon$$ (and a chosen lower bound for the number of parts). This Ramsey-like phenomenon is the content of the Regularity Lemma.  
 
-**Szemerédi’s Regularity Lemma.**  For every $$\varepsilon>0$$ and integer $$m_0 \ge 1$$ there exists $$M=M(\varepsilon,m_0)$$ such that every finite graph $$G=(V,E)$$ admits a partition
-
-$$V \;=\; V_0 \cup V_1 \cup \cdots \cup V_k, \qquad m_0 \le k \le M,$$
-
-with
-
-$$\vert V_0\vert  \le \varepsilon \vert V\vert  \quad\text{and}\quad \vert V_1\vert =\cdots=\vert V_k\vert ,$$
-
-for which all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$, $$1\le i<j\le k$$$, are $$\varepsilon$$-regular.
+**Szemerédi’s Regularity Lemma.**  For every $$\varepsilon > 0$$ and every positive integer $m$, there exists an integer $M = M(\varepsilon, m)$ such that if $G$ is a graph with at least $M$ vertices, then there exists an integer $k$ with $$m \leq k \leq M$$  
+and an $\varepsilon$-regular partition of the vertex set of $G$ into $k$ classes.  
 
 <h3>Proof</h3>
 At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called **energy increment argument**. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $$\varepsilon$$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
