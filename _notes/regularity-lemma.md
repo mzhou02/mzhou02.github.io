@@ -41,8 +41,7 @@ In other words, the density between $$A$$ and $$B$$ is essentially uniform acros
 
 We now define what it means for a partition to be random-like.
 
-**$$\varepsilon$$-regular partition.**  
-For $$\varepsilon > 0$$, a partition of the vertex set  
+**$$\varepsilon$$-regular partition.** For $$\varepsilon > 0$$, a partition of the vertex set  
 
 $$V = V_0 \cup V_1 \cup \cdots \cup V_k$$
 
@@ -57,8 +56,7 @@ how many parts must we allow in order to guarantee that such a partition exists?
 Remarkably, Szemerédi proved that the number of parts required depends not on the size of the graph, but only $\varepsilon$ (and a chosen lower bound for the number of parts).
 This Ramsey-like phenomenon is the content of the Regularity Lemma.  
 
-**Szemerédi’s Regularity Lemma.**  
-For every $$\varepsilon>0$$ and integer $$m_0 \ge 1$$ there exists $$M=M(\varepsilon,m_0)$$ such that every finite graph $$G=(V,E)$$ admits a partition
+**Szemerédi’s Regularity Lemma.**  For every $$\varepsilon>0$$ and integer $$m_0 \ge 1$$ there exists $$M=M(\varepsilon,m_0)$$ such that every finite graph $$G=(V,E)$$ admits a partition
 
 $$V \;=\; V_0 \cup V_1 \cup \cdots \cup V_k, \qquad m_0 \le k \le M,$$
 
@@ -76,9 +74,7 @@ If a partition is not yet $\varepsilon$-regular, then one can refine it in such 
 Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition.  
 The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
 
-**Definition (Energy of a pair).**  
-Let $$U, W \subseteq V$$ with $$|V| = n$$.  
-The energy of the pair $(U,W)$ is defined by  
+**Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$|V| = n$$. The energy of the pair $(U,W)$ is defined by  
 
 $$q(U,W) := \frac{|U|\,|W|}{n^{2}} \, d(U,W)^{2}.$$
 
