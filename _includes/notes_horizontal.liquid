@@ -1,27 +1,27 @@
 <div class="col-md-6 mb-3">
   <div class="card hoverable">
-    {% if program.img %}
+    {% if note.img %}
       {%
         include figure.liquid
         loading="eager"
-        path=program.img
+        path=note.img
         sizes = "250px"
-        alt="program thumbnail"
+        alt="note thumbnail"
       %}
     {% endif %}
     <div class="card-body">
-      <h2 class="card-title text-lowercase">{{ program.title }}</h2>
-      <p class="card-text">{{ program.description }}</p>
+      <h2 class="card-title text-lowercase">{{ note.title }}</h2>
+      <p class="card-text">{{ note.description }}</p>
       <div class="row ml-1 mr-1 p-0">
-        {% if program.github %}
+        {% if note.github %}
           <div class="github-icon">
             <div class="icon" data-toggle="tooltip" title="Code Repository">
-              <a href="{{ program.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
+              <a href="{{ note.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
             </div>
-            {% if program.github_stars %}
+            {% if note.github_stars %}
               <span class="stars" data-toggle="tooltip" title="GitHub Stars">
                 <i class="fa-solid fa-star"></i>
-                <span id="{{ program.github_stars }}-stars"></span>
+                <span id="{{ note.github_stars }}-stars"></span>
               </span>
             {% endif %}
           </div>
