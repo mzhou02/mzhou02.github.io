@@ -8,7 +8,7 @@ keywords: Mike Zhou, UPenn, University of Pennsylvania, Computer Science, Mathem
 
 profile:
   align: right
-  image: headshot_website.jpg
+  image: headshot.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
 
