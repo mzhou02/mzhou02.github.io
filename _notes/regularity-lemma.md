@@ -9,7 +9,7 @@ mathjax: true
 ---
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer ||  [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
@@ -25,15 +25,15 @@ The Regularity Lemma asserts that this can always be done: every large graph can
 **Edge density.** Let $$G=(V,E)$$ be a graph and let $$A,B \subseteq V$$ be disjoint nonempty sets.  
 The *edge density* between $$A$$ and $$B$$ is defined as  
 
-$$d(A,B) := \frac{e(A,B)}{|A|\,|B|},$$  
+$$d(A,B) := \frac{e(A,B)}{\vert A\vert \,\vert B\vert },$$  
 
 where $$e(A,B)$$ is the number of edges with one endpoint in $$$A$$ and one in $$B$$.
 
 Now, how should we define what it means for the edges between two vertex sets to look random? A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly.  To capture this, we require that no large subset of either side reveals a very different density of edges than the whole pair.  
 
-**$$\varepsilon$$-regular pair.** Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$|X| \geq \varepsilon |A|$$ and $$|Y| \geq \varepsilon |B|$$$, one has  
+**$$\varepsilon$$-regular pair.** Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$\vert X\vert  \geq \varepsilon \vert A\vert $$ and $$\vert Y\vert  \geq \varepsilon \vert B\vert $$$, one has  
 
-$$\bigl|\, d(X,Y) - d(A,B) \,\bigr| \leq \varepsilon.$$
+$$\bigl\vert \, d(X,Y) - d(A,B) \,\bigr\vert  \leq \varepsilon.$$
 
 In other words, the density between $$A$$ and $$B$$ is essentially uniform across all large enough sub-pairs.
 
@@ -64,7 +64,7 @@ $$V \;=\; V_0 \cup V_1 \cup \cdots \cup V_k, \qquad m_0 \le k \le M,$$
 
 with
 
-$$|V_0| \le \varepsilon |V| \quad\text{and}\quad |V_1|=\cdots=|V_k|,$$
+$$\vert V_0\vert  \le \varepsilon \vert V\vert  \quad\text{and}\quad \vert V_1\vert =\cdots=\vert V_k\vert ,$$
 
 for which all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$, $$1\le i<j\le k$$$, are $$\varepsilon$$-regular.
 
@@ -73,7 +73,7 @@ At first sight, the Regularity Lemma looks like a forbiddingly difficult stateme
 
 **Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$\vert V\vert  = n$$. The energy of the pair $$(U,W)$$ is defined by  
 
-$$q(U,W) := \frac{|U|\,|W|}{n^{2}} \, d(U,W)^{2}.$$
+$$q(U,W) := \frac{\vert U\vert \,\vert W\vert }{n^{2}} \, d(U,W)^{2}.$$
 
 For partitions  $$\mathcal{P}_U = \{ U_1, \ldots, U_k \}$$ of $$U$$ and $$\mathcal{P}_W = \{ W_1, \ldots, W_\ell \}$$ of $$W$$, we define the energy to be the sum of the energies between each pair of parts:  
 
@@ -83,10 +83,10 @@ Finally, for a partition  $$\mathcal{P} = \{ V_1, \ldots, V_k \}$$ of $$V$$, def
 
 Specifically,  
 
-$$q(\mathcal{P}) = \sum_{i=1}^{k} \sum_{j=1}^{k} q(V_i, V_j) = \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{|V_i|\,|V_j|}{n^{2}} \, d(V_i, V_j)^{2}.$$
+$$q(\mathcal{P}) = \sum_{i=1}^{k} \sum_{j=1}^{k} q(V_i, V_j) = \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{\vert V_i\vert \,\vert V_j\vert }{n^{2}} \, d(V_i, V_j)^{2}.$$
 
 Note that energy is always between $$0$$ and $$1$$, since edge density is at most $1$:  
 
-$$q(\mathcal{P}) = \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{|V_i|\,|V_j|}{n^{2}} \, d(V_i, V_j)^{2} \;\;\leq\;\; \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{|V_i|\,|V_j|}{n^{2}} = 1.$$
+$$q(\mathcal{P}) = \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{\vert V_i\vert \,\vert V_j\vert }{n^{2}} \, d(V_i, V_j)^{2} \;\;\leq\;\; \sum_{i=1}^{k} \sum_{j=1}^{k} \frac{\vert V_i\vert \,\vert V_j\vert }{n^{2}} = 1.$$
 
 To be continued.
