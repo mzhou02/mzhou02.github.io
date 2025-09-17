@@ -4,7 +4,7 @@
     - name: Name
       value: Mike Zhou
     - name: Languages
-      value: English, Chinese, French
+      value: English, Chinese, French, Japanese (N5)
 
 - title: Education
   type: time_table
@@ -29,5 +29,5 @@
       year: 2022 - 2024
       description:
         - CIS 5020 - Algorithms (Summer 2024)
-        - STAT 4300 - Probability (Spring 2023 )
+        - STAT 4300 - Probability (Spring 2023)
         - CIS 1600 - Discrete Mathematics (Fall 2022)
