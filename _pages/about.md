@@ -92,4 +92,4 @@ I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upen
 
 My research interests primarily focus on architectures and methods that enable AI systems to reason more effectively. I’m  interested in approaches that reimagine how models structure and manipulate information—such as architectures inspired by latent reasoning spaces—and in reinforcement learning as a tool for shaping adaptive, generalizable behaviors. Alongside this, I study reinforcement learning as a way to guide models toward more adaptive and generalizable behaviors.
 
-<a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
+<a href='/about'>Click here</a> to learn more about me, or check out <a href='/projects'>my projects</a> and <a href='/notes'>my notes</a> here.

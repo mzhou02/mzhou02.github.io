@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A collection of projects and research work I have completed.
+description: A collection of software projects and programs I have developed.
 nav: true
 nav_order: 3
-display_categories: [reinforcement learning, nlp, algebra, combinatorics]
+display_categories: [graphics, games, applications, machine learning]
 horizontal: false
 ---
 <!-- Google tag (gtag.js) -->

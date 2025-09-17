@@ -167,10 +167,10 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
+  notes:
     output: true
     permalink: /notes/:path/
-  programs:
+  projects:
     output: true
     permalink: /projects/:path/
 
