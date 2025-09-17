@@ -55,14 +55,14 @@ $$r = 0.b_1 b_2 b_3 \dots$$
 
 By construction, $$ r $$ differs from each $$ r_i $$ in at least the $$ i$$-th decimal place. Therefore, $$ r$$ is not in the list, contradicting our assumption that all real numbers in $$ (0,1) $$ were listed.
 
-From this result, we can make a clear observation. While the rational and algebraic numbers are scattered densely across the real line, they form only a countable skeleton. The transcendental numbers, in contrast, fill in the uncountable “gaps” between them, making up almost all of the real number continuum. In essence, because transcendental numbers fill in these gaps between rationals, they can reveal themselves through how well they can be approximated by rationals. Roughly speaking, an irrational numebr that can be approximated by rationals better than any other number must be transcendental.
+From this result, we can make a clear observation. While the rational and algebraic numbers are scattered densely across the real line, they form only a countable skeleton. The transcendental numbers, in contrast, fill in the uncountable “gaps” between them, making up almost all of the real number continuum. In essence, because transcendental numbers fill in these gaps between rationals, they can reveal themselves through how well they can be approximated by rationals. Roughly speaking, an irrational number that can be approximated by rationals better than any other number must be transcendental.
 
 <h3>Liouville's Insight and Transcendental Numbers</h3>
 Though predating Cantor, Liouville’s crucial insight, dating back to 1844, was exactly this: to understand just how well irrational algebraic numbers can be approximated by rationals—and how that imposes deep structural limitations. To demonstrate this, he constructed what is now known as the <b>Liouville constant</b>:
 
 $$L = \sum_{n=1}^{\infty} \frac{1}{10^{n!}} = 0.110001000000000000000001000\ldots$$
 
-This number is famous not only for its curious decimal expansion, but also for being the first number proved to be **transcendental**—that is, not the root of any non-zero polynomial with integer coefficients.
+Now you might ask: what does it mean for a number to be “better” approximated by a rational? After all, every real number admits rational approximations. The usual intention is to compare the denominator of the approximating fraction with the size of the error. An approximation is unusually good if the number can be matched by a rational whose denominator is small relative to the error term.
 
 Let’s begin with the key result:
 
