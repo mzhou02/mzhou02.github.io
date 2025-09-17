@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description:
+title: programs
+permalink: /programs/
+description: A collection of programs and software projects I have developed.
 nav: true
-nav_order: 3
-display_categories: [graphics]
+nav_order: 4
+display_categories: [graphics, games, applications]
 horizontal: false
 ---
 <!-- Google tag (gtag.js) -->
@@ -18,29 +18,29 @@ horizontal: false
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-<!-- pages/projects.md -->
+<!-- pages/programs.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
+  <!-- Display categorized programs -->
   {% for category in page.display_categories %}
   <a id="{{ category }}" href=".#{{ category }}">
     <h2 class="category">{{ category }}</h2>
   </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
+  {% assign categorized_programs = site.programs | where: "category", category %}
+  {% assign sorted_programs = categorized_programs | sort: "importance" %}
+  <!-- Generate cards for each program -->
   {% if page.horizontal %}
   <div class="container">
     <div class="row row-cols-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
+    {% for program in sorted_programs %}
+      {% include programs_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="grid">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
+    {% for program in sorted_programs %}
+      {% include programs.liquid %}
     {% endfor %}
   </div>
   {% endif %}
@@ -48,29 +48,27 @@ horizontal: false
 
 {% else %}
 
-<!-- Display projects without categories -->
+<!-- Display programs without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+{% assign sorted_programs = site.programs | sort: "importance" %}
 
-  <!-- Generate cards for each project -->
+  <!-- Generate cards for each program -->
 
 {% if page.horizontal %}
 
   <div class="container">
     <div class="row row-cols-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
+    {% for program in sorted_programs %}
+      {% include programs_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="grid">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
+    {% for program in sorted_programs %}
+      {% include programs.liquid %}
     {% endfor %}
   </div>
   {% endif %}
 {% endif %}
 </div>
-
-<a href='/projects/mini-minecraft'>Mini Minecraft</a>

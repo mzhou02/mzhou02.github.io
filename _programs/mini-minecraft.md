@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Mini Minecraft
-description:
-img: 
+description: A Minecraft-inspired game developed using C++ and OpenGL with voxel-based worlds, physics engine, and procedural generation.
+img: mini-minecraft.png
 importance: 1
 category: graphics
 mathjax: true
