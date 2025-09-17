@@ -122,7 +122,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: the starter # blog_name will be displayed in your blog page
-blog_description: like any starter, each post is a living mixture — bubbling, rising, feeding what comes next
+blog_description: like any sourdough starter, each post is a living mixture — bubbling, rising, feeding what comes next
 permalink: /blog/:year/:title/
 
 # Pagination
