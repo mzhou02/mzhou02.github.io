@@ -122,7 +122,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Blog # blog_name will be displayed in your blog page
-blog_description: My thoughful spot
+blog_description: My thoughtful spot
 permalink: /blog/:year/:title/
 
 # Pagination
