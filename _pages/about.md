@@ -40,6 +40,6 @@ My name is Mike Zhou and I am currently a fourth year undergraduate studying com
 
 I am currently an undergraduate researcher at <a href='https://cogcomp.seas.upenn.edu/'>Penn's Cognitive Computation Group</a>, where I am working with Professor Dan Roth on various aspects of machine translation and language model reasoning. Before that, I worked on the learnability of n-gram models at <a href='https://rycolab.io/'>Rycolab</a>.
 
-Within NLP, I am interested in language model reasoning. I am interested in where models parametrically store their knowledge, and why some prompts (like CoT and self consistency) elicit reasoning better than others. On my free time, I also like to think about problems related to arithmetic combinatorics and graph theory.
+My research interests primarily focus on architectures and methods that enable AI systems to reason more effectively. I’m  interested in approaches that reimagine how models structure and manipulate information—such as architectures inspired by latent reasoning spaces—and in reinforcement learning as a tool for shaping adaptive, generalizable behaviors. Alongside this, I study reinforcement learning as a way to guide models toward more adaptive and generalizable behaviors.
 
 <a href='/about'>Click here</a> to learn more about me, or check out <a href='/notes'>my notes</a> here.
