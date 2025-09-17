@@ -4,8 +4,8 @@ title: projects
 permalink: /projects/
 description: 
 nav: true
-nav_order: 3
-display_categories: [graphics, games, applications, machine learning]
+nav_order: 4
+display_categories: [machine learning, graphics]
 horizontal: false
 ---
 <!-- Google tag (gtag.js) -->

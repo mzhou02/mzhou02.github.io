@@ -4,7 +4,7 @@ title: notes
 permalink: /notes/
 description: A collection of notes and research work I have completed.
 nav: true
-nav_order: 4
+nav_order: 3
 display_categories: [reinforcement learning, nlp, algebra, combinatorics]
 horizontal: false
 ---
