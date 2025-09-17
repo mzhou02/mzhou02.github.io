@@ -48,7 +48,7 @@ $$V = V_0 \cup V_1 \cup \cdots \cup V_k$$
 is called an $$\varepsilon$$-regular partition if:  
 
 1. $$|V_0| \leq \varepsilon |V|$$ (an exceptional set of negligible size) 
-2. $$|V_1| = |V_2| = \cdots = |V_k|$$ ((the non-exceptional classes are balanced))  
+2. $$|V_1| = |V_2| = \cdots = |V_k|$$ (the non-exceptional classes are balanced)
 3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
 
 Having defined $$\varepsilon$$-regular partitions, a natural question arises:  
