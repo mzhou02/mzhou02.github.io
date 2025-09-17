@@ -45,8 +45,8 @@ $$V = V_0 \cup V_1 \cup \cdots \cup V_k$$
 
 is called an $$\varepsilon$$-regular partition if:  
 
-1. $$\#V_0\# \leq \varepsilon \#V\#$$ (an exceptional set of negligible size) 
-2. $$\#V_1\# = \#V_2\# = \cdots = \#V_k\#$$ (the non-exceptional classes are balanced)
+1. $$\vert V_0\vert  \leq \varepsilon \vert V\vert $$ (an exceptional set of negligible size) 
+2. $$\vert V_1\vert  = \vert V_2\vert  = \cdots = \vert V_k\vert $$ (the non-exceptional classes are balanced)
 3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
 
 <figure style="max-width: 50%; margin: 0;">
@@ -71,7 +71,7 @@ for which all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$, $$1\le
 <h3>Proof</h3>
 At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called **energy** increment argument*. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $$\varepsilon$$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
 
-**Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$\#V\# = n$$. The energy of the pair $$(U,W)$$ is defined by  
+**Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$\vert V\vert  = n$$. The energy of the pair $$(U,W)$$ is defined by  
 
 $$q(U,W) := \frac{|U|\,|W|}{n^{2}} \, d(U,W)^{2}.$$
 
