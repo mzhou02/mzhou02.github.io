@@ -16,45 +16,40 @@ mathjax: true
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-One of the guiding principles in extremal combinatorics is that large, complicated objects often admit useful approximate descriptions. 
-For graphs, a natural approach is to partition the vertex set into a moderate number of pieces and ask whether the edge distribution between these pieces has some uniformity. 
+One of the guiding principles in extremal combinatorics is that large, complicated objects often admit useful approximate descriptions. For graphs, a natural approach is to partition the vertex set into a moderate number of pieces and ask whether the edge distribution between these pieces has some uniformity. 
 
-The Regularity Lemma asserts that this can always be done: every large graph can be approximated, at a coarse scale, by a partition in which almost all pairs of vertex classes behave in a pseudorandom fashion. 
-That is, the edge density between two classes is essentially stable, in the sense that it does not fluctuate significantly when one restricts to large subsets. 
-This allows one to replace the original graph by a simpler ``reduced graph'' on the partition classes, losing only a small amount of information. 
+The Regularity Lemma asserts that this can always be done: every large graph can be approximated, at a coarse scale, by a partition in which almost all pairs of vertex classes behave in a pseudorandom fashion. That is, the edge density between two classes is essentially stable, in the sense that it does not fluctuate significantly when one restricts to large subsets. This allows one to replace the original graph by a simpler ``reduced graph'' on the partition classes, losing only a small amount of information. 
 
 <h3>Basic Definitions</h3>
 
 **Edge density.**  
-Let $G=(V,E)$ be a graph and let $$A,B \subseteq V$$ be disjoint nonempty sets.  
+Let $$G=(V,E)$$ be a graph and let $$A,B \subseteq V$$ be disjoint nonempty sets.  
 The *edge density* between $$A$$ and $$B$$ is defined as  
 
 $$d(A,B) := \frac{e(A,B)}{|A|\,|B|},$$  
 
-where $e(A,B)$ is the number of edges with one endpoint in $A$ and one in $B$.
+where $$e(A,B)$$ is the number of edges with one endpoint in $$$A$$ and one in $$B$$.
 
-Now, how should we define what it means for the edges between two vertex sets to look random?  
-A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly.  
-To capture this, we require that no large subset of either side reveals a very different density of edges than the whole pair.  
+Now, how should we define what it means for the edges between two vertex sets to look random? A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly.  To capture this, we require that no large subset of either side reveals a very different density of edges than the whole pair.  
 
-**$\varepsilon$-regular pair.**  
+**$$\varepsilon$$-regular pair.**  
 Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$|X| \geq \varepsilon |A|$$ and $$|Y| \geq \varepsilon |B|$$$, one has  
 
 $$\bigl|\, d(X,Y) - d(A,B) \,\bigr| \leq \varepsilon.$$
 
-In other words, the density between $A$ and $B$ is essentially uniform across all large enough sub-pairs.
+In other words, the density between $$A$$ and $$B$$ is essentially uniform across all large enough sub-pairs.
 
 We now define what it means for a partition to be random-like.
 
-**$\varepsilon$-regular partition.**  
+**$$\varepsilon$$-regular partition.**  
 For $$\varepsilon > 0$$, a partition of the vertex set  
 
 $$V = V_0 \cup V_1 \cup \cdots \cup V_k$$
 
-is called an $\varepsilon$-regular partition if:  
+is called an $$\varepsilon$$-regular partition if:  
 
-1. $$|V_0| \leq \varepsilon |V| \quad\text{(an exceptional set of negligible size)},$$  
-2. $$|V_1| = |V_2| = \cdots = |V_k| \quad\text{(the non-exceptional classes are balanced)},$$  
+1. $$|V_0| \leq \varepsilon |V|$$ (an exceptional set of negligible size) 
+2. $$|V_1| = |V_2| = \cdots = |V_k|$$ ((the non-exceptional classes are balanced))  
 3. all but at most $$\varepsilon k^2$$ of the pairs $$(V_i,V_j)$$ with $$1 \leq i < j \leq k$$ are $$\varepsilon$$-regular.  
 
 Having defined $$\varepsilon$$-regular partitions, a natural question arises:  
