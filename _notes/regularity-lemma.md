@@ -75,6 +75,7 @@ We now define what it means for a partition to be random-like.
 
 We have previously mentioned how every graph has a partition in which almost all pairs of vertex classes behave in a pseudorandom fashion. Having introduced the notion of an $\varepsilon$-regular partition, one might naturally ask how large the partition must be, as a function of the graph size and $\varepsilon$. One of the most striking and beautiful features of combinatorics is that the answer depends only on $\varepsilon$, and is in fact **independent** of the size of the graph. This Ramsey-like phenomenon is the content of Szemerédi’s Regularity Lemma.
 
+<br>
 <div class="card mt-3 p-3">
   <h3 class="card-title font-weight-medium">Szemerédi's Regularity Lemma</h3>
   <div class="card-text">
