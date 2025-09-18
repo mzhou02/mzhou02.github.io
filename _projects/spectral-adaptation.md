@@ -15,7 +15,7 @@ Full implementation available at: [https://github.com/mzhou02/Spectral-Adaptatio
 
 This project implements a vanilla transformer architecture with efficient fine-tuning capabilities using Singular Value Decomposition (SVD). The approach enables parameter-efficient adaptation of large language models to new domains while preserving the structure of pretrained weights.
 
-## Key Innovation: SVD Fine-Tuning
+## Fine-Tuning Approach
 
 Given a weight matrix $$W \in \mathbb{R}^{m \times n}$$, SVD factorizes it as:
 
@@ -24,8 +24,6 @@ $$ W = U \Sigma V^\top $$
 where:
 - $$U \in \mathbb{R}^{m \times r}$$ and $$V \in \mathbb{R}^{n \times r}$$ are (semi-)orthogonal matrices
 - $$\Sigma = \mathrm{diag}(\sigma_1, \sigma_2, \dots, \sigma_r)$$ is the diagonal matrix of singular values
-
-### Fine-Tuning Approach
 
 Instead of updating the entire weight matrix, we:
 1. **Freeze** $$U$$ and $$V$$ matrices
