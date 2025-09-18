@@ -73,7 +73,7 @@ We now define what it means for a partition to be random-like.
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </figure>
 
-We have previously mentioned how every graph has a partition in which almost all pairs of vertex classes behave in a pseudorandom fashion. Having introduced the notion of an $\varepsilon$-regular partition, one might naturally ask how large the partition must be, as a function of the graph size and $\varepsilon$. One of the most striking and beautiful features of combinatorics is that the answer depends only on $\varepsilon$, and is in fact **independent** of the size of the graph. This Ramsey-like phenomenon is the content of Szemerédi’s Regularity Lemma.
+We have previously mentioned how every graph has a partition in which almost all pairs of vertex classes behave in a pseudorandom fashion. Having introduced the notion of an $$\varepsilon$$-regular partition, one might naturally ask how large the partition must be, as a function of the graph size and $$\varepsilon$$. One of the most striking and beautiful features of combinatorics is that the answer depends only on $$\varepsilon$$, and is in fact **independent** of the size of the graph. This Ramsey-like phenomenon is the content of Szemerédi’s Regularity Lemma.
 
 <br>
 <div class="card mt-3 p-3">
@@ -85,7 +85,7 @@ We have previously mentioned how every graph has a partition in which almost all
 <br>
 
 <h3>Proof</h3>
-At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called **energy increment argument**. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $$\varepsilon$$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
+At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called **energy increment argument**. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $$\varepsilon$$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $$\varepsilon$$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
 
 **Definition (Energy of a pair).**  Let $$U, W \subseteq V$$ with $$\vert V\vert  = n$$. The energy of the pair $$(U,W)$$ is defined by  
 
