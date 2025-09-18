@@ -30,40 +30,42 @@ Now, how should we define what it means for the edges between two vertex sets to
   <div class="card mt-3 p-3">
     <h3 class="card-title font-weight-medium">Edge Density</h3>
     <div class="card-text">
-      <p>Let $G=(V,E)$ be a graph and let $A,B \subseteq V$ be disjoint nonempty sets. The <em>edge density</em> between $A$ and $B$ is defined as</p>
+      <p>Let \(G=(V,E)\) be a graph and let \(A,B \subseteq V\) be disjoint nonempty sets. The <em>edge density</em> between \(A\) and \(B\) is defined as</p>
       
       <p>$$d(A,B) := \frac{e(A,B)}{\vert A\vert \,\vert B\vert },$$</p>
       
-      <p>where $e(A,B)$ is the number of edges with one endpoint in $A$ and one in $B$.</p>
+      <p>where \(e(A,B)\) is the number of edges with one endpoint in \(A\) and one in \(B\).</p>
     </div>
   </div>
   
   <div class="card mt-3 p-3">
-    <h3 class="card-title font-weight-medium">$\varepsilon$-Regular Pair</h3>
+    <h3 class="card-title font-weight-medium">\(\varepsilon\)-Regular Pair</h3>
     <div class="card-text">
-      <p>Given $\varepsilon > 0$, a pair $(A,B)$ of disjoint vertex sets is said to be $\varepsilon$-regular if for all subsets $X \subseteq A$ and $Y \subseteq B$ with $\vert X\vert \geq \varepsilon \vert A\vert$ and $\vert Y\vert \geq \varepsilon \vert B\vert$, one has</p>
+      <p>Given \(\varepsilon > 0\), a pair \((A,B)\) of disjoint vertex sets is said to be \(\varepsilon\)-regular if for all subsets \(X \subseteq A\) and \(Y \subseteq B\) with \(\vert X\vert \geq \varepsilon \vert A\vert\) and \(\vert Y\vert \geq \varepsilon \vert B\vert\), one has</p>
       
       <p>$$\bigl\vert \, d(X,Y) - d(A,B) \,\bigr\vert \leq \varepsilon.$$</p>
       
-      <p>In other words, the density between $A$ and $B$ is essentially uniform across all large enough sub-pairs.</p>
+      <p>In other words, the density between \(A\) and \(B\) is essentially uniform across all large enough sub-pairs.</p>
     </div>
   </div>
 </div>
 
 We now define what it means for a partition to be random-like.
 
+<br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">$\varepsilon$-Regular Partition</h3>
+  <h3 class="card-title font-weight-medium">\(\varepsilon\)-Regular Partition</h3>
   <div class="card-text">
-    <p>A partition of $V$ into $k$ classes</p>
+    <p>A partition of \(V\) into \(k\) classes</p>
     
     <p>$$\mathcal{P} = \{ V_1, V_2, \ldots, V_k \}$$</p>
     
-    <p>is called an $\varepsilon$-regular partition if</p>
+    <p>is called an \(\varepsilon\)-regular partition if</p>
     
     <p>$$\sum_{\substack{(V_i,V_j) \ \text{not } \varepsilon\text{-regular}}} |V_i|\,|V_j| \;\;\leq\;\; \varepsilon \, |V|^2.$$</p>
   </div>
 </div>
+<br>
 
 <figure style="max-width: 90%; margin: 0; text-align: center;">
   <img src="/assets/img/epsilon_regular_partition.png" 
@@ -76,9 +78,10 @@ We have previously mentioned how every graph has a partition in which almost all
 <div class="card mt-3 p-3">
   <h3 class="card-title font-weight-medium">Szemerédi's Regularity Lemma</h3>
   <div class="card-text">
-    <p>For every $\varepsilon > 0$ and every positive integer $m$, there exists an integer $M = M(\varepsilon, m)$ such that if $G$ is a graph with at least $M$ vertices, then there exists an integer $k$ with $m \leq k \leq M$ and an $\varepsilon$-regular partition of the vertex set of $G$ into $k$ classes.</p>
+    <p>For every \(\varepsilon > 0\) and every positive integer \(m\), there exists an integer \(M = M(\varepsilon, m)\) such that if \(G\) is a graph with at least \(M\) vertices, then there exists an integer \(k\) with \(m \leq k \leq M\) and an \(\varepsilon\)-regular partition of the vertex set of \(G\) into \(k\) classes.</p>
   </div>
 </div>  
+<br>
 
 <h3>Proof</h3>
 At first sight, the Regularity Lemma looks like a forbiddingly difficult statement to prove: one has to somehow enforce uniform edge distributions across almost all pairs in a partition of arbitrary size. The key insight is the so-called **energy increment argument**. One defines a simple quantitative measure of how well a partition captures the structure of a graph—often called the *energy* of the partition—by averaging squared edge densities across the pairs. If a partition is not yet $$\varepsilon$$-regular, then one can refine it in such a way that this energy strictly increases by a definite amount. Since the energy is bounded above, this process cannot continue indefinitely, and so after finitely many steps one arrives at an $\varepsilon$-regular partition. The elegance of this method lies in turning what seems an intractable global requirement into the repeated local act of improving a potential function.  
