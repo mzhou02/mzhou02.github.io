@@ -26,17 +26,29 @@ From this point of view, many difficult problems about embedding or counting sub
 
 Now, how should we define what it means for the edges between two vertex sets to look random? We begin by defining what edge density means. A natural way to define randomness between two vertex sets is to ask whether their edges are distributed approximately uniformly. To capture this, we require that no **large** subset of either side reveals a very different density of edges than the whole pair.
 
-**Edge density.** Let $$G=(V,E)$$ be a graph and let $$A,B \subseteq V$$ be disjoint nonempty sets. The *edge density* between $$A$$ and $$B$$ is defined as  
-
-$$d(A,B) := \frac{e(A,B)}{\vert A\vert \,\vert B\vert },$$  
-
-where $$e(A,B)$$ is the number of edges with one endpoint in $$$A$$ and one in $$B$$. 
-
-**$$\varepsilon$$-regular pair.** Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$\vert X\vert  \geq \varepsilon \vert A\vert $$ and $$\vert Y\vert  \geq \varepsilon \vert B\vert $$$, one has  
-
-$$\bigl\vert \, d(X,Y) - d(A,B) \,\bigr\vert  \leq \varepsilon.$$
-
-In other words, the density between $$A$$ and $$B$$ is essentially uniform across all large enough sub-pairs.
+<div class="cv">
+  <div class="card mt-3 p-3">
+    <h3 class="card-title font-weight-medium">Edge Density</h3>
+    <div class="card-text">
+      <p>Let $$G=(V,E)$$ be a graph and let $$A,B \subseteq V$$ be disjoint nonempty sets. The <em>edge density</em> between $$A$$ and $$B$$ is defined as</p>
+      
+      <p>$$d(A,B) := \frac{e(A,B)}{\vert A\vert \,\vert B\vert },$$</p>
+      
+      <p>where $$e(A,B)$$ is the number of edges with one endpoint in $$A$$ and one in $$B$$.</p>
+    </div>
+  </div>
+  
+  <div class="card mt-3 p-3">
+    <h3 class="card-title font-weight-medium">$$\varepsilon$$-Regular Pair</h3>
+    <div class="card-text">
+      <p>Given $$\varepsilon > 0$$, a pair $$(A,B)$$ of disjoint vertex sets is said to be $$\varepsilon$$-regular if for all subsets $$X \subseteq A$$ and $$Y \subseteq B$$ with $$\vert X\vert \geq \varepsilon \vert A\vert$$ and $$\vert Y\vert \geq \varepsilon \vert B\vert$$, one has</p>
+      
+      <p>$$\bigl\vert \, d(X,Y) - d(A,B) \,\bigr\vert \leq \varepsilon.$$</p>
+      
+      <p>In other words, the density between $$A$$ and $$B$$ is essentially uniform across all large enough sub-pairs.</p>
+    </div>
+  </div>
+</div>
 
 We now define what it means for a partition to be random-like.
 
