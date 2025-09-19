@@ -3,7 +3,7 @@ layout: page
 title: Szemerédi's Regularity Lemma
 description: 
 img: 
-importance: 1
+importance: 2
 category: combinatorics
 mathjax: true
 ---
