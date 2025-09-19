@@ -18,10 +18,25 @@ mathjax: true
 
 One of the striking lessons of Ramsey theory is that complete disorder is impossible. No matter how chaotically one arranges a large enough structure, pockets of order must inevitably emerge. This principle—sometimes summarized as “absolute chaos is unattainable”—turns out to be both simple to state and profound in consequence.
 
-The origins trace back to Frank Ramsey’s 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
+The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
+
+<div class="cv">
+  <div class="card mt-3 p-3">
+    <h3 class="card-title font-weight-medium">Contents</h3>
+    <div class="card-text">
+      <ol style="margin: 0; padding-left: 1.5rem;">
+        <li><a href="#the-party-problem">The Party Problem</a></li>
+        <li><a href="#ramsey-numbers">Ramsey Numbers</a></li>
+        <li><a href="#ramsey-numbers-for-hypergraphs">Ramsey Numbers for Hypergraphs</a></li>
+        <li><a href="#points-in-convex-position">Points in Convex Position</a></li>
+        <li><a href="#fermats-last-theorem-over-finite-fields">Fermat's Last Theorem Over Finite Fields</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
 
 <br>
-<h3>The Party Problem</h3>
+<h3 id="the-party-problem">The Party Problem</h3>
 
 A canonical entry point is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
 
@@ -38,7 +53,7 @@ $$R(3,3) = 6,$$
 the first nontrivial **Ramsey number**.  
 
 <br>
-<h3>Ramsey Numbers</h3>
+<h3 id="ramsey-numbers">Ramsey Numbers</h3>
 
 This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $$R(k,\ell)$$ is defined to be the smallest integer $$n$$ such that every graph on $$n$$ vertices contains either a clique of size $$k$$ or an independent set of size $$\ell$$.  
 
@@ -46,7 +61,7 @@ Equivalently, one may phrase the problem in terms of edge-colorings: consider a 
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 1</h5>
+  <h6 class="card-title font-weight-medium">Theorem 1</h6>
   <div class="card-text">
     Ramsey numbers exist, ie. \(R(k, \ell)\) is finite for all positive integers \(k\) and \(\ell\).
   </div>
@@ -75,7 +90,7 @@ More specifically, we get the following bound:
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Exercise 1</h5>
+  <h6 class="card-title font-weight-medium">Exercise 1</h6>
   <div class="card-text">
     Prove that $$R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$$
   </div>
@@ -86,7 +101,7 @@ Meaning that the diagonal Ramsey numbers, $$R(k, k)$$, are bounded by the centra
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Recent Breakthrough</h5>
+  <h6 class="card-title font-weight-medium">Recent Breakthrough</h6>
   <div class="card-text">
     Last year, a breakthrough was made for Ramsey numbers, showing with elementary methods that \(R(k, k) < 3.999^k\) for large \(k\). Though seemingly minimal, it was the first exponential base saving in 90 years.
   </div>
@@ -97,9 +112,9 @@ One can also consider edge-colorings with more than two colors. In this setting,
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 2</h5>
+  <h6 class="card-title font-weight-medium">Theorem 2</h6>
   <div class="card-text">
-    Ramsey numbers for more than 2 colors exist, ie. $$R(k_1, k_2, ..., k_n)$$, for some integer \(n\), is finite for all positive integers \(k_n\).
+    Ramsey numbers for more than 2 colors exist, ie. $$R(k_1, k_2, ..., k_n),$$ for some integer \(n\), is finite for all positive integers \(k_n\).
   </div>
 </div>
 <br>
@@ -117,7 +132,7 @@ $$R(k_1,k_2,\dots,k_n) \leq R(R(k_1,k_2), k_3, \dots, k_n),$$
 which proves finiteness in the $$n$$-color case.
 
 <br>
-<h3>Ramsey Numbers for Hypergraphs</h3>
+<h3 id="ramsey-numbers-for-hypergraphs">Ramsey Numbers for Hypergraphs</h3>
 
 The notion of Ramsey numbers extends naturally from graphs to hypergraphs, where edges are arbitrary subsets of vertices rather than just pairs. For integers \(i \geq 2\), the \emph{hypergraph Ramsey number} \(R^{(i)}(k,\ell)\) is defined to be the smallest \(N\) such that, whenever all \(i\)-element subsets of \(\{1,2,\dots,N\}\) are colored red or blue, one of the following occurs:
 
@@ -129,7 +144,7 @@ Equivalently, we are coloring the \(i\)-edges of the complete \(i\)-uniform hype
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 3</h5>
+  <h6 class="card-title font-weight-medium">Theorem 3</h6>
   <div class="card-text">
     For integers \(s,t \geq 2\),  
 
@@ -169,12 +184,12 @@ Similarly, let \(T \subset Y\) be this blue clique. By definition of \(c'\), eve
 In both cases, we obtain the desired red \(s\)-set or blue \(t\)-set in \(X\). This completes the proof. \(\square\)
 
 <br>
-<h3>Points in Convex Position</h3>
+<h3 id="points-in-convex-position">Points in Convex Position</h3>
 Although Ramsey’s theorem laid the formal groundwork, the broader spirit of what is now called **Ramsey theory** was rediscovered and popularized a few years later by Erdős. A particularly simple but striking application arose from a geometric problem posed by a young mathematician, **Esther Klein**, in 1933. Her question concerned the unavoidable appearance of convex configurations among a small set of points.  
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 4 (Klein, 1933).</h5>
+  <h6 class="card-title font-weight-medium">Theorem 4 (Klein, 1933).</h6>
   <div class="card-text">
     Given 5 points in the plane in general position (no three collinear), there exist four points that form a convex quadrilateral. 
   </div>
@@ -194,7 +209,7 @@ The problem raised by Klein can be extended in a natural way. Erdős asked: for 
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 5 (Erdős–Szekeres, 1935).</h5>
+  <h6 class="card-title font-weight-medium">Theorem 5 (Erdős–Szekeres, 1935).</h6>
   <div class="card-text">
     For every integer \(k \geq 3\), there exists an integer \(N(k)\) such that any set of \(N(k)\) points in the plane in general position contains \(k\) points in convex position.  
   </div>
@@ -219,7 +234,7 @@ Suppose, for contradiction, that these \(k\) points are not in convex position. 
 Thus all \(k\) points lie in convex position, completing the proof. \(\square\)  
 
 <br>
-<h3>Fermat's Last Theorem Over Finite Fields</h3>  
+<h3 id="fermats-last-theorem-over-finite-fields">Fermat's Last Theorem Over Finite Fields</h3>  
 At the turn of the twentieth century, Fermat’s Last Theorem was still a central mystery. A natural idea was to examine the problem modulo a prime \(p\). After all, if there were an integer solution to  
 
 $$x^n + y^n = z^n,$$  
@@ -234,7 +249,7 @@ But this approach fails. Dickson (1909) showed that for large primes \(p\), the 
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 6 (Schur, 1916).</h5>
+  <h6 class="card-title font-weight-medium">Theorem 6 (Schur, 1916).</h6>
   <div class="card-text">
     For every positive integer \(r\), there exists an integer \(N\) such that, no matter how one colors the integers \(\{1,2,\dots,N\}\) with \(r\) colors, there is always a monochromatic solution to  
 
@@ -261,7 +276,7 @@ Schur’s theorem shows that additive relations like \(x+y=z\) cannot be avoided
 
 <br>
 <div class="card mt-3 p-3">
-  <h5 class="card-title font-weight-medium">Theorem 7 (Dickson, 1909).</h5>
+  <h6 class="card-title font-weight-medium">Theorem 7 (Dickson, 1909).</h6>
   <div class="card-text">
     Let \(n \geq 3\). For sufficiently large primes \(p\), the congruence  
 
