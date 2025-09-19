@@ -20,6 +20,7 @@ One of the striking lessons of Ramsey theory is that complete disorder is imposs
 
 The origins trace back to Frank Ramsey’s 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
 
+<br>
 <h3>The Party Problem</h3>
 
 A canonical entry point is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
@@ -36,6 +37,7 @@ $$R(3,3) = 6,$$
 
 the first nontrivial **Ramsey number**.  
 
+<br>
 <h3>Ramsey Numbers</h3>
 
 This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $$R(k,\ell)$$ is defined to be the smallest integer $$n$$ such that every graph on $$n$$ vertices contains either a clique of size $$k$$ or an independent set of size $$\ell$$.  
@@ -44,9 +46,9 @@ Equivalently, one may phrase the problem in terms of edge-colorings: consider a 
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 1</h3>
+  <h5 class="card-title font-weight-medium">Theorem 1</h5>
   <div class="card-text">
-    Ramsey numbers exist, ie. $$R(k, \ell)$$ is finite for all positive integers $k$ and $\ell$.
+    Ramsey numbers exist, ie. \(R(k, \ell)\) is finite for all positive integers \(k\) and \(\ell\).
   </div>
 </div>
 <br>
@@ -67,13 +69,13 @@ In either case, the desired configuration is unavoidable. This establishes the f
 
 $$R(k,\ell) \leq R(k-1,\ell) + R(k,\ell-1),$$  
 
-valid for all $$k,\ell \geq 2$$.
+valid for all $$k,\ell \geq 2$$. \(\square\)
 
 More specifically, we get the following bound:
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Exercise 1</h3>
+  <h5 class="card-title font-weight-medium">Exercise 1</h5>
   <div class="card-text">
     Prove that $$R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$$
   </div>
@@ -84,9 +86,9 @@ Meaning that the diagonal Ramsey numbers, $$R(k, k)$$, are bounded by the centra
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Recent Breakthrough</h3>
+  <h5 class="card-title font-weight-medium">Recent Breakthrough</h5>
   <div class="card-text">
-    Last year, a breakthrough was made for Ramsey numbers, showing with elementary methods that $$R(k, k) < 3.999^k$$ for large $$k$$. Though seemingly minimal, it was the first exponential base saving in 90 years.
+    Last year, a breakthrough was made for Ramsey numbers, showing with elementary methods that \(R(k, k) < 3.999^k\) for large \(k\). Though seemingly minimal, it was the first exponential base saving in 90 years.
   </div>
 </div>
 <br>
@@ -95,20 +97,18 @@ One can also consider edge-colorings with more than two colors. In this setting,
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 2</h3>
+  <h5 class="card-title font-weight-medium">Theorem 2</h5>
   <div class="card-text">
-    Ramsey numbers for more than 2 colors exist, ie. $$R(k_1, k_2, ..., k_n)$$, for some integer $$n$$, is finite for all positive integers $$k_n$$.
+    Ramsey numbers for more than 2 colors exist, ie. $$R(k_1, k_2, ..., k_n)$$, for some integer \(n\), is finite for all positive integers \(k_n\).
   </div>
 </div>
 <br>
 
 We proceed by induction on the number of colors. The base case of two colors has already been established.  
 
-Suppose now that the statement holds for $$n-1$$ colors, and consider an edge-coloring with $$n > 2$$ colors. Merge the first two colors into a single “combined” color, so that we are effectively working with $$n-1$$ colors. By the inductive hypothesis, we know that  
-$$R(R(k_1,k_2), k_3, \dots, k_n)$$  
-is finite.  
+Suppose now that the statement holds for $$n-1$$ colors, and consider an edge-coloring with $$n > 2$$ colors. Merge the first two colors into a single “combined” color, so that we are effectively working with $$n-1$$ colors. By the inductive hypothesis, we know that $$R(R(k_1,k_2), k_3, \dots, k_n)$$ is finite.  
 
-Assume, for contradiction, that no monochromatic clique of size $$k_i$$ appears in color $$i$$ for any $$i \geq 3$$. Then there must exist a clique of size $R(k_1,k_2)$ whose edges are all in the combined color $(1,2)$. When we now distinguish between colors $$1$$ and $$2$$, this clique necessarily contains either a monochromatic $$K_{k_1}$$ in color $$1$$ or a monochromatic $$K_{k_2}$$ in color $$2$$.  
+Assume, for contradiction, that no monochromatic clique of size $$k_i$$ appears in color $$i$$ for any $$i \geq 3$$. Then there must exist a clique of size $R(k_1,k_2)$ whose edges are all in the combined color $(1,2)$. When we now distinguish between colors $$1$$ and $$2$$, this clique necessarily contains either a monochromatic $$K_{k_1}$$ in color $$1$$ or a monochromatic $$K_{k_2}$$ in color $$2$$. \(\square\)
 
 Thus,  
 
@@ -116,6 +116,7 @@ $$R(k_1,k_2,\dots,k_n) \leq R(R(k_1,k_2), k_3, \dots, k_n),$$
 
 which proves finiteness in the $$n$$-color case.
 
+<br>
 <h3>Ramsey Numbers for Hypergraphs</h3>
 
 The notion of Ramsey numbers extends naturally from graphs to hypergraphs, where edges are arbitrary subsets of vertices rather than just pairs. For integers \(i \geq 2\), the \emph{hypergraph Ramsey number} \(R^{(i)}(k,\ell)\) is defined to be the smallest \(N\) such that, whenever all \(i\)-element subsets of \(\{1,2,\dots,N\}\) are colored red or blue, one of the following occurs:
@@ -128,7 +129,7 @@ Equivalently, we are coloring the \(i\)-edges of the complete \(i\)-uniform hype
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 3</h3>
+  <h5 class="card-title font-weight-medium">Theorem 3</h5>
   <div class="card-text">
     For integers \(s,t \geq 2\),  
 
@@ -165,14 +166,15 @@ Similarly, let \(T \subset Y\) be this blue clique. By definition of \(c'\), eve
 - a **red \(s\)-set** inside \(T\), and we are done; or  
 - a **blue \((t-1)\)-set** \(U \subset T\). In the latter case, adjoining \(x\) gives a blue \(t\)-set in \(X\), since all triples in \(U\) are blue, and all triples involving \(x\) and two vertices of \(U\) are also blue.  
 
-In both cases, we obtain the desired red \(s\)-set or blue \(t\)-set in \(X\). This completes the proof. \(\;\Box\)
+In both cases, we obtain the desired red \(s\)-set or blue \(t\)-set in \(X\). This completes the proof. \(\square\)
 
+<br>
 <h3>Points in Convex Position</h3>
 Although Ramsey’s theorem laid the formal groundwork, the broader spirit of what is now called **Ramsey theory** was rediscovered and popularized a few years later by Erdős. A particularly simple but striking application arose from a geometric problem posed by a young mathematician, **Esther Klein**, in 1933. Her question concerned the unavoidable appearance of convex configurations among a small set of points.  
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 4 (Klein, 1933).</h3>
+  <h5 class="card-title font-weight-medium">Theorem 4 (Klein, 1933).</h5>
   <div class="card-text">
     Given 5 points in the plane in general position (no three collinear), there exist four points that form a convex quadrilateral. 
   </div>
@@ -186,13 +188,13 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 
 Draw the line through the two interior points. Since no three points are collinear, at least two of the three hull vertices must lie on the same side of this line. These two vertices, together with the two interior points, necessarily form a convex quadrilateral:  
 
-Thus in any configuration of 5 points in general position, a convex quadrilateral is unavoidable.
+Thus in any configuration of 5 points in general position, a convex quadrilateral is unavoidable. \(\square\)  
 
 The problem raised by Klein can be extended in a natural way. Erdős asked: for a given integer \(k\), is there always some finite number \(N\) such that any configuration of \(N\) points in the plane, with no three collinear, must contain \(k\) points in convex position? This question, settled in joint work with Szekeres, is now regarded as one of the foundational results in combinatorial geometry.  
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 5 (Erdős–Szekeres, 1935).</h3>
+  <h5 class="card-title font-weight-medium">Theorem 5 (Erdős–Szekeres, 1935).</h5>
   <div class="card-text">
     For every integer \(k \geq 3\), there exists an integer \(N(k)\) such that any set of \(N(k)\) points in the plane in general position contains \(k\) points in convex position.  
   </div>
@@ -216,10 +218,12 @@ Suppose, for contradiction, that these \(k\) points are not in convex position. 
 
 Thus all \(k\) points lie in convex position, completing the proof. \(\square\)  
 
+<br>
 <h3>Fermat's Last Theorem Over Finite Fields</h3>  
 At the turn of the twentieth century, Fermat’s Last Theorem was still a central mystery. A natural idea was to examine the problem modulo a prime \(p\). After all, if there were an integer solution to  
 
 $$x^n + y^n = z^n,$$  
+
 then reducing everything modulo \(p\) would also give a solution to  
 
 $$x^n + y^n \equiv z^n \pmod{p}.$$  
@@ -230,7 +234,7 @@ But this approach fails. Dickson (1909) showed that for large primes \(p\), the 
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 6 (Schur, 1916).</h3>
+  <h5 class="card-title font-weight-medium">Theorem 6 (Schur, 1916).</h5>
   <div class="card-text">
     For every positive integer \(r\), there exists an integer \(N\) such that, no matter how one colors the integers \(\{1,2,\dots,N\}\) with \(r\) colors, there is always a monochromatic solution to  
 
@@ -257,7 +261,7 @@ Schur’s theorem shows that additive relations like \(x+y=z\) cannot be avoided
 
 <br>
 <div class="card mt-3 p-3">
-  <h3 class="card-title font-weight-medium">Theorem 7 (Dickson, 1909).</h3>
+  <h5 class="card-title font-weight-medium">Theorem 7 (Dickson, 1909).</h5>
   <div class="card-text">
     Let \(n \geq 3\). For sufficiently large primes \(p\), the congruence  
 
@@ -291,4 +295,4 @@ Since \(\alpha\) is invertible, dividing through yields
 
 $$x^n + y^n \equiv z^n \pmod{p}.$$  
 
-Thus Fermat’s congruence has a non-trivial solution.
+Thus Fermat’s congruence has a non-trivial solution. \(\square\)  
