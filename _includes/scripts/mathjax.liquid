@@ -4,9 +4,15 @@
     window.MathJax = {
       tex: {
         tags: 'ams',
-        inlineMath: [['\\(', '\\)']],
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
       },
+      startup: {
+        ready: function () {
+          MathJax.startup.defaultReady();
+          console.log('MathJax is loaded and ready');
+        }
+      }
     };
   </script>
   <script
