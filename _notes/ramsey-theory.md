@@ -9,7 +9,7 @@ mathjax: true
 ---
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
 <script>
-  window.dataLayer = window.dataLayer ||  [];
+  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
@@ -149,19 +149,19 @@ Take a set \(X\) of size \(R(a,b) + 1\), and suppose every triple of vertices in
 
 Choose a vertex \(x \in X\), and consider the remaining vertices \(Y = X \setminus \{x\}\). Now, define a new coloring \(c'\) on the pairs of \(Y\): for each edge \(\{y,z\}\), color it red in \(c'\) if the triple \(\{x,y,z\}\) was red in the original coloring, and blue otherwise.  
 
-In this way, the triples involving \(x\) are encoded as edges in a 2–coloring of \(K_Y\). Since \(|Y| = R(a,b)\), Ramsey’s theorem for graphs applies: there is either  
+In this way, the triples involving \(x\) are encoded as edges in a 2–coloring of \(K_Y\). Since \(\vert Y\vert  = R(a,b)\), Ramsey’s theorem for graphs applies: there is either  
 
 - a **red clique of size \(a\)** in \(c'\), or  
 - a **blue clique of size \(b\)** in \(c'\).  
 
 **Case 1: A red clique of size \(a\) in \(c'\).**  
-Let \(Z \subset Y\) be this red clique. By definition of \(c'\), every pair in \(Z\) forms a red triple with \(x\). Now restrict attention to the coloring of triples inside \(Z\). Since \(|Z| = a = R^{(3)}(s-1,t)\), one of two things must happen:  
+Let \(Z \subset Y\) be this red clique. By definition of \(c'\), every pair in \(Z\) forms a red triple with \(x\). Now restrict attention to the coloring of triples inside \(Z\). Since \(\vert Z\vert  = a = R^{(3)}(s-1,t)\), one of two things must happen:  
 
 - \(Z\) contains a **blue \(t\)-set**, which is already a blue \(t\)-set in \(X\), or  
 - \(Z\) contains a **red \((s-1)\)-set**. Adding \(x\) to this set produces a red \(s\)-set in \(X\), because all triples involving \(x\) and two vertices of the \((s-1)\)-set are red.  
 
 **Case 2: A blue clique of size \(b\) in \(c'\).**  
-Similarly, let \(T \subset Y\) be this blue clique. By definition of \(c'\), every pair in \(T\) forms a blue triple with \(x\). Now consider the restriction to triples inside \(T\). Since \(|T| = b = R^{(3)}(s,t-1)\), we find either:  
+Similarly, let \(T \subset Y\) be this blue clique. By definition of \(c'\), every pair in \(T\) forms a blue triple with \(x\). Now consider the restriction to triples inside \(T\). Since \(\vert T\vert  = b = R^{(3)}(s,t-1)\), we find either:  
 
 - a **red \(s\)-set** inside \(T\), and we are done; or  
 - a **blue \((t-1)\)-set** \(U \subset T\). In the latter case, adjoining \(x\) gives a blue \(t\)-set in \(X\), since all triples in \(U\) are blue, and all triples involving \(x\) and two vertices of \(U\) are also blue.  
