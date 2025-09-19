@@ -35,8 +35,8 @@ One of the striking lessons of Ramsey theory is that complete disorder is imposs
 
 The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
 
-<h2 id="the-party-problem">An Introductory Example</h2>
 <br>
+<h2 id="the-party-problem">An Introductory Example</h2>
 
 A canonical entry point is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
 
@@ -52,10 +52,8 @@ $$R(3,3) = 6,$$
 
 the first nontrivial **Ramsey number**.  
 
-<br id="ramsey-numbers">
 <br>
-<h2>Ramsey Numbers</h2>
-<br>
+<h1 id="ramsey-numbers">Ramsey Numbers</h1>
 
 This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $$R(k,\ell)$$ is defined to be the smallest integer $$n$$ such that every graph on $$n$$ vertices contains either a clique of size $$k$$ or an independent set of size $$\ell$$.  
 
@@ -135,7 +133,7 @@ which proves finiteness in the $$n$$-color case.
 
 <br id="ramsey-numbers-for-hypergraphs">
 <br>
-<h2>Ramsey Numbers for Hypergraphs</h2>
+<h1>Ramsey Numbers for Hypergraphs</h1>
 <br>
 
 The notion of Ramsey numbers extends naturally from graphs to hypergraphs, where edges are arbitrary subsets of vertices rather than just pairs. For integers $i \geq 2$, the \emph{hypergraph Ramsey number} $R^{(i)}(k,\ell)$ is defined to be the smallest $N$ such that, whenever all $i$-element subsets of $\{1,2,\dots,N\}$ are colored red or blue, one of the following occurs:
@@ -189,7 +187,7 @@ In both cases, we obtain the desired red $s$-set or blue $t$-set in $X$. This co
 
 <br id="points-in-convex-position">
 <br>
-<h2>Points in Convex Position</h2>
+<h1>Points in Convex Position</h1>
 <br>
 
 Although Ramsey’s theorem laid the formal groundwork, the broader spirit of what is now called **Ramsey theory** was rediscovered and popularized a few years later by Erdős. A particularly simple but striking application arose from a geometric problem posed by a young mathematician, **Esther Klein**, in 1933. Her question concerned the unavoidable appearance of convex configurations among a small set of points.  
@@ -242,7 +240,7 @@ Thus all $k$ points lie in convex position, completing the proof. $\square$
 
 <br id="fermats-last-theorem-over-finite-fields">
 <br>
-<h2>Fermat's Last Theorem Over Finite Fields</h2>  
+<h1>Fermat's Last Theorem Over Finite Fields</h1>  
 <br>
 
 At the turn of the twentieth century, Fermat’s Last Theorem was still a central mystery. A natural idea was to examine the problem modulo a prime $p$. After all, if there were an integer solution to  
