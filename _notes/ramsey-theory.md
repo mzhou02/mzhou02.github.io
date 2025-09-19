@@ -31,22 +31,42 @@ mathjax: true
   </div>
 </div>
 
-One of the striking lessons of Ramsey theory is that complete disorder is impossible. No matter how chaotically one arranges a large enough structure, pockets of order must inevitably emerge. This principle—sometimes summarized as “absolute chaos is unattainable”—turns out to be both simple to state and profound in consequence.
+A central idea in Ramsey theory is that complete disorder cannot persist. In any sufficiently large structure, some degree of order is guaranteed to appear.
 
 The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
 
 <br>
 <h2 id="the-party-problem">An Introductory Example</h2>
 
-A canonical entry point is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
+To demonstrate, a classic example is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
 
-To formalize this, represent each guest by a vertex of a graph. Place an edge between two vertices if those guests know each other, and leave it absent otherwise. The question becomes: for a given integer $$$n$$, how many vertices are required to ensure the existence of either a clique $$K_n$$ (a complete subgraph on $n$ vertices) or an independent set of size $$n$$?  
+To formalize this, represent each guest by a vertex of a graph. Place an edge between two vertices if those guests know each other, and leave it absent otherwise. The question becomes: for a given integer $$n$$, how many vertices are required to ensure the existence of either a clique $$K_n$$ (a complete subgraph on $n$ vertices) or an independent set of size $$n$$?  
 
 Consider the case $$n=3$$. With five vertices, it is possible to avoid both configurations: for example, a 5-cycle contains no triangle (3-clique) and no independent set of size three.  
 
-But with six vertices, such avoidance is impossible. Indeed, select any vertex $$v$$. Among the remaining five vertices, by the pigeonhole principle $$v$$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. If any two of these neighbors are adjacent, they together with $$v$$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set. The second case is entirely analogous. Thus, in every graph on six vertices, either a 3-clique or a 3-independent set must occur.  
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/five_cycle.png" 
+       alt="Five Cycle" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
 
-We conclude that the minimum number of guests required to guarantee three mutual acquaintances or three mutual strangers is six. In Ramsey-theoretic notation, this is written as
+But with six vertices, such avoidance is impossible. Indeed, select any vertex $$v$$. Among the remaining five vertices, by the pigeonhole principle $$v$$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
+
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/r33_1.png" 
+       alt="Five Cycle" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
+
+If any two of these neighbors are adjacent, they together with $$v$$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set.
+
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/r33_2.png" 
+       alt="Five Cycle" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
+
+The second case is entirely analogous. Thus, in every graph on six vertices, either a 3-clique or a 3-independent set must occur, meaning that the minimum number of guests required to guarantee three mutual acquaintances or three mutual strangers is six. We write this as
 
 $$R(3,3) = 6,$$
 
@@ -74,7 +94,13 @@ $$R(2,\ell) = \ell, \qquad R(k,2) = k.$$
 
 Indeed, to avoid a red $$K_2$$, all edges must be blue, forcing a blue clique of size $$\ell$$; the argument is symmetric in the other case.  
 
-For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3)=6$$, consider a complete graph $$G$$ on $$R(k-1,\ell) + R(k,\ell-1)$$ vertices with edges colored red or blue. Fix any vertex $$v \in G$$. Among the remaining vertices, $$v$$ must be joined by at least $$R(k-1,\ell)$$ red edges or at least $$R(k,\ell-1)$$ blue edges.  
+For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3)=6$$, consider a complete graph $$G$$ on $$R(k-1,\ell) + R(k,\ell-1)$$ vertices with edges colored red or blue. Fix any vertex $$v \in G$$. Among the remaining vertices, $$v$$ must be joined by at least $$R(k-1,\ell)$$ red edges or at least $$R(k,\ell-1)$$ blue edges.
+
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
+       alt="Five Cycle" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
 
 - If $$v$$ has at least $$R(k-1,\ell)$$ red neighbors, then within this red neighborhood we either find a red $$K_{k-1}$$ or a blue $$K_\ell$$ (by definition of Ramsey numbers). In the first case, adjoining $$v$$ produces a red $$K_k$$; in the second, we already have the required blue $$K_\ell$$.  
 
@@ -206,7 +232,19 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 - If the hull already contains 4 or more vertices, those vertices form a convex quadrilateral and we are done.  
 - Otherwise, the convex hull is a triangle with exactly two interior points, as in the figure:  
 
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/five_points.png" 
+       alt="Convex Hull" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
+
 Draw the line through the two interior points. Since no three points are collinear, at least two of the three hull vertices must lie on the same side of this line. These two vertices, together with the two interior points, necessarily form a convex quadrilateral:  
+
+<figure style="max-width: 90%; margin: 0; text-align: center;">
+  <img src="/assets/img/ramsey_notes/five_points2.png" 
+       alt="Five Cycle" 
+       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</figure>
 
 Thus in any configuration of 5 points in general position, a convex quadrilateral is unavoidable. $\square$  
 
