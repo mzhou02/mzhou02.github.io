@@ -146,7 +146,7 @@ The simplest example is unremarkable: a single red clique on $k-1$ vertices avoi
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
        alt="Two Cliques" 
-       style="max-width: 40%; height: auto;">
+       style="max-width: 35%; height: auto;">
 </figure>
 <br>
 
