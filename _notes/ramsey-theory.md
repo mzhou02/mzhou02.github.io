@@ -44,7 +44,7 @@ To formalize this, represent each guest by a vertex of a graph. Place an edge be
 
 Consider the case $$n=3$$. With five vertices, it is possible to avoid both configurations: for example, a 5-cycle contains no triangle (3-clique) and no independent set of size three.  
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 60%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/five_cycle.png" 
        alt="Five Cycle" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -52,7 +52,7 @@ Consider the case $$n=3$$. With five vertices, it is possible to avoid both conf
 
 But with six vertices, such avoidance is impossible. Indeed, select any vertex $$v$$. Among the remaining five vertices, by the pigeonhole principle $$v$$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 60%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/r33_1.png" 
        alt="Five Cycle" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -60,7 +60,7 @@ But with six vertices, such avoidance is impossible. Indeed, select any vertex $
 
 If any two of these neighbors are adjacent, they together with $$v$$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set.
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 60%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/r33_2.png" 
        alt="Five Cycle" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -96,7 +96,7 @@ Indeed, to avoid a red $$K_2$$, all edges must be blue, forcing a blue clique of
 
 For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3)=6$$, consider a complete graph $$G$$ on $$R(k-1,\ell) + R(k,\ell-1)$$ vertices with edges colored red or blue. Fix any vertex $$v \in G$$. Among the remaining vertices, $$v$$ must be joined by at least $$R(k-1,\ell)$$ red edges or at least $$R(k,\ell-1)$$ blue edges.
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 70%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
        alt="Five Cycle" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -232,7 +232,7 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 - If the hull already contains 4 or more vertices, those vertices form a convex quadrilateral and we are done.  
 - Otherwise, the convex hull is a triangle with exactly two interior points, as in the figure:  
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 60%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/five_points.png" 
        alt="Convex Hull" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -240,7 +240,7 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 
 Draw the line through the two interior points. Since no three points are collinear, at least two of the three hull vertices must lie on the same side of this line. These two vertices, together with the two interior points, necessarily form a convex quadrilateral:  
 
-<figure style="max-width: 90%; margin: 0; text-align: center;">
+<figure style="max-width: 60%; margin: 0; text-align: center;">
   <img src="/assets/img/ramsey_notes/five_points2.png" 
        alt="Five Cycle" 
        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
