@@ -189,7 +189,7 @@ $$R(k,k) \;>\; \frac{1}{e\sqrt{2}}\,k\,2^{k/2}.$$
 
 and we have
 
-$$R(k,k) = \Omega\!\big(k\,2^{k/2}\big). \square$$
+$$R(k,k) = \Omega\!\;\big(k\,2^{k/2}\big). \square$$
 
 One can also consider edge-colorings with more than two colors. In this setting, the same question arises: must a monochromatic clique of some size still appear?
 
@@ -347,11 +347,13 @@ The second outcome is impossible, because Klein’s theorem shows that among any
 
 Suppose, for contradiction, that these $k$ points are not in convex position. Then the convex hull of these points is not a $k$-gon, and so some point must lie strictly inside a triangle formed by three others. These four points fail to form a convex quadrilateral, contradicting the assumption that every 4–subset was red.  
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/convex_points.png" 
-       alt="Inductive Proof Lower Bound" 
+       alt="Convex Points Triangulation" 
        style="max-width: 50%; height: auto;">
 </figure>
+<br>
 
 Thus all $k$ points lie in convex position, completing the proof. $\square$  
 
@@ -403,7 +405,7 @@ Schur’s theorem shows that additive relations like $x+y=z$ cannot be avoided o
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Theorem 7 (Dickson, 1909).</h6>
   <div class="card-text">
-    Let $n \geq 3$. For sufficiently large primes $p$, the congruence  
+    Let $n \geq 3$. For all sufficiently large primes $p$, the congruence  
 
     $$x^n + y^n \equiv z^n \pmod{p}$$  
     
