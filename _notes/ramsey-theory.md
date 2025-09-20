@@ -55,7 +55,7 @@ But with six vertices, such avoidance is impossible. Indeed, select any vertex $
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_1.png" 
-       alt="Five Cycle" 
+       alt="Finding R(3,3)" 
        style="max-width: 60%; height: auto;">
 </figure>
 
@@ -63,7 +63,7 @@ If any two of these neighbors are adjacent, they together with $v$ form a 3-cliq
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_2.png" 
-       alt="Five Cycle" 
+       alt="Connecting R(3,3)" 
        style="max-width: 60%; height: auto;">
 </figure>
 
@@ -100,7 +100,7 @@ For the inductive step, suppose $k,\ell > 2$. Inspired by the proof of $R(3,3)=6
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
-       alt="Five Cycle" 
+       alt="Inductive Proof Lower Bound" 
        style="max-width: 70%; height: auto;">
 </figure>
 
@@ -143,16 +143,16 @@ A natural approach to finding a lower bound is to construct colorings of large c
 The simplest example is unremarkable: a single red clique on $k-1$ vertices avoids a red $K_k$, but only shows that $R(k,k) > k-1$, which we already knew. A modest improvement comes from two cliques of size $k-1$, colored red internally and blue across: any $k$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $R(k,k) \geq 2(k-1)$.
 
 <figure style="display: flex; justify-content: center; margin: 0;">
-  <img src="/assets/img/ramsey_notes/lower_bound_1" 
-       alt="Five Cycle" 
+  <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
+       alt="Two Cliques" 
        style="max-width: 60%; height: auto;">
 </figure>
 
 The idea extends naturally. Partition into $k-1$ cliques of size $k-1$, red inside, blue between. By the pigeonhole principle, any $k$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $K_k$ exists. This yields $R(k,k) \;\geq\; (k-1)^2.$
 
 <figure style="display: flex; justify-content: center; margin: 0;">
-  <img src="/assets/img/ramsey_notes/lower_bound_2" 
-       alt="Five Cycle" 
+  <img src="/assets/img/ramsey_notes/lower_bound_2.png" 
+       alt="$k-1$ Cliques" 
        style="max-width: 60%; height: auto;">
 </figure>
 
@@ -298,7 +298,7 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points.png" 
-       alt="Five Cycle" 
+       alt="Three Point Convex Hull" 
        style="max-width: 60%; height: auto;">
 </figure>
 
@@ -306,7 +306,7 @@ Draw the line through the two interior points. Since no three points are colline
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points2.png" 
-       alt="Five Cycle" 
+       alt="Convex Quadrilateral" 
        style="max-width: 60%; height: auto;">
 </figure>
 
