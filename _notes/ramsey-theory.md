@@ -36,7 +36,8 @@ A central idea in Ramsey theory is that complete disorder cannot persist. In any
 The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
 
 <br>
-<h2 id="the-party-problem">An Introductory Example</h2>
+<h2 id="the-party-problem">An Introductory Example</h1>
+<br>
 
 To demonstrate, a classic example is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
 
@@ -44,26 +45,26 @@ To formalize this, represent each guest by a vertex of a graph. Place an edge be
 
 Consider the case $$n=3$$. With five vertices, it is possible to avoid both configurations: for example, a 5-cycle contains no triangle (3-clique) and no independent set of size three.  
 
-<figure style="max-width: 60%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_cycle.png" 
        alt="Five Cycle" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       style="max-width: 60%; height: auto;">
 </figure>
 
 But with six vertices, such avoidance is impossible. Indeed, select any vertex $$v$$. Among the remaining five vertices, by the pigeonhole principle $$v$$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
 
-<figure style="max-width: 60%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_1.png" 
        alt="Five Cycle" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       style="max-width: 60%; height: auto;">
 </figure>
 
 If any two of these neighbors are adjacent, they together with $$v$$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set.
 
-<figure style="max-width: 60%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_2.png" 
        alt="Five Cycle" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       style="max-width: 60%; height: auto;">
 </figure>
 
 The second case is entirely analogous. Thus, in every graph on six vertices, either a 3-clique or a 3-independent set must occur, meaning that the minimum number of guests required to guarantee three mutual acquaintances or three mutual strangers is six. We write this as
@@ -74,6 +75,7 @@ the first nontrivial **Ramsey number**.
 
 <br>
 <h1 id="ramsey-numbers">Ramsey Numbers</h1>
+<br>
 
 This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $$R(k,\ell)$$ is defined to be the smallest integer $$n$$ such that every graph on $$n$$ vertices contains either a clique of size $$k$$ or an independent set of size $$\ell$$.  
 
@@ -96,10 +98,10 @@ Indeed, to avoid a red $$K_2$$, all edges must be blue, forcing a blue clique of
 
 For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3)=6$$, consider a complete graph $$G$$ on $$R(k-1,\ell) + R(k,\ell-1)$$ vertices with edges colored red or blue. Fix any vertex $$v \in G$$. Among the remaining vertices, $$v$$ must be joined by at least $$R(k-1,\ell)$$ red edges or at least $$R(k,\ell-1)$$ blue edges.
 
-<figure style="max-width: 70%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
        alt="Five Cycle" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       style="max-width: 70%; height: auto;">
 </figure>
 
 - If $$v$$ has at least $$R(k-1,\ell)$$ red neighbors, then within this red neighborhood we either find a red $$K_{k-1}$$ or a blue $$K_\ell$$ (by definition of Ramsey numbers). In the first case, adjoining $$v$$ produces a red $$K_k$$; in the second, we already have the required blue $$K_\ell$$.  
@@ -133,6 +135,56 @@ Meaning that the diagonal Ramsey numbers, $$R(k, k)$$, are bounded by the centra
   </div>
 </div>
 <br>
+
+One might wonder whether the lower bound for the diagonal Ramsey numbers grows exponentially as well. After all, the recent breakthroughs on the upper bound are only meaningful if the numbers themselves are truly exponential in scale. If there were even a slight chance that $$R(k,k)$$ could be merely polynomial (say quadratic or cubic), then every advance on the upper bound---whether $$4^k$$, $$3.999^k$$, or lower---would be largely beside the point.
+
+A natural approach to finding a lower bound is to construct colorings of large complete graphs in which no monochromatic $$K_k$$ appears. A natural idea is to partition the vertices into ``blocks'' and force every $$k$$-set of vertices to see both red and blue edges.
+
+The simplest example is unremarkable: a single red clique on $$k-1$$ vertices avoids a red $$K_k$$, but only shows that $$R(k,k) > k-1$$, which we already knew. A modest improvement comes from two cliques of size $$k-1$$, colored red internally and blue across: any $$k$$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $$R(k,k) \geq 2(k-1)$$.
+
+<figure style="display: flex; justify-content: center; margin: 0;">
+  <img src="/assets/img/ramsey_notes/lower_bound_1" 
+       alt="Five Cycle" 
+       style="max-width: 60%; height: auto;">
+</figure>
+
+The idea extends naturally. Partition into $$k-1$$ cliques of size $$k-1$$, red inside, blue between. By the pigeonhole principle, any $$k$$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $$K_k$$ exists. This yields $$R(k,k) \;\geq\; (k-1)^2.$$
+
+<figure style="display: flex; justify-content: center; margin: 0;">
+  <img src="/assets/img/ramsey_notes/lower_bound_2" 
+       alt="Five Cycle" 
+       style="max-width: 60%; height: auto;">
+</figure>
+
+For decades, this quadratic construction marked the frontier of our knowledge. But quadratic growth, however elegant the argument, falls far short of exponential. To push beyond this impasse required a new philosophy, one that would loosen the demand for explicit construction.
+
+A decisive advance came in 1947 with Erd\H{o}s’s introduction of the probabilistic method. Rather than constructing a particular coloring, one analyzes a uniformly random red–blue coloring of $$K_n$$. If the expected number of monochromatic copies of $$K_k$$ is strictly less than one, it follows (by the first moment method) that there must exist a coloring with none. In this way, one can establish existence without explicit construction.
+
+Formally, for a fixed $$k$$-set of vertices, the probability it forms a monochromatic clique is  
+
+$$2^{1-\binom{k}{2}}.$$
+
+Thus the expected number of monochromatic $$K_k$$ in a random coloring of $$K_n$$ is  
+
+$$\mathbb{E}X = \binom{n}{k}\,2^{\,1-\binom{k}{2}}.$$
+
+If $$\mathbb{E}X < 1$$, then some coloring contains no monochromatic $$K_k$$.  
+
+Using the inequality $$\binom{n}{k} \leq (en/k)^k$$, we obtain  
+
+$$\mathbb{E}X \;\leq\; \Big(\tfrac{en}{k}\Big)^k\,2^{\,1-\binom{k}{2}}.$$
+
+which is less than one for estimates
+
+$$n \;\geq\; \Big\lfloor \frac{k}{e}\,2^{(k-1)/2} \Big\rfloor$$
+
+Hence
+
+$$R(k,k) \;>\; \frac{1}{e\sqrt{2}}\,k\,2^{k/2}.$$
+
+and we have
+
+$$R(k,k) = \Omega\!\big(k\,2^{k/2}\big). \square$$
 
 One can also consider edge-colorings with more than two colors. In this setting, the same question arises: must a monochromatic clique of some size still appear?
 
@@ -232,18 +284,18 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 - If the hull already contains 4 or more vertices, those vertices form a convex quadrilateral and we are done.  
 - Otherwise, the convex hull is a triangle with exactly two interior points, as in the figure:  
 
-<figure style="max-width: 60%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points.png" 
-       alt="Convex Hull" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       alt="Five Cycle" 
+       style="max-width: 60%; height: auto;">
 </figure>
 
 Draw the line through the two interior points. Since no three points are collinear, at least two of the three hull vertices must lie on the same side of this line. These two vertices, together with the two interior points, necessarily form a convex quadrilateral:  
 
-<figure style="max-width: 60%; margin: 0; text-align: center;">
+<figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points2.png" 
        alt="Five Cycle" 
-       style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+       style="max-width: 60%; height: auto;">
 </figure>
 
 Thus in any configuration of 5 points in general position, a convex quadrilateral is unavoidable. $\square$  
