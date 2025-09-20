@@ -48,7 +48,7 @@ Consider the case $n=3$. With five vertices, it is possible to avoid both config
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_cycle.png" 
        alt="Five Cycle" 
-       style="max-width: 50%; height: auto;">
+       style="max-width: 40%; height: auto;">
 </figure>
 
 But with six vertices, such avoidance is impossible. Indeed, select any vertex $v$. Among the remaining five vertices, by the pigeonhole principle $v$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
@@ -120,7 +120,10 @@ More specifically, we get the following bound:
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Exercise 1</h6>
   <div class="card-text">
-    Prove that $R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$
+    Prove that 
+    
+    $$R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$$
+
   </div>
 </div>
 <br>
