@@ -41,9 +41,9 @@ The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic,
 
 To demonstrate, a classic example is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
 
-To formalize this, represent each guest by a vertex of a graph. Place an edge between two vertices if those guests know each other, and leave it absent otherwise. The question becomes: for a given integer $$n$$, how many vertices are required to ensure the existence of either a clique $$K_n$$ (a complete subgraph on $n$ vertices) or an independent set of size $$n$$?  
+To formalize this, represent each guest by a vertex of a graph. Place an edge between two vertices if those guests know each other, and leave it absent otherwise. The question becomes: for a given integer $n$, how many vertices are required to ensure the existence of either a clique $K_n$ (a complete subgraph on $n$ vertices) or an independent set of size $n$?  
 
-Consider the case $$n=3$$. With five vertices, it is possible to avoid both configurations: for example, a 5-cycle contains no triangle (3-clique) and no independent set of size three.  
+Consider the case $n=3$. With five vertices, it is possible to avoid both configurations: for example, a 5-cycle contains no triangle (3-clique) and no independent set of size three.  
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_cycle.png" 
@@ -51,7 +51,7 @@ Consider the case $$n=3$$. With five vertices, it is possible to avoid both conf
        style="max-width: 60%; height: auto;">
 </figure>
 
-But with six vertices, such avoidance is impossible. Indeed, select any vertex $$v$$. Among the remaining five vertices, by the pigeonhole principle $$v$$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
+But with six vertices, such avoidance is impossible. Indeed, select any vertex $v$. Among the remaining five vertices, by the pigeonhole principle $v$ is either adjacent to at least three of them, or non-adjacent to at least three. Suppose the first case holds. 
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_1.png" 
@@ -59,7 +59,7 @@ But with six vertices, such avoidance is impossible. Indeed, select any vertex $
        style="max-width: 60%; height: auto;">
 </figure>
 
-If any two of these neighbors are adjacent, they together with $$v$$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set.
+If any two of these neighbors are adjacent, they together with $v$ form a 3-clique. If none are adjacent, they themselves form a 3-independent set.
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/r33_2.png" 
@@ -77,9 +77,9 @@ the first nontrivial **Ramsey number**.
 <h1 id="ramsey-numbers">Ramsey Numbers</h1>
 <br>
 
-This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $$R(k,\ell)$$ is defined to be the smallest integer $$n$$ such that every graph on $$n$$ vertices contains either a clique of size $$k$$ or an independent set of size $$\ell$$.  
+This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $R(k,\ell)$ is defined to be the smallest integer $n$ such that every graph on $n$ vertices contains either a clique of size $k$ or an independent set of size $\ell$.  
 
-Equivalently, one may phrase the problem in terms of edge-colorings: consider a complete graph on $$n$$ vertices in which each edge is colored either red or blue. Then $$R(k,\ell)$$ is the least $n$ for which such a coloring must contain either a red $$K_k$$ (a $$k$$-clique all of whose edges are red) or a blue $$K_\ell$$ (an $$\ell$$-clique all of whose edges are blue), regardless of how the colors are assigned.
+Equivalently, one may phrase the problem in terms of edge-colorings: consider a complete graph on $n$ vertices in which each edge is colored either red or blue. Then $R(k,\ell)$ is the least $n$ for which such a coloring must contain either a red $K_k$ (a $k$-clique all of whose edges are red) or a blue $K_\ell$ (an $\ell$-clique all of whose edges are blue), regardless of how the colors are assigned.
 
 <br>
 <div class="card mt-3 p-3">
@@ -94,9 +94,9 @@ We establish the general recurrence by induction. Observe first that the boundar
 
 $$R(2,\ell) = \ell, \qquad R(k,2) = k.$$  
 
-Indeed, to avoid a red $$K_2$$, all edges must be blue, forcing a blue clique of size $$\ell$$; the argument is symmetric in the other case.  
+Indeed, to avoid a red $K_2$, all edges must be blue, forcing a blue clique of size $\ell$; the argument is symmetric in the other case.  
 
-For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3)=6$$, consider a complete graph $$G$$ on $$R(k-1,\ell) + R(k,\ell-1)$$ vertices with edges colored red or blue. Fix any vertex $$v \in G$$. Among the remaining vertices, $$v$$ must be joined by at least $$R(k-1,\ell)$$ red edges or at least $$R(k,\ell-1)$$ blue edges.
+For the inductive step, suppose $k,\ell > 2$. Inspired by the proof of $R(3,3)=6$, consider a complete graph $G$ on $R(k-1,\ell) + R(k,\ell-1)$ vertices with edges colored red or blue. Fix any vertex $v \in G$. Among the remaining vertices, $v$ must be joined by at least $R(k-1,\ell)$ red edges or at least $R(k,\ell-1)$ blue edges.
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
@@ -104,15 +104,15 @@ For the inductive step, suppose $$k,\ell > 2$$. Inspired by the proof of $$R(3,3
        style="max-width: 70%; height: auto;">
 </figure>
 
-- If $$v$$ has at least $$R(k-1,\ell)$$ red neighbors, then within this red neighborhood we either find a red $$K_{k-1}$$ or a blue $$K_\ell$$ (by definition of Ramsey numbers). In the first case, adjoining $$v$$ produces a red $$K_k$$; in the second, we already have the required blue $$K_\ell$$.  
+- If $v$ has at least $R(k-1,\ell)$ red neighbors, then within this red neighborhood we either find a red $K_{k-1}$ or a blue $K_\ell$ (by definition of Ramsey numbers). In the first case, adjoining $v$ produces a red $K_k$; in the second, we already have the required blue $K_\ell$.  
 
-- Symmetrically, if $$v$$ has at least $$R(k,\ell-1)$$ blue neighbors, then either a blue $$K_{\ell-1}$$ arises (which, together with $$v$$, forms a blue $$K_\ell$$), or a red $$K_k$$ already appears.  
+- Symmetrically, if $v$ has at least $R(k,\ell-1)$ blue neighbors, then either a blue $K_{\ell-1}$ arises (which, together with $v$, forms a blue $K_\ell$), or a red $K_k$ already appears.  
 
 In either case, the desired configuration is unavoidable. This establishes the fundamental recurrence  
 
 $$R(k,\ell) \leq R(k-1,\ell) + R(k,\ell-1),$$  
 
-valid for all $$k,\ell \geq 2$$. $\square$
+valid for all $k,\ell \geq 2$. $\square$
 
 More specifically, we get the following bound:
 
@@ -120,12 +120,12 @@ More specifically, we get the following bound:
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Exercise 1</h6>
   <div class="card-text">
-    Prove that $$R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$$
+    Prove that $R(k, \ell) \leq \binom{k + \ell -2}{k - 1}$
   </div>
 </div>
 <br>
 
-Meaning that the diagonal Ramsey numbers, $$R(k, k)$$, are bounded by the central binomial coefficient, $$\binom{2k - 2}{k - 1}$$, or simply, exponential.
+Meaning that the diagonal Ramsey numbers, $R(k, k)$, are bounded by the central binomial coefficient, $\binom{2k - 2}{k - 1}$, or simply, exponential.
 
 <br>
 <div class="card mt-3 p-3">
@@ -136,11 +136,11 @@ Meaning that the diagonal Ramsey numbers, $$R(k, k)$$, are bounded by the centra
 </div>
 <br>
 
-One might wonder whether the lower bound for the diagonal Ramsey numbers grows exponentially as well. After all, the recent breakthroughs on the upper bound are only meaningful if the numbers themselves are truly exponential in scale. If there were even a slight chance that $$R(k,k)$$ could be merely polynomial (say quadratic or cubic), then every advance on the upper bound---whether $$4^k$$, $$3.999^k$$, or lower---would be largely beside the point.
+One might wonder whether the lower bound for the diagonal Ramsey numbers grows exponentially as well. After all, the recent breakthroughs on the upper bound are only meaningful if the numbers themselves are truly exponential in scale. If there were even a slight chance that $R(k,k)$ could be merely polynomial (say quadratic or cubic), then every advance on the upper bound---whether $4^k$, $3.999^k$, or lower---would be largely beside the point.
 
-A natural approach to finding a lower bound is to construct colorings of large complete graphs in which no monochromatic $$K_k$$ appears. A natural idea is to partition the vertices into ``blocks'' and force every $$k$$-set of vertices to see both red and blue edges.
+A natural approach to finding a lower bound is to construct colorings of large complete graphs in which no monochromatic $K_k$ appears. A natural idea is to partition the vertices into ``blocks'' and force every $k$-set of vertices to see both red and blue edges.
 
-The simplest example is unremarkable: a single red clique on $$k-1$$ vertices avoids a red $$K_k$$, but only shows that $$R(k,k) > k-1$$, which we already knew. A modest improvement comes from two cliques of size $$k-1$$, colored red internally and blue across: any $$k$$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $$R(k,k) \geq 2(k-1)$$.
+The simplest example is unremarkable: a single red clique on $k-1$ vertices avoids a red $K_k$, but only shows that $R(k,k) > k-1$, which we already knew. A modest improvement comes from two cliques of size $k-1$, colored red internally and blue across: any $k$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $R(k,k) \geq 2(k-1)$.
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1" 
@@ -148,7 +148,7 @@ The simplest example is unremarkable: a single red clique on $$k-1$$ vertices av
        style="max-width: 60%; height: auto;">
 </figure>
 
-The idea extends naturally. Partition into $$k-1$$ cliques of size $$k-1$$, red inside, blue between. By the pigeonhole principle, any $$k$$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $$K_k$$ exists. This yields $$R(k,k) \;\geq\; (k-1)^2.$$
+The idea extends naturally. Partition into $k-1$ cliques of size $k-1$, red inside, blue between. By the pigeonhole principle, any $k$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $K_k$ exists. This yields $R(k,k) \;\geq\; (k-1)^2.$
 
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_2" 
@@ -158,19 +158,19 @@ The idea extends naturally. Partition into $$k-1$$ cliques of size $$k-1$$, red 
 
 For decades, this quadratic construction marked the frontier of our knowledge. But quadratic growth, however elegant the argument, falls far short of exponential. To push beyond this impasse required a new philosophy, one that would loosen the demand for explicit construction.
 
-A decisive advance came in 1947 with Erd\H{o}s’s introduction of the probabilistic method. Rather than constructing a particular coloring, one analyzes a uniformly random red–blue coloring of $$K_n$$. If the expected number of monochromatic copies of $$K_k$$ is strictly less than one, it follows (by the first moment method) that there must exist a coloring with none. In this way, one can establish existence without explicit construction.
+A decisive advance came in 1947 with Erd\H{o}s’s introduction of the probabilistic method. Rather than constructing a particular coloring, one analyzes a uniformly random red–blue coloring of $K_n$. If the expected number of monochromatic copies of $K_k$ is strictly less than one, it follows (by the first moment method) that there must exist a coloring with none. In this way, one can establish existence without explicit construction.
 
-Formally, for a fixed $$k$$-set of vertices, the probability it forms a monochromatic clique is  
+Formally, for a fixed $k$-set of vertices, the probability it forms a monochromatic clique is  
 
 $$2^{1-\binom{k}{2}}.$$
 
-Thus the expected number of monochromatic $$K_k$$ in a random coloring of $$K_n$$ is  
+Thus the expected number of monochromatic $K_k$ in a random coloring of $K_n$ is  
 
 $$\mathbb{E}X = \binom{n}{k}\,2^{\,1-\binom{k}{2}}.$$
 
-If $$\mathbb{E}X < 1$$, then some coloring contains no monochromatic $$K_k$$.  
+If $\mathbb{E}X < 1$, then some coloring contains no monochromatic $K_k$.  
 
-Using the inequality $$\binom{n}{k} \leq (en/k)^k$$, we obtain  
+Using the inequality $\binom{n}{k} \leq (en/k)^k$, we obtain  
 
 $$\mathbb{E}X \;\leq\; \Big(\tfrac{en}{k}\Big)^k\,2^{\,1-\binom{k}{2}}.$$
 
@@ -192,22 +192,22 @@ One can also consider edge-colorings with more than two colors. In this setting,
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Theorem 2</h6>
   <div class="card-text">
-    Ramsey numbers for more than 2 colors exist, ie. $$R(k_1, k_2, ..., k_n),$$ for some integer $n$, is finite for all positive integers $k_n$.
+    Ramsey numbers for more than 2 colors exist, ie. $R(k_1, k_2, ..., k_n),$ for some integer $n$, is finite for all positive integers $k_n$.
   </div>
 </div>
 <br>
 
 We proceed by induction on the number of colors. The base case of two colors has already been established.  
 
-Suppose now that the statement holds for $$n-1$$ colors, and consider an edge-coloring with $$n > 2$$ colors. Merge the first two colors into a single “combined” color, so that we are effectively working with $$n-1$$ colors. By the inductive hypothesis, we know that $$R(R(k_1,k_2), k_3, \dots, k_n)$$ is finite.  
+Suppose now that the statement holds for $n-1$ colors, and consider an edge-coloring with $n > 2$ colors. Merge the first two colors into a single “combined” color, so that we are effectively working with $n-1$ colors. By the inductive hypothesis, we know that $R(R(k_1,k_2), k_3, \dots, k_n)$ is finite.  
 
-Assume, for contradiction, that no monochromatic clique of size $$k_i$$ appears in color $$i$$ for any $$i \geq 3$$. Then there must exist a clique of size $R(k_1,k_2)$ whose edges are all in the combined color $(1,2)$. When we now distinguish between colors $$1$$ and $$2$$, this clique necessarily contains either a monochromatic $$K_{k_1}$$ in color $$1$$ or a monochromatic $$K_{k_2}$$ in color $$2$$. $\square$
+Assume, for contradiction, that no monochromatic clique of size $k_i$ appears in color $i$ for any $i \geq 3$. Then there must exist a clique of size $R(k_1,k_2)$ whose edges are all in the combined color $(1,2)$. When we now distinguish between colors $1$ and $2$, this clique necessarily contains either a monochromatic $K_{k_1}$ in color $1$ or a monochromatic $K_{k_2}$ in color $2$. $\square$
 
 Thus,  
 
 $$R(k_1,k_2,\dots,k_n) \leq R(R(k_1,k_2), k_3, \dots, k_n),$$  
 
-which proves finiteness in the $$n$$-color case.
+which proves finiteness in the $n$-color case.
 
 <br id="ramsey-numbers-for-hypergraphs">
 <br>
@@ -262,6 +262,18 @@ Similarly, let $T \subset Y$ be this blue clique. By definition of $c'$, every p
 - a **blue $(t-1)$-set** $U \subset T$. In the latter case, adjoining $x$ gives a blue $t$-set in $X$, since all triples in $U$ are blue, and all triples involving $x$ and two vertices of $U$ are also blue.  
 
 In both cases, we obtain the desired red $s$-set or blue $t$-set in $X$. This completes the proof. $\square$
+
+<br>
+<div class="card mt-3 p-3">
+  <h6 class="card-title font-weight-medium">Exercise 2 (General Recursive Bound)</h6>
+  <div class="card-text">
+    Use the same argument to show that for all $r \geq 3$,
+
+    $$R^{(r)}(s,t) \;\leq\; R\!\big(R^{(r)}(s-1,t),\, R^{(r)}(s,t-1)\big) + 1.$$
+
+  </div>
+</div>
+<br>
 
 <br id="points-in-convex-position">
 <br>
