@@ -98,11 +98,13 @@ Indeed, to avoid a red $K_2$, all edges must be blue, forcing a blue clique of s
 
 For the inductive step, suppose $k,\ell > 2$. Inspired by the proof of $R(3,3)=6$, consider a complete graph $G$ on $R(k-1,\ell) + R(k,\ell-1)$ vertices with edges colored red or blue. Fix any vertex $v \in G$. Among the remaining vertices, $v$ must be joined by at least $R(k-1,\ell)$ red edges or at least $R(k,\ell-1)$ blue edges.
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/ramsey_theorem_diagram.png" 
        alt="Inductive Proof Lower Bound" 
-       style="max-width: 70%; height: auto;">
+       style="max-width: 60%; height: auto;">
 </figure>
+<br>
 
 - If $v$ has at least $R(k-1,\ell)$ red neighbors, then within this red neighborhood we either find a red $K_{k-1}$ or a blue $K_\ell$ (by definition of Ramsey numbers). In the first case, adjoining $v$ produces a red $K_k$; in the second, we already have the required blue $K_\ell$.  
 
@@ -149,7 +151,7 @@ The simplest example is unremarkable: a single red clique on $k-1$ vertices avoi
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
        alt="Two Cliques" 
-       style="max-width: 35%; height: auto;">
+       style="max-width: 40%; height: auto;">
 </figure>
 <br>
 
