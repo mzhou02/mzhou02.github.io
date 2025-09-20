@@ -36,7 +36,7 @@ A central idea in Ramsey theory is that complete disorder cannot persist. In any
 The origins trace back to Frank Ramsey's 1928 paper on the foundations of logic, where a combinatorial lemma appeared almost as a side remark. That lemma grew into a field of its own: Ramsey theory, the systematic study of the patterns that must appear within sufficiently large or complex objects. Its charm lies in the fact that one can encounter deep theorems through problems that sound almost recreational.
 
 <br>
-<h2 id="the-party-problem">An Introductory Example</h1>
+<h1 id="the-party-problem">An Introductory Example</h1>
 <br>
 
 To demonstrate, a classic example is the **party problem**. Suppose you invite several guests to a gathering. No matter how the acquaintance relations among them are arranged, can one guarantee that a group of them will either all know each other or all be mutual strangers?  
