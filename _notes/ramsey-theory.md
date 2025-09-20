@@ -142,19 +142,23 @@ A natural approach to finding a lower bound is to construct colorings of large c
 
 The simplest example is unremarkable: a single red clique on $k-1$ vertices avoids a red $K_k$, but only shows that $R(k,k) > k-1$, which we already knew. A modest improvement comes from two cliques of size $k-1$, colored red internally and blue across: any $k$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $R(k,k) \geq 2(k-1)$.
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
        alt="Two Cliques" 
-       style="max-width: 60%; height: auto;">
+       style="max-width: 30%; height: auto;">
 </figure>
+<br>
 
 The idea extends naturally. Partition into $k-1$ cliques of size $k-1$, red inside, blue between. By the pigeonhole principle, any $k$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $K_k$ exists. This yields $R(k,k) \;\geq\; (k-1)^2.$
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_2.png" 
        alt="$k-1$ Cliques" 
-       style="max-width: 60%; height: auto;">
+       style="max-width: 70%; height: auto;">
 </figure>
+<br>
 
 For decades, this quadratic construction marked the frontier of our knowledge. But quadratic growth, however elegant the argument, falls far short of exponential. To push beyond this impasse required a new philosophy, one that would loosen the demand for explicit construction.
 
@@ -296,19 +300,23 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 - If the hull already contains 4 or more vertices, those vertices form a convex quadrilateral and we are done.  
 - Otherwise, the convex hull is a triangle with exactly two interior points, as in the figure:  
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points.png" 
        alt="Three Point Convex Hull" 
        style="max-width: 60%; height: auto;">
 </figure>
+<br>
 
 Draw the line through the two interior points. Since no three points are collinear, at least two of the three hull vertices must lie on the same side of this line. These two vertices, together with the two interior points, necessarily form a convex quadrilateral:  
 
+<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points2.png" 
        alt="Convex Quadrilateral" 
        style="max-width: 60%; height: auto;">
 </figure>
+<br>
 
 Thus in any configuration of 5 points in general position, a convex quadrilateral is unavoidable. $\square$  
 
