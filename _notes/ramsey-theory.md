@@ -22,7 +22,7 @@ mathjax: true
     <div class="card-text">
       <ol style="margin: 0; padding-left: 1.5rem;">
         <li><a href="#the-party-problem">An Introductory Example</a></li>
-        <li><a href="#ramsey-numbers">Ramsey Numbers</a></li>
+        <li><a href="#ramsey-numbers">Elementary Ramsey Bounds</a></li>
         <li><a href="#ramsey-numbers-for-hypergraphs">Ramsey Numbers for Hypergraphs</a></li>
         <li><a href="#points-in-convex-position">Points in Convex Position</a></li>
         <li><a href="#fermats-last-theorem-over-finite-fields">Fermat's Last Theorem Over Finite Fields</a></li>
@@ -74,7 +74,7 @@ $$R(3,3) = 6,$$
 the first nontrivial **Ramsey number**.  
 
 <br>
-<h1 id="ramsey-numbers">Ramsey Numbers</h1>
+<h1 id="ramsey-numbers">Elementary Ramsey Bounds</h1>
 <br>
 
 This example is the first instance of a much broader phenomenon, captured by the notion of **Ramsey numbers**. The Ramsey number $R(k,\ell)$ is defined to be the smallest integer $n$ such that every graph on $n$ vertices contains either a clique of size $k$ or an independent set of size $\ell$.  
@@ -138,7 +138,7 @@ Meaning that the diagonal Ramsey numbers, $R(k, k)$, are bounded by the central 
 
 One might wonder whether the lower bound for the diagonal Ramsey numbers grows exponentially as well. After all, the recent breakthroughs on the upper bound are only meaningful if the numbers themselves are truly exponential in scale. If there were even a slight chance that $R(k,k)$ could be merely polynomial (say quadratic or cubic), then every advance on the upper bound---whether $4^k$, $3.999^k$, or lower---would be largely beside the point.
 
-A natural approach to finding a lower bound is to construct colorings of large complete graphs in which no monochromatic $K_k$ appears. A natural idea is to partition the vertices into ``blocks'' and force every $k$-set of vertices to see both red and blue edges.
+A natural approach to finding a lower bound is to construct colorings of large complete graphs in which no monochromatic $K_k$ appears. A natural idea is to partition the vertices into "blocks" and force every $k$-set of vertices to see both red and blue edges.
 
 The simplest example is unremarkable: a single red clique on $k-1$ vertices avoids a red $K_k$, but only shows that $R(k,k) > k-1$, which we already knew. A modest improvement comes from two cliques of size $k-1$, colored red internally and blue across: any $k$ vertices include two from the same clique (a red edge) and at least one from the other (a blue edge), hence $R(k,k) \geq 2(k-1)$.
 
@@ -146,7 +146,7 @@ The simplest example is unremarkable: a single red clique on $k-1$ vertices avoi
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
        alt="Two Cliques" 
-       style="max-width: 30%; height: auto;">
+       style="max-width: 35%; height: auto;">
 </figure>
 <br>
 
@@ -162,7 +162,7 @@ The idea extends naturally. Partition into $k-1$ cliques of size $k-1$, red insi
 
 For decades, this quadratic construction marked the frontier of our knowledge. But quadratic growth, however elegant the argument, falls far short of exponential. To push beyond this impasse required a new philosophy, one that would loosen the demand for explicit construction.
 
-A decisive advance came in 1947 with Erd\H{o}s’s introduction of the probabilistic method. Rather than constructing a particular coloring, one analyzes a uniformly random red–blue coloring of $K_n$. If the expected number of monochromatic copies of $K_k$ is strictly less than one, it follows (by the first moment method) that there must exist a coloring with none. In this way, one can establish existence without explicit construction.
+A decisive advance came in 1947 with Erdős’s introduction of the probabilistic method. Rather than constructing a particular coloring, one analyzes a uniformly random red–blue coloring of $K_n$. If the expected number of monochromatic copies of $K_k$ is strictly less than one, it follows (by the first moment method) that there must exist a coloring with none. In this way, one can establish existence without explicit construction.
 
 Formally, for a fixed $k$-set of vertices, the probability it forms a monochromatic clique is  
 
@@ -211,14 +211,14 @@ Thus,
 
 $$R(k_1,k_2,\dots,k_n) \leq R(R(k_1,k_2), k_3, \dots, k_n),$$  
 
-which proves finiteness in the $n$-color case.
+which proves finiteness in the $n$-color case. $\square$
 
 <br id="ramsey-numbers-for-hypergraphs">
 <br>
 <h1>Ramsey Numbers for Hypergraphs</h1>
 <br>
 
-The notion of Ramsey numbers extends naturally from graphs to hypergraphs, where edges are arbitrary subsets of vertices rather than just pairs. For integers $i \geq 2$, the \emph{hypergraph Ramsey number} $R^{(i)}(k,\ell)$ is defined to be the smallest $N$ such that, whenever all $i$-element subsets of $\{1,2,\dots,N\}$ are colored red or blue, one of the following occurs:
+The notion of Ramsey numbers extends naturally from graphs to hypergraphs, where edges are arbitrary subsets of vertices rather than just pairs. For integers $i \geq 2$, the **hypergraph Ramsey number** $R^{(i)}(k,\ell)$ is defined to be the smallest $N$ such that, whenever all $i$-element subsets of $\{1,2,\dots,N\}$ are colored red or blue, one of the following occurs:
 
 - there is a set $S_1$ of size $k$ such that every $i$-subset of $S_1$ is red, or  
 - there is a set $S_2$ of size $\ell$ such that every $i$-subset of $S_2$ is blue.  
@@ -232,7 +232,7 @@ Equivalently, we are coloring the $i$-edges of the complete $i$-uniform hypergra
   <div class="card-text">
     For integers $s,t \geq 2$,  
 
-    $$R^{(3)}(s,t) \;\leq\; R\!\big(R^{(3)}(s-1,t),\, R^{(3)}(s,t-1)\big) \;+\; 1.$$
+    $$R^{(3)}(s,t) \;\leq\; R\!\;\big(R^{(3)}(s-1,t),\, R^{(3)}(s,t-1)\big) \;+\; 1.$$
 
   </div>
 </div>
@@ -273,7 +273,7 @@ In both cases, we obtain the desired red $s$-set or blue $t$-set in $X$. This co
   <div class="card-text">
     Use the same argument to show that for all $r \geq 3$,
 
-    $$R^{(r)}(s,t) \;\leq\; R\!\big(R^{(r)}(s-1,t),\, R^{(r)}(s,t-1)\big) + 1.$$
+    $$R^{(r)}(s,t) \;\leq\; R\!\;\big(R^{(r)}(s-1,t),\, R^{(r)}(s,t-1)\big) + 1.$$
 
   </div>
 </div>
@@ -304,7 +304,7 @@ The argument is elegantly short. Consider the convex hull of the 5 points.
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points.png" 
        alt="Three Point Convex Hull" 
-       style="max-width: 60%; height: auto;">
+       style="max-width: 45%; height: auto;">
 </figure>
 <br>
 
@@ -314,7 +314,7 @@ Draw the line through the two interior points. Since no three points are colline
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/five_points2.png" 
        alt="Convex Quadrilateral" 
-       style="max-width: 60%; height: auto;">
+       style="max-width: 50%; height: auto;">
 </figure>
 <br>
 
