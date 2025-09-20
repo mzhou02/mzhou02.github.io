@@ -370,7 +370,7 @@ $$x^n + y^n \equiv z^n \pmod{p}.$$
 
 Perhaps, then, one could hope to prove Fermat’s Last Theorem by ruling out all such congruences.  
 
-But this approach fails. Dickson (1909) showed that for large primes $p$, the congruence has infinitely many solutions. Though his argument was very algebraic heavy, a few years later, Issai Schur rederived this impossibility with a surprisingly elementary combinatorial argument. His result, now called **Schur’s theorem**, is a milestone in Ramsey theory, and widely considered the beginning of additive combinatorics.
+But this approach fails. Dickson (1909) showed that for large primes $p$, the congruence has infinitely many solutions. Though his argument was very algebraic heavy, a few years later, Issai Schur rederived this impossibility with a surprisingly elementary combinatorial argument. His result, now called **Schur’s theorem**, is widely considered the beginning of additive combinatorics.
 
 <br>
 <div class="card mt-3 p-3">
