@@ -146,19 +146,17 @@ The simplest example is unremarkable: a single red clique on $k-1$ vertices avoi
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_1.png" 
        alt="Two Cliques" 
-       style="max-width: 35%; height: auto;">
+       style="max-width: 40%; height: auto;">
 </figure>
 <br>
 
 The idea extends naturally. Partition into $k-1$ cliques of size $k-1$, red inside, blue between. By the pigeonhole principle, any $k$-set contains two vertices from the same clique (a red edge) and two vertices from different cliques (a blue edge), so no monochromatic $K_k$ exists. This yields $R(k,k) \;\geq\; (k-1)^2.$
 
-<br>
 <figure style="display: flex; justify-content: center; margin: 0;">
   <img src="/assets/img/ramsey_notes/lower_bound_2.png" 
-       alt="$k-1$ Cliques" 
+       alt="Inductive Proof Lower Bound" 
        style="max-width: 70%; height: auto;">
 </figure>
-<br>
 
 For decades, this quadratic construction marked the frontier of our knowledge. But quadratic growth, however elegant the argument, falls far short of exponential. To push beyond this impasse required a new philosophy, one that would loosen the demand for explicit construction.
 
@@ -345,6 +343,12 @@ By the definition of the hypergraph Ramsey number, there must exist either
 The second outcome is impossible, because Klein’s theorem shows that among any 5 points in general position, there are always 4 in convex position. Hence we are left with the first outcome: a set of $k$ points in which every 4–subset is red.  
 
 Suppose, for contradiction, that these $k$ points are not in convex position. Then the convex hull of these points is not a $k$-gon, and so some point must lie strictly inside a triangle formed by three others. These four points fail to form a convex quadrilateral, contradicting the assumption that every 4–subset was red.  
+
+<figure style="display: flex; justify-content: center; margin: 0;">
+  <img src="/assets/img/ramsey_notes/convex_points.png" 
+       alt="Inductive Proof Lower Bound" 
+       style="max-width: 50%; height: auto;">
+</figure>
 
 Thus all $k$ points lie in convex position, completing the proof. $\square$  
 
