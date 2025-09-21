@@ -2,7 +2,7 @@
 layout: page
 title: notes
 permalink: /notes/
-description: A collection of notes and research work I have completed.
+description: A collection of notes I have previously written.
 nav: true
 nav_order: 3
 display_categories: [reinforcement learning, combinatorics, nlp, algebra]

@@ -101,11 +101,15 @@ $$\max_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[r(x, y) - \bet
 
 Notice that this is equivalent to minimizing
 
+<br>
+
 $$\min_{\pi} \text{KL}[\pi(y\mid x) \mid \pi_{\text{ref}}(y\mid x)] - \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)}[ \frac{1}{\beta}r(x, y)]$$
 
 $$=\min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\pi_{\text{ref}}(y\mid x)} \right)- \frac{1}{\beta}r(x, y) \right]$$
 
 $$ = \min_{\pi} \mathbb{E}_{x \sim \mathcal{D}, y \sim \pi(y\mid x)} \left[ \text{log}\left(\frac{\pi(y \mid x)}{\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)} \right)- \text{log}(Z(x))\right]$$
+
+<br>
 
 Because $$\frac{1}{Z(x)} \pi_{\text{ref}}(y\mid x) \exp\left(\frac{1}{\beta}r(x,y)\right)$$ forms a valid probablity distribution, this is equivalent to
 
