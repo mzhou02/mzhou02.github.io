@@ -169,7 +169,7 @@ Now, we continue with finding our large Fourier coefficient.
 </div>
 <br>
 
-Let $\mathbb{I}_{[N]}$ represent the indicator function for whether an element $x$ is in $[N]$ and $\mathbb{I}_{A}$ represent the indicator function for whether an element $x$ is in $A$. Then, we have that $\Lambda_3(\mathbb{I}_{[N]})$ counts the number of 3-term arithmetic progressions from $[N]$, which is more than $\frac{N^2}{2}$. Since we are assuming that $A$ has no nontrivial 3-term arithmetic progressions, we have that $\Lambda_3(\mathbb{I}_A) = \alpha N$. Thus, we have that
+<p>Let $\mathbb{I}_{[N]}$ represent the indicator function for whether an element $x$ is in $[N]$ and $\mathbb{I}_{A}$ represent the indicator function for whether an element $x$ is in $A$. Then, we have that $\Lambda_3(\mathbb{I}_{[N]})$ counts the number of 3-term arithmetic progressions from $[N]$, which is more than $\frac{N^2}{2}$. Since we are assuming that $A$ has no nontrivial 3-term arithmetic progressions, we have that $\Lambda_3(\mathbb{I}_A) = \alpha N$. Thus, we have that</p>
 
 $$\frac{\alpha^3N^2}{2} - \alpha N \leq \Lambda_3(\alpha \mathbb{I}_{[N]}) - \Lambda_3(\mathbb{I}_A)$$
 
