@@ -220,12 +220,12 @@ $$ = \sum_{i = 1}^k \vert e(d\theta) - 1\vert  \leq \vert P_i\vert  \  \vert e(d
 Thus, it suffices to pick a common difference $d$ that makes $e(d\theta)$ arbitrarily close to 1. We use the above lemma to choose a $d$ such that $d\theta \leq \frac{\eta}{3\pi N^{1/3}}$ where $d \leq \frac{4\pi N^{1/3}}{\eta}$. First, notice that $\vert e(d\theta) - 1\vert $ is bounded by the arc length of $d\theta$ degrees. Thus,
 
 $$\vert e(d\theta) - 1\vert  \leq 2\pi \left( \frac{\eta}{4 \pi N^{1/3}}\right) = \frac{\eta}{2N^{1/3}} $$
-Thus,
+
+And,
 
 $$\sup _{x,y\in P_{i}}\vert e(x\theta )-e(y\theta )\vert  \leq \vert P_i\vert  \ \vert e(d\theta) - 1\vert  \leq 2N^{1/3} \left( \frac{\eta}{2 N^{1/3}}\right) = \eta$$
 
 Since $N > C\eta^{-6}$, we have that $d \leq \frac{4\pi N^{1/3}}{CN^{-1/6}} = O(\sqrt{N})$, which is small enough for us to divide our subprogressions with lengths between $N^{1/3}$ and $2N^{1/3}$. $\square$
-
 
 Using this lemma, we now find a subprogression that we can restrict the original set to and find a density increment.
 
@@ -247,7 +247,7 @@ Since $N > C\alpha^{-12}$, we can select $\eta = \frac{\alpha^2}{20}$ to divide 
 
 $$\frac{\alpha^2}{10}N \leq \left\vert \sum _{x \in \mathbb{Z}}^{N}(\mathbb{I}_{A}-\alpha )(x)e(-x\theta)\right\vert  = \left\vert \sum_{i = 1}^k \sum _{x \in P_i}(\mathbb{I}_{A}-\alpha )(x)e(-x\theta)\right\vert  \leq \sum_{i = 1}^k \left\vert  \sum _{x \in P_i}(\mathbb{I}_{A}-\alpha )(x)e(-x\theta)\right\vert $$
 
-and because $\sup _{x,y\in P_{i}}\vert e(x\theta )-e(y\theta )\vert <\frac{\alpha^2}{20}$,
+<p>and because $\sup _{x,y\in P_{i}}\vert e(x\theta )-e(y\theta )\vert <\frac{\alpha^2}{20}$,</p>
 
 $$\leq \sum_{i = 1}^k \left(\left\vert  \sum _{x \in P_i}(\mathbb{I}_{A}-\alpha )(x)e(-y_i\theta)\right\vert  + \left\vert  \sum _{x \in P_i}(\mathbb{I}_{A}-\alpha )(x)(e(-x\theta) - e(-y_i\theta))\right\vert \right)$$
 
