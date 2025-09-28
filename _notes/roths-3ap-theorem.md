@@ -59,7 +59,7 @@ which bears a striking resemblance to a Fourier coefficient:
 
 $$\widehat{\mathbb{I} - \alpha}(\theta) = \sum_{x \in [N]} (\mathbb{I} - \alpha)(x) e^{-2\pi i x\theta}. \text{   (2)}$$
 
-By the triangle inequality, (1) provides an upper bound for the Fourier coefficient in (2), provided that \(e^{-2\pi i x\theta}\) remains approximately constant on each subset \(P_i\). Therefore, if we can demonstrate the existence of a large Fourier bias and partition \([N]\) into subsets where \(e^{-2\pi i x\theta}\) behaves uniformly, we can work backward to obtain another density increment.
+By the triangle inequality, (1) provides an upper bound for the Fourier coefficient in (2), provided that $e^{-2\pi i x\theta}\$remains approximately constant on each subset $P_i$. Therefore, if we can demonstrate the existence of a large Fourier bias and partition $[N]$ into subsets where $e^{-2\pi i x\theta}$ behaves uniformly, we can work backward to obtain another density increment.
 
 <br>
 <h1 id="strategy">Strategy and Pre-Requisites</h1>
@@ -120,7 +120,7 @@ We denote $\Lambda(f, f, f)$ as $\Lambda_3(f)$.
 <h1 id="non-uniformity">3AP-free $\Rightarrow$ large Fourier coefficient</h1>
 <br>
 
-Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal to $(\mathbb{I} - \alpha \mathbb{I}_{[N]})(x)$ (since we are only summing over elements of $[N]$). The number of 3APs in $\mathbb{I}_{[N]}$ is much larger than the number of 3APs in $A$ if $A$ were 3AP free. So if we want to bound the density of $A$ if $A$ is 3AP free, we naturally want to find a way to relate the number of 3APs to the Fourier coefficients of their functions. 
+Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal to $(\mathbb{I} - \alpha \mathbb{I}_{\text{[N]}})(x)$ (since we are only summing over elements of $[N]$). The number of 3APs in $\mathbb{I}_{\text{[N]}}$ is much larger than the number of 3APs in $A$ if $A$ were 3AP free. So if we want to bound the density of $A$ if $A$ is 3AP free, we naturally want to find a way to relate the number of 3APs to the Fourier coefficients of their functions. 
 
 <br>
 <div class="card mt-3 p-3">
@@ -229,6 +229,7 @@ Since $N > C\eta^{-6}$, we have that $d \leq \frac{4\pi N^{1/3}}{CN^{-1/6}} = O(
 
 Using this lemma, we now find a subprogression that we can restrict the original set to and find a density increment.
 
+<br>
 <h3>Density Increment</h3>
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Lemma 6 (Non-uniformity $\Rightarrow$ Density Increment).</h6>
