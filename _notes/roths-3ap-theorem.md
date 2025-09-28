@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Roth's Theorem
-description: 
+description: Fourier analytic proof of Roth's Theorem on three-term arithmetic progressions
 img: 
 importance: 2
 category: combinatorics
