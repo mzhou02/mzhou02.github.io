@@ -91,7 +91,7 @@ As you may have guessed, we're interested particularly in the value $\Lambda(\ma
 
 <br>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 1.</h3>
+  <h4 class="card-title font-weight-medium">Lemma 1.</h4>
   <div class="card-text">
     <p>$$\Lambda(f, g, h) = \int_0^1 \widehat{f}(\theta) \widehat{g}(-2\theta) \widehat{h}(\theta) d\theta$$</p>
   </div>
@@ -123,7 +123,7 @@ Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal
 
 <br>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 2 (Counting Lemma).</h3>
+  <h4 class="card-title font-weight-medium">Lemma 2 (Counting Lemma).</h4>
   <div class="card-text">
     <p>Let $f, g : \ \mathbb{Z} \rightarrow \mathbb{C}$ and $\sum_{n \in \mathbb{Z}} \vert f(n)\vert ^2 \leq M, \sum_{n \in \mathbb{Z}} \vert g(n)\vert ^2 \leq M$, for some $M$. Then, we have that:</p>
 
@@ -159,7 +159,7 @@ Now, we continue with finding our large Fourier coefficient.
 
 <br>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 3 (No 3AP $\Rightarrow$ Non-uniformity).</h3>
+  <h4 class="card-title font-weight-medium">Lemma 3 (No 3AP $\Rightarrow$ Non-uniformity).</h4>
   <div class="card-text">
     <p>Let $A \subset [N]$ be 3-AP free with $\vert A\vert  = \alpha N$ and $N \geq 5/\alpha^2$. Then there exists some $\theta$ such that </p>
 
@@ -190,7 +190,7 @@ Now that we have our large Fourier coefficient, we just now need to be able to d
 
 <br>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 4 (Dirichlet).</h3>
+  <h4 class="card-title font-weight-medium">Lemma 4 (Dirichlet).</h4>
   <div class="card-text">
     <p>Let $\theta, \delta \in \mathbb{R}$, there is $x \leq \frac{1}{\delta}$ such that the distance of $x\theta$ to the closest integer is at most $\delta$. </p>
   </div>
@@ -203,7 +203,7 @@ The reason why this is so useful is because if we can find a $d$ where $d\theta$
 
 <br>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 5 (Dirichlet).</h3>
+  <h4 class="card-title font-weight-medium">Lemma 5 (Dirichlet).</h4>
   <div class="card-text">
     <p>Let $ 0<\eta <1,\theta \in \mathbb {R} $. Assume that $ N>C\eta ^{-6}$ for a universal constant $C$. Then it is possible to partition $[N]$ into arithmetic progressions $ P_{i}$ with length $ N^{1/3}\leq \vert P_{i}\vert \leq 2N^{1/3}$ such that $ \sup _{x,y\in P_{i}}\vert e(x\theta )-e(y\theta )\vert <\eta $ for all $ i$. </p>
   </div>
@@ -230,7 +230,7 @@ Using this lemma, we now find a subprogression that we can restrict the original
 
 <h3>Density Increment</h3>
 <div class="card mt-3 p-3">
-  <h4 class="card-title font-weight-medium">Lemma 6 (Non-uniformity $\Rightarrow$ Density Increment).</h3>
+  <h4 class="card-title font-weight-medium">Lemma 6 (Non-uniformity $\Rightarrow$ Density Increment).</h4>
   <div class="card-text">
     <p>Let $A$ be a 3-AP-free subset of $[N]$, with $\vert A\vert =\alpha N$ and $N > C\alpha ^{-12}$. Then, there exists a sub progression $P\subset [N]$ such that $\vert P\vert \geq N^{1/3}$ and $\vert A\cap P\vert \geq (\alpha +\alpha ^{2}/40)\vert P\vert $. </p>
   </div>
