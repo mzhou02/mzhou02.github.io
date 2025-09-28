@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reinforcement Learning with Human Feedback
-description: 
+description: "Notes on alignment by preference: RLHF to DPO"
 img: 
 importance: 1
 category: reinforcement learning
