@@ -121,7 +121,7 @@ We can rearrange this insight on the optimal policy to express the reward functi
 
 $$r(x,y) = \beta \log \frac{\pi_r(y\mid x)}{\pi_{\text{ref}}(y\mid x)} + \beta \log Z(x)$$
 
-Of course, we don't know the optimal policy—that's what we're trying to learn. But we do have human preference data that tells us which outputs are preferred to others. And since under the Bradley Terry model, the probability of a human preferring one output over another only deals with the differences in their rewards, we have some nice cancellation properties (keep in mind that $$Z(x)$$ is very hard to calculate, so we would like to get rid of that).
+Of course, we don't know the optimal policy—that's what we're trying to learn. But we do have human preference data that tells us which outputs are preferred to others. And since under the Bradley Terry model, the probability of a human preferring one output over another only deals with the differences in their rewards, we have some nice cancellation properties (keep in mind that $$Z(x)$$ is **very hard** to calculate, so we would like to get rid of that).
 
 First, the Bradley Terry model says that
 
