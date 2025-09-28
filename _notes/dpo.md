@@ -16,7 +16,21 @@ mathjax: true
   gtag('config', 'G-0823RLC0T3');
 </script>
 
-<h2>The Alignment Challenge</h2>
+<div class="cv">
+  <div class="card mt-3 p-3" style="width: fit-content; max-width: 100%;">
+    <h2 class="card-title font-weight-medium">Contents</h2>
+    <div class="card-text">
+      <ol style="margin: 0; padding-left: 1.5rem;">
+        <li><a href="#alignment">The Alignment Challenge</a></li>
+        <li><a href="#foundation">The Conceptual Foundation of RLHF</a></li>
+        <li><a href="#policy-update">The Optimal Policy Under a KL Constraint</a></li>
+        <li><a href="#dpo">Direct Preference Optimization</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<h2 id="alignment">The Alignment Challenge</h2>
 
 Language models have become remarkably capable through self-supervised learning on vast corpora of human-written text. They've learned to predict the next word with impressive accuracy, absorbing patterns of knowledge, reasoning, and even some semblance of common sense. Yet, there's a fundamental gap between predicting the next word and generating text that humans genuinely find helpful, harmless, and honest.
 
@@ -24,7 +38,7 @@ This gap exists because the core objective of predicting the next token doesn't 
 
 This is the alignment challenge: how do we guide these powerful systems toward generating text that reflects human preferences and values, rather than simply reproducing the statistical patterns found in training data? How do we teach models to distinguish what should be written from what is written?
 
-<h2>The Conceptual Foundation of RLHF</h2>
+<h2 id="foundation">The Conceptual Foundation of RLHF</h2>
 
 Reinforcement Learning from Human Feedback emerged as a powerful paradigm for aligning language models with human preferences. At its heart lies a simple idea: rather than trying to specify exactly what makes text "good" through rules or examples, we can learn what humans prefer directly from their comparative judgments. The key insight of RLHF is that humans find it much easier to compare two outputs and express a preference than to articulate exactly why one output is better than another. This relative preference signal turns out to be remarkably powerful for learning to generate better text.
 
@@ -83,7 +97,7 @@ While conceptually elegant, this approach introduces significant practical chall
 - It creates a complex pipeline with multiple components that must work together
 - As the policy changes during RL, the distribution of outputs shifts, potentially making the reward model less reliable
 
-<h2>The Optimal Policy Under a KL Constraint</h2>
+<h2 id="policy-update">The Optimal Policy Under a KL Constraint</h2>
 
 This innate instability and computational infeasibility of training a reward model on human preferences while training a model on the reward model introduces the question: is there a way to train directly on human rankings and skiup the reward model step altogether?
 
@@ -137,7 +151,7 @@ Now, the partition function $$Z(x)$$ cancels out, and we can express the probabi
 
 This cancellation is the key mathematical insight that makes DPO possible. It allows us to bypass both explicit reward modeling and reinforcement learning, and instead directly optimize a policy to predict human preferences.
 
-<h2>Direct Preference Optimization</h2>
+<h2 id="dpo">Direct Preference Optimization</h2>
 
 Direct Preference Optimization (DPO) leverages this mathematical insight we just explored to create a dramatically simpler approach to preference-based alignment. Instead of the three-stage pipeline of traditional RLHF, DPO offers a direct path from human preferences to an optimized language model.
 
