@@ -31,6 +31,7 @@ mathjax: true
   </div>
 </div>
 
+<br>
 <h1 id="density-increment-argument">Density Increment Argument</h1>
 <br>
 
