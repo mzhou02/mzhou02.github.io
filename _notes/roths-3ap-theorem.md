@@ -32,7 +32,7 @@ mathjax: true
 </div>
 
 <br>
-<h1 id="density-increment-argument">Density Increment Argument</h1>
+<h2 id="density-increment-argument">Density Increment Argument</h2>
 <br>
 
 Roth’s celebrated theorem asserts that any subset of the natural numbers of positive upper density necessarily contains a three-term arithmetic progression (3AP). The proof is based on what is now called the *density increment argument*. Roughly speaking, one assumes that a set $A$ of natural numbers is free of three-term progressions, and then shows that this assumption forces $A$ to be “more dense than expected” on some structured subset of the integers. Concretely, if $A \subset [N]$ has density $\alpha$, then one can locate a subprogression $P \subset [N]$ on which the density of $A$ is not merely $\alpha$, but rather, let's say $\alpha + c\alpha^{2}$ for some absolute constant $c>0$:
@@ -62,7 +62,7 @@ $$\widehat{\mathbb{I} - \alpha}(\theta) = \sum_{x \in [N]} (\mathbb{I} - \alpha)
 By the triangle inequality, (1) provides an upper bound for the Fourier coefficient in (2), provided that $e^{-2\pi i x\theta}\$remains approximately constant on each subset $P_i$. Therefore, if we can demonstrate the existence of a large Fourier bias and partition $[N]$ into subsets where $e^{-2\pi i x\theta}$ behaves uniformly, we can work backward to obtain another density increment.
 
 <br>
-<h1 id="strategy">Strategy and Pre-Requisites</h1>
+<h2 id="strategy">Strategy and Pre-Requisites</h2>
 <br>
 
 <h3>Strategy</h3>
@@ -117,7 +117,7 @@ $$= \int_0^1 \widehat{f}(\theta) \widehat{g}(-2\theta) \widehat{h}(\theta) \ d\t
 We denote $\Lambda(f, f, f)$ as $\Lambda_3(f)$.
 
 <br>
-<h1 id="non-uniformity">3AP-free $\Rightarrow$ large Fourier coefficient</h1>
+<h2 id="non-uniformity">3AP-free $\Rightarrow$ large Fourier coefficient</h2>
 <br>
 
 <p>Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal to $(\mathbb{I} - \alpha \mathbb{I}_{[N]})(x)$ (since we are only summing over elements of $[N]$). The number of 3APs in $\mathbb{I}_{[N]}$ is much larger than the number of 3APs in $A$ if $A$ were 3AP free. So if we want to bound the density of $A$ if $A$ is 3AP free, we naturally want to find a way to relate the number of 3APs to the Fourier coefficients of their functions.</p>
@@ -182,7 +182,7 @@ $$\frac{\alpha^3N^2}{2} - \alpha N \leq 3\alpha N \Vert \widehat{f - g}\Vert_{\i
 $$\Vert \widehat{f - g}\Vert_{\infty} \geq \frac{\alpha^2N}{6} - \frac{1}{3} \geq \frac{\alpha^2N}{10} \square$$
 
 <br>
-<h1 id="density-increment">Large Fourier Coefficient $\Rightarrow$ Density Increment</h1>
+<h2 id="density-increment">Large Fourier Coefficient $\Rightarrow$ Density Increment</h2>
 <br>
 
 <h3>Subset Division</h3>
@@ -266,7 +266,7 @@ $$\frac{\alpha^2}{20} \vert P_i\vert  \leq 2\vert A\cap P_i\vert  - 2\alpha P_i$
 $$\vert A\cap P_i\vert \geq (\alpha +\alpha ^{2}/40)\vert P_i\vert  \square$$
 
 <br>
-<h1 id="wrap-up">Wrap Up</h1>
+<h2 id="wrap-up">Wrap Up</h2>
 <br>
 
 After at most $40/\alpha + 1$ iterations of restricting to a subprogression and finding the new density of that set restricted to this subprogression, we will double our density in that subset. Then, after $20/\alpha + 1$, we will double again. We can double at most $-\text{log}(\alpha)$ number of times before getting a density greater than 1, meaning that we will have at most $O(\frac{1}{\alpha})$ number of iterations. We can continue iterating until $N_i \leq C\alpha_i^{-12}$, where $N_i$ is size of the progression we are restricting to and $\alpha_i$ is the density of the set in this progression. Let us continue iterating until this condition. Then $N_i \leq C \alpha_i^{-12} \leq C\alpha^{-12}$, and since our subprogression is of size at least $N^{1/3}$,
