@@ -120,7 +120,7 @@ We denote $\Lambda(f, f, f)$ as $\Lambda_3(f)$.
 <h1 id="non-uniformity">3AP-free $\Rightarrow$ large Fourier coefficient</h1>
 <br>
 
-Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal to $(\mathbb{I} - \alpha \mathbb{I}_{\text{[N]}})(x)$ (since we are only summing over elements of $[N]$). The number of 3APs in $\mathbb{I}_{\text{[N]}}$ is much larger than the number of 3APs in $A$ if $A$ were 3AP free. So if we want to bound the density of $A$ if $A$ is 3AP free, we naturally want to find a way to relate the number of 3APs to the Fourier coefficients of their functions. 
+<p>Notice that the quantity we are interested, $(\mathbb{I} - \alpha)(x)$, is equal to $(\mathbb{I} - \alpha \mathbb{I}_{[N]})(x)$ (since we are only summing over elements of $[N]$). The number of 3APs in $\mathbb{I}_{[N]}$ is much larger than the number of 3APs in $A$ if $A$ were 3AP free. So if we want to bound the density of $A$ if $A$ is 3AP free, we naturally want to find a way to relate the number of 3APs to the Fourier coefficients of their functions.</p>
 
 <br>
 <div class="card mt-3 p-3">
