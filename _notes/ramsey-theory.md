@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ramsey Theory
-description: Ramsey Theory and the beginning of Additive Combinatorics
+description: Early steps in Additive Combinatorics
 img: 
 importance: 1
 category: combinatorics
