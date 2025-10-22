@@ -121,7 +121,7 @@ Rewriting,
 
 $$\|g\|^2 = \|p\|_2^2 - 2p_x + 1.$$
 
-Since the entries of $p_\theta$ are nonnegative and sum to one,
+Since the entries of $p$ are nonnegative and sum to one,
 
 $$\|p\|_2^2 \leq p_x^2 + (1 - p_x)^2.$$
 
