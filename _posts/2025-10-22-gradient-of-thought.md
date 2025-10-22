@@ -106,7 +106,7 @@ We now use this to connect the size of the gradient to the model’s probability
   <div class="card-text">
     <p>Let $g$ be the loss gradient in respect to model logits. If $\|g\| > \tau$, then 
     
-    $$ 1 - \sqrt{\tau} < \theta(x_t \mid y_{<t}) < 1 - \sqrt{\tfrac{\tau}{2}}. $$
+    $$ 1 - \sqrt{\tau} < p_\theta(x_t \mid y_{<t}) < 1 - \sqrt{\tfrac{\tau}{2}}. $$
     
     </p>
   </div>
