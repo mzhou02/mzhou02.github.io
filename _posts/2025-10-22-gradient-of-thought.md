@@ -24,7 +24,7 @@ steadily rises. This is the familiar cross-entropy language-modeling objective.
 
 At a high level, an LLM learns a map from *context*, what has already been seen, to *expectation*, a distribution for what should come next,. Fine-tuning, or post-training, refines this map for specific tasks: multi-step reasoning, following instructions, calibration, and so on.
 
-<p>A by-now standard empirical observation is that prompting models to produce Chain-of-Thought (CoT), step-by-step intermediate explanations, often yields striking improvements on reasoning tasks<sup><a href="#ref1">[1]</a></sup>. Appending "Let’s think step by step" induces the model to unfold a short sequence of intermediate tokens that articulate a path:<p>
+<p>A by-now standard empirical observation is that prompting models to produce Chain-of-Thought (CoT), step-by-step intermediate explanations, often yields striking improvements on reasoning tasks<sup><a href="#ref1">[1]</a></sup>. Appending "Let’s think step by step" induces the model to unfold a short sequence of intermediate tokens that articulate a path:</p>
 
 <blockquote style="margin-left: 2.5em; margin-right: 2.5em; font-size: 0.9em; color: #444; font-style: italic;"> "To solve this, first note the number is even; therefore dividing by two gives..." </blockquote>
 
@@ -161,4 +161,5 @@ Geometrically, this translates to a refinement of the model’s internal landsca
 <br>
 <h1> References </h1>
 <br>
+
 <p id="ref1">[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V. Le, and Denny Zhou. 2022. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.* In Advances in Neural Information Processing Systems 35 (NeurIPS 2022).</p>
