@@ -162,4 +162,4 @@ Geometrically, this translates to a refinement of the model’s internal landsca
 <h1> References </h1>
 <br>
 
-<p id="ref1">[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V. Le, and Denny Zhou. 2022. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.* In Advances in Neural Information Processing Systems 35 (NeurIPS 2022).</p>
+<p id="ref1">[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V. Le, and Denny Zhou. 2022. <i>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.</i> In Advances in Neural Information Processing Systems 35 (NeurIPS 2022).</p>
