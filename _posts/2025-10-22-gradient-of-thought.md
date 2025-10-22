@@ -26,7 +26,7 @@ At a high level, an LLM learns a map from *context* (what has already been seen)
 
 A by-now standard empirical observation (see, e.g., Wei et al.) is that prompting models to produce *Chain-of-Thought* (CoT), step-by-step intermediate explanations, often yields striking improvements on reasoning tasks. Appending "Let’s think step by step" induces the model to unfold a short sequence of intermediate tokens that articulate a path:
 
-<blockquote> "To solve this, first note the number is even; therefore dividing by two gives \dots" </blockquote>
+<blockquote style="margin-left: 2.5em; margin-right: 2.5em; font-size: 0.9em; color: #444; font-style: italic;"> "To solve this, first note the number is even; therefore dividing by two gives \dots" </blockquote>
 
 Why should such intermediate text help?
 
