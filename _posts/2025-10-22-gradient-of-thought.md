@@ -24,7 +24,7 @@ steadily rises. This is the familiar cross-entropy language-modeling objective.
 
 At a high level, an LLM learns a map from *context*, what has already been seen, to *expectation*, a distribution for what should come next,. Fine-tuning, or *post-training*, refines this map for specific tasks: multi-step reasoning, following instructions, calibration, and so on.
 
-A by-now standard empirical observation (see, e.g., Wei et al.) is that prompting models to produce *Chain-of-Thought* (CoT), step-by-step intermediate explanations, often yields striking improvements on reasoning tasks. Appending "Let’s think step by step" induces the model to unfold a short sequence of intermediate tokens that articulate a path:
+A by-now standard empirical observation (see, e.g., Wei et al.) is that prompting models to produce Chain-of-Thought (CoT), step-by-step intermediate explanations, often yields striking improvements on reasoning tasks. Appending "Let’s think step by step" induces the model to unfold a short sequence of intermediate tokens that articulate a path:
 
 <blockquote style="margin-left: 2.5em; margin-right: 2.5em; font-size: 0.9em; color: #444; font-style: italic;"> "To solve this, first note the number is even; therefore dividing by two gives..." </blockquote>
 
@@ -32,10 +32,11 @@ Why should such intermediate text help?
 
 <br>
 <h2> An Information-Theoretic Perspective </h2>
+<br>
 
 At bottom, next-token prediction is an exercise in uncertainty management. The *surprisal* of a token $x_t$ given its context $x_{<t}$ is
 
-$$\text{supr}(x_t \mid x_{<t}) \;=\; -\log p_\theta(x_t \mid x_{<t}),$$
+$$\text{surp}(x_t \mid x_{<t}) \;=\; -\log p_\theta(x_t \mid x_{<t}),$$
 
 measured in bits. Surprisal counts how many "yes/no" questions one would need, on average, to identify the correct token under the model's own distribution. High surprisal signals a difficult prediction (the model did not expect this token); low surprisal signals an easy one.
 
@@ -145,6 +146,8 @@ Of course, if we used only the preceding lemma, one could only guarantee this in
 
 <br>
 <h2> From Surprise to Stability </h2>
+<br>
+
 For the most part, changes in logit gradients translate directly to changes in model gradients, and from this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories closer to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment: it is also a natural training objective for it.
 
 Reasoning sequences in this light act as a variational regularizer on the cross-entropy objective, implicitly minimizing curvature in the loss surface. But beyond stabilizing optimization, these gentler updates confer several deeper benefits. In fine-tuning, where a narrow slice of data adjusts a model with billions of parameters, stability matters as much as accuracy. Smoother gradients prevent overcorrection and reduce the risk of catastrophic forgetting, allowing the model to incorporate new reasoning patterns without erasing the representations that support them. Intuitively, we are teaching the model to reason more, not to memorize differently: the training signal refines the structure of thought rather than replacing its contents. This makes reasoning supervision doubly valuable: it extends the model’s abilities while preserving the foundation it was built upon.
@@ -153,5 +156,7 @@ This perspective helps illuminate why many modern alignment strategies, like the
 
 Geometrically, this translates to a refinement of the model’s internal landscape. Pre-training yields a vast but rugged terrain, full of steep cliffs where token probabilities shift abruptly from one step to the next. Post-training on reasoning traces acts less like the addition of new knowledge and more like a smoothing operation across this surface. The same information remains, but its contours soften; gradients that once fluctuated violently begin to flow coherently along intermediate steps. The model does not merely learn new facts—it learns to traverse its own knowledge more gracefully. In the end, the gradient tells a simple story: reasoning is a way of making prediction coherent. When a model learns to smooth its own landscape—distributing complexity over time and thought—it becomes not only a better reasoner, but a gentler learner.
 
-<h2> References </h2>
+<br>
+<h1> References </h1>
+<br>
 Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. V., & Zhou, D. (2022). *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. In Advances in Neural Information Processing Systems 35, 2022.*
