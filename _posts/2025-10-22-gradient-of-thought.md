@@ -90,7 +90,7 @@ $$= -q(k) + p_k \sum_i q(i) = p_k - q(k),$$
 
 since $\sum_i q(i) = 1$. 
 
-Specializing to the one-hot case $q = \mathbb{I}\{k = x_t\}$ gives
+Specializing to the one-hot case <p>$q = \mathbb{I}\{k = x_t\}$</p> gives
 
 $$\frac{\partial \mathcal{L}}{\partial y_k} = p_k - \mathbb{I}\{k = x_t\},$$
 
