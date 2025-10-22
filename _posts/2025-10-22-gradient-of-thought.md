@@ -31,7 +31,7 @@ At a high level, an LLM learns a map from *context*, what has already been seen,
 Why should such intermediate text help?
 
 <br>
-<h2> An Information-Theoretic Perspective </h2>
+<h1> An Information-Theoretic Perspective </h1>
 <br>
 
 At bottom, next-token prediction is an exercise in uncertainty management. The *surprisal* of a token $x_t$ given its context $x_{<t}$ is
@@ -47,7 +47,9 @@ $$q \;\to\; r_1 \;\to\; r_2 \;\to\; \cdots \;\to\; r_k \;\to\; a,$$
 so that each conditional $p_\theta(r_i \mid q, r_{<i})$ and $p_\theta(a \mid q, r_{1:k})$ is higher than it would have been without the preceding scaffolding. The informational load that would otherwise concentrate in a single cliff-edge step becomes distributed across the sentence in several gentler slopes.
 
 <br>
-<h2> Chain-of-Thought and Post Training Gradients </h2>
+<h1> Chain-of-Thought and Post Training Gradients </h1>
+<br>
+
 One can think of post-training not as the acquisition of new facts, but as the adjustment of geometry within a model that already knows much. Because language models are optimized under a cross-entropy objective, surprisal and gradient behavior are intimately linked: when the model’s predictions are more evenly distributed, its updates become steadier. Fine-tuning on Chain-of-Thought (CoT) prompt–answer pairs achieves precisely this effect. The reasoning prefix redistributes surprisal across tokens, smoothing the loss surface and dampening abrupt fluctuations in the gradient with respect to the logits—what we may call gradient spikes. In essence, CoT supervision transforms learning from a sequence of sharp corrections into a flow of gentle, coherent updates.
 
 <br>
@@ -145,7 +147,7 @@ The magnitude of the gradient spike during training is thus largely governed by 
 Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest.
 
 <br>
-<h2> From Surprise to Stability </h2>
+<h1> From Surprise to Stability </h1>
 <br>
 
 For the most part, changes in logit gradients translate directly to changes in model gradients, and from this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories closer to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment: it is also a natural training objective for it.
@@ -158,6 +160,4 @@ Geometrically, this translates to a refinement of the model’s internal landsca
 
 <br>
 <h1> References </h1>
-<br>
-
 <p id="ref1">[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V. Le, and Denny Zhou. 2022. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.* In Advances in Neural Information Processing Systems 35 (NeurIPS 2022).</p>
