@@ -30,11 +30,12 @@ A by-now standard empirical observation (see, e.g., Wei et al.) is that promptin
 
 Why should such intermediate text help?
 
+<br>
 <h2> An Information-Theoretic Perspective </h2>
 
 At bottom, next-token prediction is an exercise in uncertainty management. The *surprisal* of a token $x_t$ given its context $x_{<t}$ is
 
-$$\surp(x_t \mid x_{<t}) \;=\; -\log p_\theta(x_t \mid x_{<t}),$$
+$$\text{supr}(x_t \mid x_{<t}) \;=\; -\log p_\theta(x_t \mid x_{<t}),$$
 
 measured in bits. Surprisal counts how many "yes/no" questions one would need, on average, to identify the correct token under the model's own distribution. High surprisal signals a difficult prediction (the model did not expect this token); low surprisal signals an easy one.
 
@@ -44,6 +45,7 @@ $$q \;\to\; r_1 \;\to\; r_2 \;\to\; \cdots \;\to\; r_k \;\to\; a,$$
 
 so that each conditional $p_\theta(r_i \mid q, r_{<i})$ and $p_\theta(a \mid q, r_{1:k})$ is higher than it would have been without the preceding scaffolding. The informational load that would otherwise concentrate in a single cliff-edge step becomes distributed across the sentence in several gentler slopes.
 
+<br>
 <h2> Chain-of-Thought and Post Training Gradients </h2>
 One can think of post-training not as the acquisition of new facts, but as the adjustment of geometry within a model that already knows much. Because language models are optimized under a cross-entropy objective, surprisal and gradient behavior are intimately linked: when the model’s predictions are more evenly distributed, its updates become steadier. Fine-tuning on Chain-of-Thought (CoT) prompt–answer pairs achieves precisely this effect. The reasoning prefix redistributes surprisal across tokens, smoothing the loss surface and dampening abrupt fluctuations in the gradient with respect to the logits—what we may call gradient spikes. In essence, CoT supervision transforms learning from a sequence of sharp corrections into a flow of gentle, coherent updates.
 
@@ -70,12 +72,16 @@ so
 
 $$\frac{\partial}{\partial y_k} \log p_i = \frac{\partial y_i}{\partial y_k} - \frac{\partial \log Z}{\partial y_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial y_k}$$
 
+<br>
+
 $$ = \mathbb{I}\{i = k\} - \frac{e^{y_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
 
 
 Therefore,
 
 $$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(i) \frac{\partial}{\partial y_k} \log p_i = -\sum_i q(i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
+
+<br>
 
 $$= -q(k) + p_k \sum_i q(i) = p_k - q(k),$$
 
@@ -87,6 +93,7 @@ $$\frac{\partial \mathcal{L}}{\partial y_k} = p_k - \mathbb{I}\{k = x_{t+1}\},$$
 
 as claimed. $\square$
 
+<br>
 We now use this to connect the size of the gradient to the model’s probability distribution.
 
 
@@ -131,10 +138,12 @@ to get that
 
 $$p_x \geq 1 - \sqrt{\tau}. \square$$
 
+<br>
 The magnitude of the gradient spike during training is thus largely governed by the tail of the model’s probability distribution: when the model assigns high probability to the correct token, the gradient necessarily remains small. Reasoning traces are easier to for the model to predict, effectively shifting the distribution of the correct token forward, moving the tail upwards and thereby reducing the frequency and severity of large gradients in practice.
 
 Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest.
 
+<br>
 <h2> From Surprise to Stability </h2>
 From this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories closer to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment: it is also a natural training objective for it.
 
