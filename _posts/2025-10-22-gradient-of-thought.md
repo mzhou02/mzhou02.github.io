@@ -4,7 +4,7 @@ title: "The Gradient of Thought: Reasoning as a Natural Objective for Alignment"
 date: 2025-10-22 18:34:00
 description:
 tags: nlp
-categories: math
+categories: ai
 featured: false
 ---
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
@@ -161,4 +161,3 @@ Geometrically, this translates to a refinement of the model’s internal landsca
 <br>
 
 <p id="ref1">[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc V. Le, and Denny Zhou. 2022. *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.* In Advances in Neural Information Processing Systems 35 (NeurIPS 2022).</p>
-
