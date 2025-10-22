@@ -50,7 +50,7 @@ so that each conditional $p_\theta(r_i \mid q, r_{<i})$ and $p_\theta(a \mid q, 
 <h1> Chain-of-Thought and Post Training Gradients </h1>
 <br>
 
-One can think of post-training not as the acquisition of new facts, but as the adjustment of geometry within a model that already knows much. Because language models are optimized under a cross-entropy objective, **surprisal and gradient behavior are intimately linked**: when the model’s predictions are more evenly distributed, its updates become steadier. Fine-tuning on Chain-of-Thought (CoT) prompt-answer pairs achieves precisely this effect. The reasoning prefix redistributes surprisal across tokens, smoothing the loss surface and dampening abrupt fluctuations in the gradient with respect to the logits, what we may call gradient spikes. In essence, CoT supervision transforms learning from a sequence of sharp corrections into a flow of gentle, coherent updates.
+One can think of post-training not as the acquisition of new facts, but as the adjustment of geometry within a model that already knows much. Because language models are optimized under a cross-entropy objective, **surprisal and gradient behavior are intimately linked**: when the model’s predictions are more evenly distributed, its updates become steadier. Fine-tuning on Chain-of-Thought prompt-answer pairs achieves precisely this effect. The reasoning prefix redistributes surprisal across tokens, smoothing the loss surface and dampening abrupt fluctuations in the gradient with respect to the logits, what we may call gradient spikes. In essence, CoT supervision transforms learning from a sequence of sharp corrections into a flow of gentle, coherent updates.
 
 <br>
 <div class="card mt-3 p-3">
