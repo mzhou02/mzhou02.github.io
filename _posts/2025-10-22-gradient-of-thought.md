@@ -53,7 +53,7 @@ One can think of post-training not as the acquisition of new facts, but as the a
   <div class="card-text">
     <p>The partial derivative of the loss with respect to $y_k$ is simply the model’s predicted probability of that token minus the true label. In other words,
     
-    $$\frac{\partial \mathcal{L}}{\partial y_k} = p_\theta(y_k \mid c_t) - \mathbf{1}\{y_k = x_{t+1}\}, $$
+    $$\frac{\partial \mathcal{L}}{\partial y_k} = p_\theta(y_k \mid c_t) - \mathbb{I}\{y_k = x_{t+1}\}, $$
     
     where $x_{t+1}$ is the correct next token in the training data. </p>
   </div>
@@ -68,30 +68,23 @@ $$\log p_i = y_i - \log Z,$$
 
 so
 
-$$\frac{\partial}{\partial y_k} \log p_i = \frac{\partial y_i}{\partial y_k} - \frac{\partial \log Z}{\partial y_k}$$
+$$\frac{\partial}{\partial y_k} \log p_i = \frac{\partial y_i}{\partial y_k} - \frac{\partial \log Z}{\partial y_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial y_k}$$
 
-$$ = \mathbf{1}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial y_k}$$
-
-$$ = \mathbf{1}\{i = k\} - \frac{e^{y_k}}{Z}$$
-
-$$ = \mathbf{1}\{i = k\} - p_k.$$
+$$ = \mathbb{I}\{i = k\} - \frac{e^{y_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
 
 
 Therefore,
 
-$$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(i) \frac{\partial}{\partial y_k} \log p_i$$
+$$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(i) \frac{\partial}{\partial y_k} \log p_i = -\sum_i q(i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
 
-$$= -\sum_i q(i)\bigl(\mathbf{1}\{i = k\} - p_k\bigr)$$
-
-$$= -q(k) + p_k \sum_i q(i)$$
-
-$$= p_k - q(k),$$
+$$= -q(k) + p_k \sum_i q(i) = p_k - q(k),$$
 
 since $\sum_i q(i) = 1$. 
 
-Specializing to the one-hot case $q = \mathbf{1}_{\{x_{t+1}\}}$ gives
+Specializing to the one-hot case $q = \mathbb{I}\{k = x_{t+1}\}$ gives
 
-$$\frac{\partial \mathcal{L}}{\partial y_k} = p_k - \mathbf{1}\{k = x_{t+1}\},$$
+$$\frac{\partial \mathcal{L}}{\partial y_k} = p_k - \mathbb{I}\{k = x_{t+1}\},$$
+
 as claimed. $\square$
 
 We now use this to connect the size of the gradient to the model’s probability distribution.
@@ -110,42 +103,42 @@ We now use this to connect the size of the gradient to the model’s probability
 </div>
 <br>
 
-*Proof.* From Lemma 1, the gradient with respect to the logits satisfies
+*Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid c_t)$ and $p_x$ as $p_\theta(x_{t+1} \mid c_t)$  represent the probability vector of  From Lemma 1, the gradient with respect to the logits satisfies
 
-$$ \|g\|^2 = (1 - p_\theta(x_{t+1} \mid c_t))^2  + \sum_{y_i \neq x_{t+1}} p_\theta(y_i \mid c_t)^2. $$
+$$ \|g\|^2 = (1 - p_x)^2  + \sum_{y_i \neq x_{t+1}} p_\theta(y_i \mid c_t)^2. $$
 
 Rewriting,
 
-$$\|g\|^2 = \|p_\theta(\cdot \mid c_t)\|_2^2 - 2p_\theta(x_{t+1} \mid c_t) + 1.$$
+$$\|g\|^2 = \|p\|_2^2 - 2p_x + 1.$$
 
 Since the entries of $p_\theta$ are nonnegative and sum to one,
 
-$$\|p_\theta(\cdot \mid c_t)\|_2^2 \leq p_\theta(x_{t+1} \mid c_t)^2 + (1 - p_\theta(x_{t+1} \mid c_t))^2.$$
+$$\|p\|_2^2 \leq p_x^2 + (1 - p_x)^2.$$
 
 Substituting this bound gives
 
-$$\|g\|^2 \leq 2(1 - p_\theta(x_{t+1} \mid c_t))^2.$$
+$$\|g\|^2 \leq 2(1 - p_x)^2.$$
 
 Hence, if $\|g\| > \tau$, it follows that
 
-$$p_\theta(x_{t+1} \mid c_t) \leq 1 - \sqrt{\tfrac{\tau}{2}},$$
+$$p_x \leq 1 - \sqrt{\tfrac{\tau}{2}},$$
 
 Similarly, we can use the bound
 
-$$|p_\theta(\cdot \mid c_t)\|_2^2 \geq p_\theta(\cdot \mid c_t)^2$$
+$$|p\|_2^2 \geq p^2$$
 
 to get that 
 
-$$p_\theta(x_{t+1} \mid c_t) \leq 1 - \sqrt{\tau}. \square$$
+$$p_x \geq 1 - \sqrt{\tau}. \square$$
 
 The magnitude of the gradient spike during training is thus largely governed by the tail of the model’s probability distribution: when the model assigns high probability to the correct token, the gradient necessarily remains small. Reasoning traces are easier to for the model to predict, effectively shifting the distribution of the correct token forward, moving the tail upwards and thereby reducing the frequency and severity of large gradients in practice.
 
 Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest.
 
 <h2> From Surprise to Stability </h2>
-From this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories closer to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment—it is also a natural training objective for it.
+From this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories closer to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment: it is also a natural training objective for it.
 
-Reasoning sequences in this light act as a variational regularizer on the cross-entropy objective, implicitly minimizing curvature in the loss surface. But beyond stabilizing optimization, these gentler updates confer several deeper benefits. In fine-tuning, where a narrow slice of data adjusts a model with billions of parameters, stability matters as much as accuracy. Smoother gradients prevent overcorrection and reduce the risk of catastrophic forgetting, allowing the model to incorporate new reasoning patterns without erasing the representations that support them. Intuitively, we are teaching the model to reason more, not to memorize differently: the training signal refines the structure of thought rather than replacing its contents. This makes reasoning supervision doubly valuable—it extends the model’s abilities while preserving the foundation it was built upon.
+Reasoning sequences in this light act as a variational regularizer on the cross-entropy objective, implicitly minimizing curvature in the loss surface. But beyond stabilizing optimization, these gentler updates confer several deeper benefits. In fine-tuning, where a narrow slice of data adjusts a model with billions of parameters, stability matters as much as accuracy. Smoother gradients prevent overcorrection and reduce the risk of catastrophic forgetting, allowing the model to incorporate new reasoning patterns without erasing the representations that support them. Intuitively, we are teaching the model to reason more, not to memorize differently: the training signal refines the structure of thought rather than replacing its contents. This makes reasoning supervision doubly valuable: it extends the model’s abilities while preserving the foundation it was built upon.
 
 This perspective helps illuminate why many modern alignment strategies, like the “reasoning-first” design of the o1 training process, prove so effective. Most textbook data, for example, announces the answer before revealing the logic, preserving a sharp spike in surprisal that gradients must struggle to descend. Reasoning-first data, by contrast, tilts that spike into a staircase, letting probability mass shift forward gradually as intermediate steps unfold. The resulting model learns to reason and to learn in smaller, steadier increments.
 
