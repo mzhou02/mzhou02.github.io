@@ -144,19 +144,71 @@ $$p_x > 1 - \sqrt{\tau}. \square$$
 <br>
 The magnitude of the gradient spike during training is thus largely governed by the tail of the model’s probability distribution: when the model assigns high probability to the correct token, the gradient necessarily remains small. Reasoning trace data is easier for the model to predict, effectively shifting the distribution of the correct token forward, moving the tail upwards and thereby reducing the frequency and severity of large gradients in practice.
 
-Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest (I haven't empirically tested this though so I'm also unsure).
+Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest.
+
+<br>
+<h1> Experimental Setup </h1>
+<br>
+
+To give some empirical footing, I carried out a small experiment on Llama-3.1-8B-Instruct, using the GSM8K dataset as a simple and interpretable test bed. The aim was to just see whether the qualitative claims made earlier hold in practice without relying on some assumptions made.
+
+The model was fine-tuned with full parameter updates using a batch size of 4, a learning rate of $1 \times 10^{-5}$, and a random seed of 42 across all runs. Since most instruction-tuned models already display some latent reasoning behavior when prompted, the goal was not to introduce reasoning, but to vary the degree to which it is supervised.
+
+Instead of training solely on final answers, two supervision regimes were used:
+<ul>
+  <li><strong>Direct:</strong> half of the reasoning steps in each explanation were randomly removed from the sample, leaving the remaining steps (and the final answer) supervised.</li>
+  <li><strong>Full-CoT:</strong> all reasoning and answer tokens were included in the training objective.</li>
+</ul>
+
+Each model was trained for 1 000 optimizer steps, sufficient to observe early-phase dynamics where most geometric effects. During training, the following quantities were logged:
+<ul>
+  <li>Gradient norms and their rolling variance (to track spike frequency and stability),</li>
+  <li>Training loss (for convergence smoothness),</li>
+  <li>Cosine similarity between consecutive gradients and an exponential moving average of past gradients (to measure local and global coherence), and</li>
+  <li>The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$​, estimated every 100 steps using the power-iteration method.</li>
+</ul>
+
+The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$, serves as a practical proxy for the curvature of the loss surface: large eigenvalues indicate sharper, more unstable regions where gradients fluctuate rapidly, while smaller values correspond to flatter, better-conditioned areas that yield smoother updates and greater training stability.
+
+<br>
+<h1> Empirical Results </h1>
+<br>
+
+<style>
+  .img-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 12px;
+  }
+  .img-grid img {
+    width: 100%;
+    height: auto;            /* keeps aspect ratio */
+    display: block;
+  }
+</style>
+
+<div class="img-grid">
+  <img src="/assets/img/gradient_of_thought_figures/loss.png" alt="">
+  <img src="/assets/img/gradient_of_thought_figures/norm.png" alt="">
+  <img src="/assets/img/gradient_of_thought_figures/cos_sim.png" alt="">
+  <img src="/assets/img/gradient_of_thought_figures/hessian.png" alt="">
+</div>
+
+Across all runs, the training loss decreased steadily for roughly the first 150 steps before settling into a shallow oscillatory regime. This pattern is typical for low learning-rate fine-tuning on an already instruction-trained model: most of the easy loss reduction happens early, after which the optimizer moves within a relatively flat region of the loss surface. This steady plateau provides a clean window to compare the geometric behavior of different supervision schemes without the confounding effects of rapid descent.
+
+Even without large-scale tuning, the differences between supervision types were clear. Chain-of-Thought supervision produced smaller gradient norms on average and fewer sharp spikes, suggesting that its updates were more tempered than those of direct answer-only training. The cosine similarities between consecutive gradients were broadly similar across all runs, implying that the overall direction of descent was preserved; what changed was the scale and smoothness of the steps.
+
+The most revealing signal though came from the \emph{curvature estimates}. The largest Hessian eigenvalue, $\lambda_{\max}$, was consistently lower under reasoning supervision---approximately two-thirds of the value observed in the direct, answer-only baseline. Because $\lambda_{\max}$ quantifies the steepest curvature of the loss surface, this reduction indicates that CoT training leads the model into a **flatter and better-conditioned region** of parameter space, something that learning rate cannot change. In such regions, small perturbations in the weights produce proportionally smaller changes in loss; optimization proceeds more predictably, and the same learning rate becomes effectively more stable. Lower curvature implies that nearby parameter configurations behave similarly: that reasoning supervision smooths not the gradients themselves, but the **landscape they inhabit**.
 
 <br>
 <h1> Reasoning as Implicit Alignment </h1>
 <br>
 
-For the most part, changes in logit gradients translate directly into changes in parameter gradients. Although we only proved a statement about gradient spikes, it is plausible that reasoning supervision does more than reduce their size: it alters their structure. Training on reasoning traces likely improves the conditioning of gradients, making updates less erratic and more directionally consistent under the same optimizer settings. This isn’t simply a matter of shrinking step size, as one might achieve by lowering the learning rate; rather, it reshapes the loss surface itself. By distributing surprisal across intermediate steps, Chain-of-Thought supervision guides optimization along smoother, more coherent trajectories through parameter space. In this way, reasoning becomes an elicitation prior: it steers learning toward behaviors that are coherent, interpretable, and human-aligned through the very structure of the task. Reasoning here is not just a skill to be learned, but a geometry that aligns how learning unfolds.
+For the most part, changes in logit gradients translate directly into changes in parameter gradients. The experiment above suggest that reasoning supervision affects more than the scale of these gradients: it changes the geometry of the loss surface itself. Models trained on reasoning traces converge into regions of lower curvature. This flattening implies that nearby parameter configurations yield similar loss values, so the model’s updates remain better-conditioned and less sensitive to noise. In geometric terms, reasoning supervision moves the optimizer into flatter, wider basins, where learning proceeds more stably and with smaller deviations from the original pre-trained parameters.
 
-Viewed from this angle, reasoning traces act as a variational regularizer on the cross-entropy objective, implicitly improving the curvature and conditioning of the loss landscape. The benefits go beyond stability: in fine-tuning, where a narrow slice of data nudges billions of parameters, well-conditioned updates help the model integrate new reasoning patterns without distorting old ones. Directionally consistent gradients prevent overcorrection and mitigate catastrophic forgetting, allowing knowledge to be refined rather than replaced. Philosophically, we are teaching the model not simply to memorize differently, but to think more coherently: reasoning supervision refines the structure of thought itself. Whether and to what extent these effects hold empirically remains to be tested—but if they do, it would suggest that reasoning is not merely a path to alignment, but a natural objective for it.
+This behavior supports the view that reasoning supervision functions more as elicitation than just memorization. By distributing surprisal across intermediate steps of thought, Chain-of-Thought supervision regularizes the geometry of the loss landscape, improving its curvature and conditioning. The optimizer moves through flatter, better-behaved regions of parameter space, allowing updates to remain stable and directionally consistent under the same training conditions. In this regime, new reasoning patterns can be integrated without distorting the knowledge that underlies them: the model learns to refine what it already knows rather than overwrite it. Combined with the smaller gradient updates, reasoning supervision in post-training promotes less memorization and catastrophic forgetting, and guides learning toward coherence, making the parameters stay closer to the pre-trained model while aligning its behavior more closely with human-like reasoning. Philosophically, this suggests that reasoning is not merely a tool for alignment, but a natural objective for it: a way of teaching the model to think by reshaping the very geometry through which it learns.
 
-This lens also helps explain why many modern alignment strategies, like the “reasoning-first” design of the o1 training process, prove so effective. Most textbook data, for example, announces the answer before revealing the logic, preserving a sharp spike in surprisal that gradients must struggle to descend. Reasoning-first data, by contrast, tilts that spike into a staircase, letting probability mass shift forward gradually as intermediate steps unfold. The resulting model learns to reason and to learn in smaller, steadier increments.
-
-Geometrically, this translates to a refinement of the model’s internal landscape. Pre-training yields a vast but rugged terrain, full of steep cliffs where token probabilities shift abruptly from one step to the next. Post-training on reasoning traces acts less like the pure addition of new knowledge, but a bit more like a smoothing operation across this surface. The same information remains, but its contours soften; gradients that once fluctuated violently begin to flow coherently along intermediate steps. The model does not merely learn new facts—it learns to traverse its own knowledge more gracefully. In the end, the gradient tells a simple story: reasoning is a way of making prediction coherent. When a model learns to smooth its own landscape—distributing complexity over time and thought—it not only mimics reasoning better, but also becomes a gentler learner.
+In essence, pre-training yields a vast but rugged terrain, full of steep cliffs where token probabilities shift abruptly from one step to the next. Post-training on reasoning traces acts less like the pure addition of new knowledge, but a bit more like a smoothing operation across this surface. The same information remains, but its contours soften; gradients that once fluctuated violently begin to flow coherently along intermediate steps. The model does not merely learn new facts—it learns to traverse its own knowledge more gracefully. In the end, the gradient tells a simple story: reasoning is a way of making prediction coherent. When a model learns to smooth its own landscape—distributing complexity over time and thought—it not only mimics reasoning better, but also becomes a gentler learner.
 
 <br>
 <h1> References </h1>
