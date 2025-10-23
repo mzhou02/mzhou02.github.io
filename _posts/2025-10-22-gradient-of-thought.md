@@ -65,7 +65,7 @@ One can think of post-training not as the acquisition of new facts, but as the a
 </div>
 <br>
 
-*Proof.* Write $Z = \sum_j e^{y_j}$ and $p_i = e^{y_i}/Z$. 
+*Proof.* Write $Z = \sum_j e^{y_j}$ and $p_i = e^{y_i}/Z$. Let $q$ denote the one-hot distribution from the training sample and $p_k$ represent the probability of predicting token $y_k$ from context $y_{<t}$.
 
 For each $i$,
 
@@ -82,11 +82,11 @@ $$ = \mathbb{I}\{i = k\} - \frac{e^{y_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
 
 Therefore,
 
-$$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(i) \frac{\partial}{\partial y_k} \log p_i = -\sum_i q(i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
+$$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(y_i) \frac{\partial}{\partial y_k} \log p_i = -\sum_i q(y_i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
 
 <br>
 
-$$= -q(k) + p_k \sum_i q(i) = p_k - q(k),$$
+$$= -q(y_k) + p_k \sum_i q(y_i) = p_k - q(y_k),$$
 
 since $\sum_i q(i) = 1$. 
 
@@ -150,7 +150,7 @@ Of course, if we used only the preceding lemma, one could only guarantee this in
 <h1> Reasoning as Implicit Alignment </h1>
 <br>
 
-For the most part, changes in logit gradients translate directly to changes in parameter gradients, and from this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories **closer** (not necessarily close, but just closer) to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment, it is also a natural training objective for it.
+For the most part, changes in logit gradients translate directly to changes in parameter gradients, and from this gradient perspective, the benefits of Chain-of-Thought supervision extend beyond teaching the model to just reason: they reveal reasoning itself as a task that naturally aligns the model’s learning dynamics with the behaviors we seek to cultivate. Training on reasoning sequences elicit smaller, steadier gradient updates. These tempered updates allow the model’s latent capacities—abstraction, consistency, self-monitoring—to emerge without being drowned out by gradient noise, while also keeping learning trajectories **closer** (not necessarily close, but just closer) to the model’s original pre-trained distribution. In this way, the reasoning objective acts as an elicitation prior: it guides optimization toward coherent, human-aligned behavior through the intrinsic structure of the task. This demonstrates that reasoning is not just a tool for alignment, it is also a more natural training objective for it.
 
 Reasoning sequences in this light act as a variational regularizer on the cross-entropy objective, implicitly minimizing curvature in the loss surface. But beyond stabilizing optimization, these gentler updates confer several deeper benefits. In fine-tuning, where a narrow slice of data adjusts a model with billions of parameters, stability matters as much as accuracy. Smoother gradients prevent overcorrection and reduce the risk of catastrophic forgetting, allowing the model to incorporate new reasoning patterns without erasing the representations that support them. Philosophically, we are teaching the model to reason and generalize more, not to memorize differently: the training signal refines the structure of thought rather than replacing its contents. This makes reasoning supervision doubly valuable: it extends the model’s abilities while preserving the foundation it was built upon.
 
