@@ -148,7 +148,7 @@ The magnitude of the gradient spike during training is thus largely governed by 
 Of course, if we used only the preceding lemma, one could only guarantee this in theory when the shift in probability exceeds roughly $\sqrt{\tau_{\text{direct}}}(1 - \sqrt{2}/2)$ in factor; the verification of this is left as an exercise to the reader. However, the inequalities employed above are somewhat generous, and in most realistic settings the stability improvement from CoT training probably appears far stronger than this conservative bound would suggest.
 
 <br>
-<h1> Experimental Setup </h1>
+<h1> Empirical Results </h1>
 <br>
 
 To give some empirical footing, I carried out a small experiment on Llama-3.1-8B-Instruct, using the GSM8K dataset as a simple and interpretable test bed. The aim was to just see whether the qualitative claims made earlier hold in practice without relying on some assumptions made.
@@ -171,8 +171,6 @@ Each model was trained for 1000 optimizer steps, sufficient to observe early-pha
 
 The largest eigenvalue of the Hessian, $\lambda_{\text{max}}$, serves as a practical proxy for the curvature of the loss surface: large eigenvalues indicate sharper, more unstable regions where gradients fluctuate rapidly, while smaller values correspond to flatter, better-conditioned areas that yield smoother updates and greater training stability.
 
-<br>
-<h1> Empirical Results </h1>
 <br>
 
 <style>
