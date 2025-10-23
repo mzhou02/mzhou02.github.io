@@ -34,7 +34,7 @@ Why should such intermediate text help?
 <h1> An Information-Theoretic Perspective </h1>
 <br>
 
-At bottom, next-token prediction is an exercise in uncertainty management. The *surprisal* of a token $x_t$ given its context $x_{<t}$ is
+Next-token prediction can be viewed as an exercise in uncertainty management. The *surprisal* of a token $x_t$ given its context $x_{<t}$ is
 
 $$\text{surp}(x_t \mid x_{<t}) \;=\; -\log p_\theta(x_t \mid x_{<t}),$$
 
