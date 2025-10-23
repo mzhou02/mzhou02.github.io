@@ -163,9 +163,9 @@ Instead of training solely on final answers, two supervision regimes were used:
 
 Each model was trained for 1000 optimizer steps, sufficient to observe early-phase dynamics where most geometric effects. During training, the following quantities were logged:
 <ul>
-  <li>Gradient norms and their rolling variance (to track spike frequency and stability),</li>
+  <li>Gradient norms (to track spike frequency and stability),</li>
   <li>Training loss (for convergence smoothness),</li>
-  <li>Cosine similarity between consecutive gradients and an exponential moving average of past gradients (to measure local and global coherence), and</li>
+  <li>Cosine similarity between consecutive gradients (to measure local coherence), and</li>
   <li>The largest eigenvalue of the Hessian, $\lambda_{\text{max}}$​, estimated every 100 steps using the power-iteration method.</li>
 </ul>
 
