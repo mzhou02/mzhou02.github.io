@@ -160,15 +160,15 @@ Instead of training solely on final answers, two supervision regimes were used:
   <li><strong>Full-CoT:</strong> all reasoning and answer tokens were included in the training objective.</li>
 </ul>
 
-Each model was trained for 1 000 optimizer steps, sufficient to observe early-phase dynamics where most geometric effects. During training, the following quantities were logged:
+Each model was trained for 1000 optimizer steps, sufficient to observe early-phase dynamics where most geometric effects. During training, the following quantities were logged:
 <ul>
   <li>Gradient norms and their rolling variance (to track spike frequency and stability),</li>
   <li>Training loss (for convergence smoothness),</li>
   <li>Cosine similarity between consecutive gradients and an exponential moving average of past gradients (to measure local and global coherence), and</li>
-  <li>The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$​, estimated every 100 steps using the power-iteration method.</li>
+  <li>The largest eigenvalue of the Hessian, $\lambda_{\text{max}}$​, estimated every 100 steps using the power-iteration method.</li>
 </ul>
 
-The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$, serves as a practical proxy for the curvature of the loss surface: large eigenvalues indicate sharper, more unstable regions where gradients fluctuate rapidly, while smaller values correspond to flatter, better-conditioned areas that yield smoother updates and greater training stability.
+The largest eigenvalue of the Hessian, $\lambda_{\text{max}}$, serves as a practical proxy for the curvature of the loss surface: large eigenvalues indicate sharper, more unstable regions where gradients fluctuate rapidly, while smaller values correspond to flatter, better-conditioned areas that yield smoother updates and greater training stability.
 
 <br>
 <h1> Empirical Results </h1>
@@ -178,11 +178,12 @@ The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$, serves as a pract
   .img-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 per row */
-    gap: 12px;
+    column-gap: 12px;  /* space between columns */
+    row-gap: 24px;     /* bigger space between rows */
   }
   .img-grid img {
     width: 100%;
-    height: auto;            /* keeps aspect ratio */
+    height: auto; /* keep aspect ratio */
     display: block;
   }
 </style>
@@ -194,11 +195,12 @@ The largest eigenvalue of the Hessian, $\Lambda_{\text{max}}$, serves as a pract
   <img src="/assets/img/gradient_of_thought_figures/hessian.png" alt="">
 </div>
 
+<br>
 Across all runs, the training loss decreased steadily for roughly the first 150 steps before settling into a shallow oscillatory regime. This pattern is typical for low learning-rate fine-tuning on an already instruction-trained model: most of the easy loss reduction happens early, after which the optimizer moves within a relatively flat region of the loss surface. This steady plateau provides a clean window to compare the geometric behavior of different supervision schemes without the confounding effects of rapid descent.
 
 Even without large-scale tuning, the differences between supervision types were clear. Chain-of-Thought supervision produced smaller gradient norms on average and fewer sharp spikes, suggesting that its updates were more tempered than those of direct answer-only training. The cosine similarities between consecutive gradients were broadly similar across all runs, implying that the overall direction of descent was preserved; what changed was the scale and smoothness of the steps.
 
-The most revealing signal though came from the \emph{curvature estimates}. The largest Hessian eigenvalue, $\lambda_{\max}$, was consistently lower under reasoning supervision---approximately two-thirds of the value observed in the direct, answer-only baseline. Because $\lambda_{\max}$ quantifies the steepest curvature of the loss surface, this reduction indicates that CoT training leads the model into a **flatter and better-conditioned region** of parameter space, something that learning rate cannot change. In such regions, small perturbations in the weights produce proportionally smaller changes in loss; optimization proceeds more predictably, and the same learning rate becomes effectively more stable. Lower curvature implies that nearby parameter configurations behave similarly: that reasoning supervision smooths not the gradients themselves, but the **landscape they inhabit**.
+The most revealing signal though came from the **curvature estimates**. The largest Hessian eigenvalue, $\lambda_{\max}$, was consistently lower under reasoning supervision---approximately two-thirds of the value observed in the direct, answer-only baseline. Because $\lambda_{\max}$ quantifies the steepest curvature of the loss surface, this reduction indicates that CoT training leads the model into a **flatter and better-conditioned region** of parameter space, something that learning rate cannot change. In such regions, small perturbations in the weights produce proportionally smaller changes in loss; optimization proceeds more predictably, and the same learning rate becomes effectively more stable. Lower curvature implies that nearby parameter configurations behave similarly: that reasoning supervision smooths not the gradients themselves, but the **landscape they inhabit**.
 
 <br>
 <h1> Reasoning as Implicit Alignment </h1>
