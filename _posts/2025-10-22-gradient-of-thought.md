@@ -151,7 +151,7 @@ Of course, if we used only the preceding lemma, one could only guarantee this in
 <h1> Empirical Results </h1>
 <br>
 
-Despite several attempts, I was not able to extend this proof to the model parameters. So, to give some empirical footing, I carried out a small experiment on Llama-3.1-8B-Instruct, using the GSM8K dataset as a simple and interpretable test bed.
+Despite several attempts, I was not able to extend this proof to the model parameters without running into messy details with attention Jacobians. So, to give some empirical footing, I carried out a small experiment on Llama-3.1-8B-Instruct, using the GSM8K dataset as a simple and interpretable test bed.
 
 The model was fine-tuned with full parameter updates using a batch size of 4, a learning rate of $1 \times 10^{-5}$, and a random seed of 42 across all runs. Since most instruction-tuned models already display some latent reasoning behavior when prompted, the goal was not to introduce reasoning, but to vary the degree to which it is supervised.
 
