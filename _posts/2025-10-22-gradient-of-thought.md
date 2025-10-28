@@ -57,16 +57,16 @@ One can think of post-training not as the acquisition of new facts, but as the a
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Lemma 1</h6>
   <div class="card-text">
-    <p>The partial derivative of cross-etropy loss with respect to logit $y_k$ is simply the model’s predicted probability of that token minus the true label. In other words,
+    <p>The partial derivative of cross-etropy loss with respect to logit $x_k$ is simply the model’s predicted probability of that token minus the true label. In other words,
     
-    $$\frac{\partial \mathcal{L}}{\partial y_k} = p_\theta(y_k \mid y_{<t}) - \mathbb{I}\{y_k = x_t\}, $$
+    $$\frac{\partial \mathcal{L}}{\partial x_k} = p_\theta(y_t \mid y_{<t}) - \mathbb{I}\{y_t = x_k\}, $$
     
-    where $x_t$ is the correct next token in the training data (assuming softmax activation). </p>
+    where $y_t$ is the correct next token in the training data (assuming softmax activation). </p>
   </div>
 </div>
 <br>
 
-*Proof.* Write $Z = \sum_j e^{y_j}$ and $p_i = e^{y_i}/Z$. Let $q$ denote the one-hot distribution from the training sample and $p_k$ represent the probability of predicting token $y_k$ from context $y_{<t}$.
+*Proof.* Write $Z = \sum_j e^{y_j}$ and $p_i = e^{y_i}/Z$. Let $q$ denote the one-hot distribution from the training sample and $p_k$ represent the probability of predicting token $x_k$ from context $y_{<t}$.
 
 For each $i$,
 
@@ -74,26 +74,26 @@ $$\log p_i = y_i - \log Z,$$
 
 so
 
-$$\frac{\partial}{\partial y_k} \log p_i = \frac{\partial y_i}{\partial y_k} - \frac{\partial \log Z}{\partial y_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial y_k}$$
+$$\frac{\partial}{\partial x_k} \log p_i = \frac{\partial y_i}{\partial x_k} - \frac{\partial \log Z}{\partial x_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial x_k}$$
 
 <br>
 
-$$ = \mathbb{I}\{i = k\} - \frac{e^{y_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
+$$ = \mathbb{I}\{i = k\} - \frac{e^{x_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
 
 
 Therefore,
 
-$$\frac{\partial \mathcal{L}}{\partial y_k} = -\sum_{i=1}^V q(y_i) \frac{\partial}{\partial y_k} \log p_i = -\sum_i q(y_i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
+$$\frac{\partial \mathcal{L}}{\partial x_k} = -\sum_{i=1}^V q(y_i) \frac{\partial}{\partial x_k} \log p_i = -\sum_i q(y_i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
 
 <br>
 
-$$= -q(y_k) + p_k \sum_i q(y_i) = p_k - q(y_k),$$
+$$= -q(x_k) + p_k \sum_i q(y_i) = p_k - q(x_k),$$
 
 since $\sum_i q(i) = 1$. 
 
-<p>Specializing to the one-hot case $q = \mathbb{I}\{y_k = x_t\}$ gives</p>
+<p>Specializing to the one-hot case $q = \mathbb{I}\{x_k = y_t\}$ gives</p>
 
-$$\frac{\partial \mathcal{L}}{\partial y_k} = p_k - \mathbb{I}\{y_k = x_t\},$$
+$$\frac{\partial \mathcal{L}}{\partial x_k} = p_k - \mathbb{I}\{x_k = y_t\},$$
 
 as claimed. $\square$
 
@@ -107,16 +107,16 @@ We now use this to connect the size of the gradient to the model’s probability
   <div class="card-text">
     <p>Let $g$ be the loss gradient in respect to model logits. If $\|g\| > \tau$, then 
     
-    $$ 1 - \sqrt{\tau} < p_\theta(x_t \mid y_{<t}) < 1 - \sqrt{\tfrac{\tau}{2}}. $$
+    $$ 1 - \sqrt{\tau} < p_\theta(y_t \mid y_{<t}) < 1 - \sqrt{\tfrac{\tau}{2}}. $$
     
     </p>
   </div>
 </div>
 <br>
 
-*Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid y_{<t})$ and $p_x$ represent $p_\theta(x_t \mid y_{<t})$. From Lemma 1, the gradient with respect to the logits satisfies
+*Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid y_{<t})$ and $p_x$ represent $p_\theta(y_t \mid y_{<t})$. From Lemma 1, the gradient with respect to the logits satisfies
 
-$$ \|g\|^2 = (1 - p_x)^2  + \sum_{y_i \neq x_t} p_\theta(y_i \mid y_{<t})^2. $$
+$$ \|g\|^2 = (1 - p_x)^2  + \sum_{y_i \neq y_t} p_\theta(y_i \mid y_{<t})^2. $$
 
 Rewriting,
 
