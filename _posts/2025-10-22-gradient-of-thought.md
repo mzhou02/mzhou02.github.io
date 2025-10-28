@@ -114,33 +114,33 @@ We now use this to connect the size of the gradient to the model’s probability
 </div>
 <br>
 
-*Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid y_{<t})$ and $p_x$ represent $p_\theta(y_t \mid y_{<t})$. From Lemma 1, the gradient with respect to the logits satisfies
+*Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid y_{<t})$ and $p_y$ represent $p_\theta(y_t \mid y_{<t})$. From Lemma 1, the gradient with respect to the logits satisfies
 
-$$ \|g\|^2 = (1 - p_x)^2  + \sum_{y_i \neq y_t} p_\theta(y_i \mid y_{<t})^2. $$
+$$ \|g\|^2 = (1 - p_y)^2  + \sum_{y_i \neq y_t} p_\theta(y_i \mid y_{<t})^2. $$
 
 Rewriting,
 
-$$\|g\|^2 = \|p\|_2^2 - 2p_x + 1.$$
+$$\|g\|^2 = \|p\|_2^2 - 2p_y + 1.$$
 
 Since the entries of $p$ are nonnegative and sum to one,
 
-$$\|p\|_2^2 \leq p_x^2 + (1 - p_x)^2.$$
+$$\|p\|_2^2 \leq p_y^2 + (1 - p_y)^2.$$
 
 Substituting this bound gives
 
-$$\|g\|^2 \leq 2(1 - p_x)^2.$$
+$$\|g\|^2 \leq 2(1 - p_y)^2.$$
 
 Hence, if $\|g\| > \tau$, it follows that
 
-$$p_x < 1 - \sqrt{\tfrac{\tau}{2}},$$
+$$p_y < 1 - \sqrt{\tfrac{\tau}{2}},$$
 
 Similarly, we can use the bound
 
-$$|p\|_2^2 \geq p_x^2$$
+$$|p\|_2^2 \geq p_y^2$$
 
 to get that 
 
-$$p_x > 1 - \sqrt{\tau}. \square$$
+$$p_y > 1 - \sqrt{\tau}. \square$$
 
 <br>
 The magnitude of the gradient spike during training is thus largely governed by the tail of the model’s probability distribution: when the model assigns high probability to the correct token, the gradient necessarily remains small. Reasoning trace data is easier for the model to predict, effectively shifting the distribution of the correct token forward, moving the tail upwards and thereby reducing the frequency and severity of large gradients in practice.
