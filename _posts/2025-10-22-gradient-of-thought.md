@@ -66,15 +66,15 @@ One can think of post-training not as the acquisition of new facts, but as the a
 </div>
 <br>
 
-*Proof.* Write $Z = \sum_j e^{y_j}$ and $p_i = e^{y_i}/Z$. Let $q$ denote the one-hot distribution from the training sample and $p_k$ represent the probability of predicting token $x_k$ from context $y_{<t}$.
+*Proof.* Write $Z = \sum_j e^{x_j}$ and $p_i = e^{x_i}/Z$. Let $q$ denote the one-hot distribution from the training sample and $p_k$ represent the probability of predicting token $x_k$ from context $y_{<t}$.
 
 For each $i$,
 
-$$\log p_i = y_i - \log Z,$$
+$$\log p_i = x_i - \log Z,$$
 
 so
 
-$$\frac{\partial}{\partial x_k} \log p_i = \frac{\partial y_i}{\partial x_k} - \frac{\partial \log Z}{\partial x_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial x_k}$$
+$$\frac{\partial}{\partial x_k} \log p_i = \frac{\partial x_i}{\partial x_k} - \frac{\partial \log Z}{\partial x_k} = \mathbb{I}\{i = k\} - \frac{1}{Z} \frac{\partial Z}{\partial x_k}$$
 
 <br>
 
@@ -83,11 +83,11 @@ $$ = \mathbb{I}\{i = k\} - \frac{e^{x_k}}{Z} = \mathbb{I}\{i = k\} - p_k.$$
 
 Therefore,
 
-$$\frac{\partial \mathcal{L}}{\partial x_k} = -\sum_{i=1}^V q(y_i) \frac{\partial}{\partial x_k} \log p_i = -\sum_i q(y_i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
+$$\frac{\partial \mathcal{L}}{\partial x_k} = -\sum_{i=1}^V q(x_i) \frac{\partial}{\partial x_k} \log p_i = -\sum_i q(x_i)\bigl(\mathbb{I}\{i = k\} - p_k\bigr)$$
 
 <br>
 
-$$= -q(x_k) + p_k \sum_i q(y_i) = p_k - q(x_k),$$
+$$= -q(x_k) + p_k \sum_i q(x_i) = p_k - q(x_k),$$
 
 since $\sum_i q(i) = 1$. 
 
@@ -116,7 +116,7 @@ We now use this to connect the size of the gradient to the model’s probability
 
 *Proof.* Let $p$ denote the probability vector $p_\theta(\cdot \mid y_{<t})$ and $p_y$ represent $p_\theta(y_t \mid y_{<t})$. From Lemma 1, the gradient with respect to the logits satisfies
 
-$$ \|g\|^2 = (1 - p_y)^2  + \sum_{y_i \neq y_t} p_\theta(y_i \mid y_{<t})^2. $$
+$$ \|g\|^2 = (1 - p_y)^2  + \sum_{x_i \neq y_t} p_\theta(x_i \mid y_{<t})^2. $$
 
 Rewriting,
 
