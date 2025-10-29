@@ -59,7 +59,7 @@ One can think of post-training not as the acquisition of new facts, but as the a
   <div class="card-text">
     <p>The partial derivative of cross-etropy loss with respect to logit $x_k$ is simply the model’s predicted probability of that token minus the true label. In other words,
     
-    $$\frac{\partial \mathcal{L}}{\partial x_k} = p_\theta(y_t \mid y_{<t}) - \mathbb{I}\{y_t = x_k\}, $$
+    $$\frac{\partial \mathcal{L}}{\partial x_k} = p_\theta(y_t \mid y_{<t}) - \mathbb{I}\{x_k = y_t\}, $$
     
     where $y_t$ is the correct next token in the training data (assuming softmax activation). </p>
   </div>
