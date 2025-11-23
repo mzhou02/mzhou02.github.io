@@ -88,7 +88,7 @@ social: false # includes social icons at the bottom of the page
 
 I am a recent computer science and mathematics graduate from the University of Pennsylvania. I'm interested in reinforcement learning, deep learning, and arithmetic combinatorics. My current focus is on exploring architectures and methods that could enable AI systems to reason more effectively, and on using reinforcement learning as a way to shape adaptive and generalizable behaviors.
 
-During my undergraduate years, I was fortunate to work with Professors <a href='https://www.cis.upenn.edu/~mkearns/'> Michael Kearns</a>, <a href='https://en.wikipedia.org/wiki/Dan_Roth'> Dan Roth</a>, and <a href='https://rycolab.io/authors/ryan/'> Ryan Cotterell</a>, all of whom uniquely shaped my interest in AI.
+During my undergraduate years, I was fortunate to work with Professors <a href='https://en.wikipedia.org/wiki/Dan_Roth'> Dan Roth</a>, <a href='https://www.cis.upenn.edu/~mkearns/'> Michael Kearns</a>, and <a href='https://rycolab.io/authors/ryan/'> Ryan Cotterell</a>, all of whom uniquely shaped my interest in AI.
 
 <!-- <br>
 
