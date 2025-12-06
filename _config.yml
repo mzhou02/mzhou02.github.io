@@ -246,6 +246,20 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Keep non-public utility pages out of the sitemap
+  - scope:
+      path: "lighthouse_results"
+    values:
+      sitemap: false
+  # De-prioritize low-value taxonomy pages in sitemap
+  - scope:
+      path: "blog/tag"
+    values:
+      sitemap: false
+  - scope:
+      path: "blog/category"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
