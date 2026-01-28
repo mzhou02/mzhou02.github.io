@@ -75,17 +75,6 @@ social: false # includes social icons at the bottom of the page
 }
 </script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Mike Zhou - Computer Science and Mathematics student at the University of Pennsylvania (UPenn). Undergraduate researcher at Penn's Cognitive Computation Group working on NLP and machine learning.">
-  <meta name="keywords" content="Mike Zhou, UPenn, University of Pennsylvania, Computer Science, Mathematics, NLP, Machine Learning, Cognitive Computation Group, Penn SEAS">
-  <meta name="author" content="Mike Zhou">
-  <meta property="og:title" content="Mike Zhou - UPenn Computer Science & Mathematics">
-  <meta property="og:description" content="Mike Zhou - Computer Science and Mathematics student at the University of Pennsylvania (UPenn). Undergraduate researcher at Penn's Cognitive Computation Group.">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://mikezhou.me">
-</head>
-
 I am a recent computer science and mathematics graduate from the University of Pennsylvania. I'm interested in reinforcement learning, deep learning, and arithmetic combinatorics. My current focus is on exploring architectures and methods that could enable AI systems to reason more effectively, and on using reinforcement learning as a way to shape adaptive and generalizable behaviors.
 
 During my undergraduate years, I was fortunate to work with Professors <a href='https://en.wikipedia.org/wiki/Dan_Roth'> Dan Roth</a>, <a href='https://www.cis.upenn.edu/~mkearns/'> Michael Kearns</a>, and <a href='https://rycolab.io/authors/ryan/'> Ryan Cotterell</a>, all of whom uniquely shaped my interest in AI.
