@@ -79,7 +79,7 @@ We have previously mentioned how every graph has a partition in which almost all
 <div class="card mt-3 p-3">
   <h3 class="card-title font-weight-medium">Szemerédi's Regularity Lemma</h3>
   <div class="card-text">
-    <p>For every \(\varepsilon > 0\) and every positive integer \(m\), there exists an integer \(M = M(\varepsilon, m)\) such that if \(G\) is a graph with at least \(M\) vertices, then there exists an integer \(k\) with \(m \leq k \leq M\) and an \(\varepsilon\)-regular partition of the vertex set of \(G\) into \(k\) classes.</p>
+    <p>For every \(\varepsilon > 0\), there exists an integer \(M = M(\varepsilon)\) such that every finite graph \(G\) has an \(\varepsilon\)-regular partition of the vertex set of \(G\) into at most \(M\) parts.</p>
   </div>
 </div>  
 <br>

@@ -105,9 +105,9 @@ We now use this to connect the size of the gradient to the model’s probability
 <div class="card mt-3 p-3">
   <h6 class="card-title font-weight-medium">Lemma 2</h6>
   <div class="card-text">
-    <p>Let $g$ be the loss gradient in respect to model logits. If $\|g\| > \tau$, then 
+    <p>Let $g$ be the loss gradient in respect to model logits. If $\|g\|^2 = \tau$, then 
     
-    $$ 1 - \sqrt{\tau} < p_\theta(y_t \mid y_{<t}) < 1 - \sqrt{\tfrac{\tau}{2}}. $$
+    $$ 1 - \sqrt{\tau} \leq p_\theta(y_t \mid y_{<t}) \leq 1 - \sqrt{\tfrac{\tau}{2}}. $$
     
     </p>
   </div>
@@ -130,9 +130,9 @@ Substituting this bound gives
 
 $$\|g\|^2 \leq 2(1 - p_y)^2.$$
 
-Hence, if $\|g\| > \tau$, it follows that
+Hence, if $\|g\|^2 = \tau$, it follows that
 
-$$p_y < 1 - \sqrt{\tfrac{\tau}{2}},$$
+$$p_y \leq 1 - \sqrt{\tfrac{\tau}{2}},$$
 
 Similarly, we can use the bound
 
@@ -140,7 +140,7 @@ $$|p\|_2^2 \geq p_y^2$$
 
 to get that 
 
-$$p_y > 1 - \sqrt{\tau}. \square$$
+$$p_y \geq 1 - \sqrt{\tau}. \square$$
 
 <br>
 The magnitude of the gradient spike during training is thus largely governed by the tail of the model’s probability distribution: when the model assigns high probability to the correct token, the gradient necessarily remains small. Reasoning trace data is easier for the model to predict, effectively shifting the distribution of the correct token forward, moving the tail upwards and thereby reducing the frequency and severity of large gradients in practice.
