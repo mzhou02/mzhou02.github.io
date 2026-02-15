@@ -149,7 +149,7 @@ Direct Preference Optimization (DPO) leverages this mathematical insight we just
 
 <h4>The DPO Objective</h4>
 
-DPO formulates a simple objective function that directly optimizes a policy $$\pi_\theta$$ to align with human preferences:
+We use the log-likelihood loss to formulate this into a simple objective function that directly optimizes a policy $$\pi_\theta$$:
 
 $$\mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) = -\mathbb{E}_{(x,y_w,y_l) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w\mid x)}{\pi_{\text{ref}}(y_w\mid x)} - \beta \log \frac{\pi_\theta(y_l\mid x)}{\pi_{\text{ref}}(y_l\mid x)}\right)\right]$$
 
@@ -161,38 +161,3 @@ where:
 - $$\sigma$$ is the logistic function
 
 This objective has an intuitive interpretation: it increases the probability of preferred responses relative to dispreferred responses, but does so in a way that accounts for the reference model's probabilities and includes an implicit KL penalty to prevent diverging too far from the reference model.
-
-<h4>The Elegant Simplicity of DPO</h4>
-
-The beauty of DPO lies in its simplicity. Instead of the complex pipeline of traditional RLHF, DPO requires just two steps:
-
-<h4>The DPO Approach</h4>
-1. Train a reference model (e.g., through supervised fine-tuning)
-2. Directly optimize a policy to satisfy human preferences using the DPO objective
-
-This approach offers several compelling advantages:
-
-- <strong>Simplicity</strong>: A single optimization step replaces the multi-stage RLHF pipeline
-- <strong>Stability</strong>: Using a simple classification loss is more stable than RL optimization
-- <strong>Efficiency</strong>: Avoids the computational overhead of RL algorithms
-- <strong>Theoretical elegance</strong>: Directly optimizes the same underlying objective as RLHF
-- <strong>Interpretability</strong>: The implicit reward is directly tied to the policy
-
-In essence, DPO accomplishes with one elegant step what traditional RLHF does with a complex pipeline of reward modeling and reinforcement learning.
-
-<h4>Understanding the DPO Update</h4>
-
-To build intuition for how DPO works, let's examine how it updates the policy. The gradient of the DPO loss with respect to the model parameters has the form:
-
-$$\nabla_\theta \mathcal{L}_{\text{DPO}} \propto -\beta \cdot \sigma(\hat{r}_\theta(x, y_l) - \hat{r}_\theta(x, y_w)) \cdot (\nabla_\theta \log \pi_\theta(y_w\mid x) - \nabla_\theta \log \pi_\theta(y_l\mid x))$$
-
-where $$\hat{r}_\theta(x, y) = \beta \log \frac{\pi_\theta(y\mid x)}{\pi_{\text{ref}}(y\mid x)}$$ is the implicit reward.
-
-This update has a natural interpretation:
-
-- It increases the probability of the preferred response ($$y_w$$)
-- It decreases the probability of the dispreferred response ($$y_l$$)
-- The magnitude of the update is larger when the current implicit reward incorrectly ranks the responses
-- The KL penalty $$\beta$$ controls the overall magnitude of updates
-
-In essence, DPO performs a form of preference learning that directly updates the policy to better align with human preferences, without the detour through explicit reward modeling and reinforcement learning.
