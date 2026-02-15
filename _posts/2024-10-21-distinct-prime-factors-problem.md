@@ -7,14 +7,6 @@ tags: combinatorics number-theory
 categories: math
 featured: false
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 One of my favourite examples of the probabilistic method at work is the Hardy--Ramanujan theorem. It says that if you take a large integer $$x$$, the number of distinct prime factors it has, written $$\omega(x)$$, is usually very close to $$\log\log x$$. More precisely, the fluctuations are typically no larger than about $$\sqrt{\log\log x}$$.
 

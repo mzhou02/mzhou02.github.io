@@ -8,15 +8,6 @@ nav_order: 4
 display_categories: [machine learning, graphics]
 horizontal: false
 ---
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 <!-- pages/projects.md -->
 <div class="projects">

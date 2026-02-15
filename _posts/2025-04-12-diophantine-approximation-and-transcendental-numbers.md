@@ -7,14 +7,6 @@ tags: number-theory
 categories: math
 featured: false
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 Many numbers we encounter in everyday life–even those that seem impossibly complex–fall into categories we've known for centuries: rational numbers, which can be written in the form $$p/q$$, and algebraic numbers, which can be written as the root of some rational polynomial. But beyond these well-behaved figures lies a stranger world: the realm of transcendental numbers. 
 

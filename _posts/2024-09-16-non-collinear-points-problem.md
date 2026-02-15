@@ -7,14 +7,6 @@ tags: combinatorics
 categories: math
 featured: false
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 As I've been reading more about June Huh's work with the Dowling-Wilson conjecture, I've become more and more interested in algebraic methods within combinatorics. More recently, I've come across a very cute problem with a very neat solution, inspired by simple ideas from linear algebra.
 

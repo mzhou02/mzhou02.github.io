@@ -2,20 +2,12 @@
 layout: post
 title: "The Gradient of Thought: Reasoning as a Natural Objective for Alignment"
 date: 2025-10-22 18:34:00
-description:
+description: 
 tags: nlp
 categories: ai
 featured: false
 site_title: false
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 Large language models (LLMs) learn in a remarkably simple way: by predicting the next token in a sequence. During pre-training, they process vast corpora and adjust parameters $\theta$ so that the probability assigned to the correct next token,
 

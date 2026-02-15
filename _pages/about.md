@@ -17,16 +17,6 @@ latest_posts: true # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,7 +27,9 @@ social: false # includes social icons at the bottom of the page
   "email": "mikezhou@seas.upenn.edu",
   "url": "https://mikezhou.me",
   "sameAs": [
-    "https://scholar.google.com/citations?user=qc6CJjYAAAAJ"
+    "https://scholar.google.com/citations?user=sLqLDr0AAAAJ",
+    "https://github.com/mzhou02",
+    "https://www.linkedin.com/in/mikeezhou"
   ],
   "jobTitle": "Undergraduate Researcher",
   "worksFor": {

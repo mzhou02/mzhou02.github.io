@@ -7,14 +7,6 @@ importance: 3
 category: combinatorics
 mathjax: true
 ---
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0823RLC0T3"></script>
-<script>
-  window.dataLayer = window.dataLayer ||  [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0823RLC0T3');
-</script>
 
 One of the guiding principles in extremal combinatorics is that large, complicated objects often admit useful approximate descriptions. For graphs, a natural approach is to partition the vertex set into a moderate number of pieces and ask whether the edge distribution between these pieces has some uniformity. 
 

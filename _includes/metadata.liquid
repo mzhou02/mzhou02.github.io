@@ -219,10 +219,6 @@
     {% capture link %}https://www.zotero.org/{{ site.zotero_username }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
-  {% if sameaslinks != blank %}
-    {% assign sameaslinks = sameaslinks | split: '' %}
-  {% endif %}
-
   <script type="application/ld+json">
     {
         "author":
@@ -235,7 +231,7 @@
         "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
         "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
         {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks }},
+        "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}
         "name": "{{ author_name }}",
         "@context": "https://schema.org"
